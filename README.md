@@ -14,3 +14,6 @@ Without audio, the build makes a silent draft with estimated timing so you can p
 Requires `ffmpeg`, Python 3, Node, and Playwright with Chromium.
 
 See [PLAN.md](PLAN.md) for the channel strategy and safety checklist.
+
+## Channel defaults
+`pipeline/channel.json` holds the author bio (shown as an intro after the title) and the standard ending (subscribe, share your experience, contact for research animation). Every episode gets both automatically. Set `"author_intro": false` or `"standard_outro": false` in an episode to turn one off. Burmese terminology lives in `GLOSSARY.md`.

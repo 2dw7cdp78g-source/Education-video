@@ -341,6 +341,7 @@ def write_upload(ep, segs, total, out_dir, draft):
             credits.append(c)
     if credits:
         lines += ["Photo credits (Wikimedia Commons)"] + [f"- {c}" for c in credits] + [""]
+    lines += ["About the author", CHANNEL["author"]["bio"], ""]
     lines += [up.get("footer", "")]
     lines += ["```", "", f"**Tags:** {', '.join(up.get('tags', []))}", "",
               "**Subtitles:** upload `en.srt` (English) and `my.srt` (Burmese) under Subtitles.", "",
@@ -349,6 +350,32 @@ def write_upload(ep, segs, total, out_dir, draft):
         lines += [f"## Short: `{sh['id']}.mp4`", "", f"**Caption:** {sh.get('caption', sh.get('hook', ''))}", "",
                   f"**Hashtags:** {' '.join(sh.get('hashtags', up.get('hashtags', [])))}", ""]
     (out_dir / "upload.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+
+CHANNEL = json.loads((HERE / "channel.json").read_text(encoding="utf-8"))
+
+
+def apply_channel_defaults(ep):
+    """Every episode: author intro after the title scene, and the standard channel outro at the end."""
+    sc = ep["scenes"]
+    if ep.get("author_intro", True):
+        a = CHANNEL["author"]
+        ti = next((i for i, s in enumerate(sc) if s["type"] == "title"), 0)
+        tags = a["tags"]
+        author = {"type": "author", "name": a["name"], "role": a["role"], "tags": tags, "items": tags,
+                  "reveal": True, "reveal_at": [1, 1, 2, 2][:len(tags)], "lines": a["lines"]}
+        sc.insert(ti + 1, author)
+        for sh in ep.get("shorts", []):
+            sh["scenes"] = [i + 1 if i > ti else i for i in sh["scenes"]]
+    if ep.get("standard_outro", True):
+        while sc and sc[-1]["type"] in ("endcard", "outro"):
+            sc.pop()
+        o = dict(CHANNEL["outro"])
+        o["items"] = [o["title"]] + o["actions"]
+        o["reveal"], o["reveal_at"] = True, [0, 1, 2]
+        sc.append(o)
+    ep.setdefault("short_cta", CHANNEL.get("short_cta", "Full video on YouTube"))
 
 
 # ---------------------------------------------------------------- main
@@ -363,6 +390,7 @@ def main():
     ep_dir = Path(args.episode).resolve()
     ep = json.loads((ep_dir / "episode.json").read_text(encoding="utf-8"))
     S.BRAND = ep.get("channel_html", S.BRAND)
+    apply_channel_defaults(ep)
     for sc in ep["scenes"] + [ep.get("thumbnail") or {}]:  # image paths are relative to the episode folder
         if sc.get("bg"):
             p = (ep_dir / sc["bg"]["src"]).resolve()

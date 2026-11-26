@@ -521,3 +521,53 @@ def thumbnail(t):
         <h1 style='font-size:{t.get('size', 128)}px;margin-top:26px;line-height:.95;text-transform:uppercase;text-shadow:0 8px 40px rgba(0,0,0,.8)'>{big}</h1></div>"""
     bg = dict(t["bg"], dim=0.05) if t.get("bg") else None
     return page("h", body, brand=False, bg=bg, shade="linear-gradient(90deg, rgba(14,20,27,.2) 0%, rgba(14,20,27,0) 100%)")
+
+
+def _icon(name):
+    if name == "mail":
+        return (f"<svg viewBox='0 0 60 60' width='54' height='54'><rect x='6' y='14' width='48' height='34' rx='6' fill='none' stroke='{COLORS['gold']}' stroke-width='5'/>"
+                f"<path d='M8,17 L30,34 L52,17' fill='none' stroke='{COLORS['gold']}' stroke-width='5'/></svg>")
+    return (f"<svg viewBox='0 0 60 60' width='54' height='54'><path d='M8,12 H52 V40 H24 L12,50 V40 H8 Z' fill='none' stroke='{COLORS['gold']}' stroke-width='5' stroke-linejoin='round'/>"
+            f"<circle cx='20' cy='26' r='3.5' fill='{COLORS['gold']}'/><circle cx='30' cy='26' r='3.5' fill='{COLORS['gold']}'/><circle cx='40' cy='26' r='3.5' fill='{COLORS['gold']}'/></svg>")
+
+
+def scene_author(s, v, state):
+    """About the author: monogram badge, name, role, bio tags revealed one by one."""
+    shown = len(s["tags"]) if state is None else state
+    initials = "".join(w[0] for w in s["name"].split()[:3]).upper()
+    tags = "".join(
+        f"<div class='{_new(i == shown - 1).strip()}' style='opacity:{1 if i < shown else .15};display:flex;align-items:center;gap:18px;margin-top:{18 if v else 22}px'>"
+        f"<span class='badge' style='width:16px;height:16px;border-radius:50%;background:{COLORS['gold'] if i < shown else COLORS['muted']}'></span>"
+        f"<span style='font-size:{34 if v else 38}px;font-weight:600'>{e(t)}</span></div>" for i, t in enumerate(s["tags"]))
+    badge = (f"<div class='artwrap' style='position:relative;width:{300 if v else 380}px;height:{300 if v else 380}px;flex:none'>"
+             f"<svg viewBox='0 0 400 400' width='100%' height='100%'><style>"
+             f"@keyframes spinr {{ to {{ transform: rotate(360deg); }} }}"
+             f".rr {{ animation: spinr 14s linear infinite; animation-delay: calc(var(--t0) * -1s); transform-box: view-box; transform-origin: 200px 200px; }}</style>"
+             f"<circle cx='200' cy='200' r='150' fill='{COLORS['panel']}' stroke='{COLORS['gold']}' stroke-width='8'/>"
+             f"<g class='rr'><circle cx='200' cy='200' r='182' fill='none' stroke='{COLORS['gold']}' stroke-width='4' stroke-dasharray='30 22' opacity='.7'/></g>"
+             f"<text x='200' y='232' font-size='96' font-weight='800' fill='{COLORS['text']}' text-anchor='middle' letter-spacing='4'>{e(initials)}</text></svg></div>")
+    text = (f"<div class='col' style='display:flex;flex-direction:column;{'align-items:center;text-align:center' if v else ''}'>"
+            f"<div class='kicker'>About the author</div>"
+            f"<h2 style='margin-top:14px;font-size:{60 if v else 72}px'>{e(s['name'])}</h2>"
+            f"<div style='font-size:{32 if v else 34}px;color:{COLORS['gold']};font-weight:700;margin-top:10px'>{e(s['role'])}</div>"
+            f"<div style='margin-top:{20 if v else 26}px;{'text-align:left' if v else ''}'>{tags}</div></div>")
+    if v:
+        return f"<div class='stage' style='display:flex;flex-direction:column;align-items:center;gap:30px'>{badge}{text}</div>"
+    return f"<div class='stage' style='display:flex;align-items:center;gap:80px'>{badge}{text}</div>"
+
+
+def scene_outro(s, v, state):
+    """Standard channel ending: subscribe + share experience + contact for research animation."""
+    shown = len(s["actions"]) + 1 if state is None else state
+    acts = "".join(
+        f"<div class='{_new(i + 1 == shown - 1).strip()}' style='opacity:{1 if i + 1 < shown else .15};display:flex;align-items:center;gap:22px;"
+        f"background:rgba(22,32,43,.9);border:2px solid {COLORS['gold'] if i + 1 == shown - 1 else '#2b3947'};border-radius:22px;padding:22px 30px;margin-top:22px;text-align:left'>"
+        f"{_icon(a['icon'])}<span style='font-size:{32 if v else 36}px;font-weight:600;line-height:1.3'>{e(a['text'])}</span></div>"
+        for i, a in enumerate(s["actions"]))
+    bell = ART["bell"]()
+    return f"""<div class='stage' style='display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center'>
+      <div class='artwrap' style='width:{200 if v else 220}px;height:{200 if v else 220}px'>{bell}</div>
+      <h1 style='font-size:{70 if v else 78}px;max-width:1500px;margin-top:6px'>{e(s['title'])}</h1>
+      <div style='margin-top:26px;font-size:{36 if v else 36}px;font-weight:800;color:#111;background:{COLORS['gold']};padding:14px 40px;border-radius:60px'>Subscribe</div>
+      <div style='max-width:1300px'>{acts}</div>
+      <div style='margin-top:26px;font-size:{24 if v else 24}px;color:{COLORS['muted']}'>{e(s.get('safety', ''))}</div></div>"""

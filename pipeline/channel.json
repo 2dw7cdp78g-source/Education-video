@@ -1,0 +1,39 @@
+{
+  "author": {
+    "name": "Maung Yel Hkawng",
+    "role": "Human rights professional · Myanmar/Burma",
+    "bio": "Maung Yel Hkawng is a human rights professional with experience in resource mobilization and advocacy-oriented research, specializing in Myanmar/Burma. He is committed to the Burma democracy movement and experienced in working in cross-cultural, security-sensitive environments.",
+    "tags": [
+      "Advocacy-oriented research",
+      "Resource mobilization",
+      "Cross-cultural, security-sensitive work",
+      "Committed to Burma's democracy movement"
+    ],
+    "lines": [
+      {"en": "I'm Maung Yel Hkawng, a human rights professional specializing in Myanmar and Burma.",
+       "my": "ကျွန်တော်က Maung Yel Hkawng ဖြစ်ပြီး မြန်မာ/ဗမာပြည်ဆိုင်ရာ အထူးပြု လူ့အခွင့်အရေးလုပ်ငန်းကျွမ်းကျင်သူ တစ်ဦးဖြစ်ပါတယ်။"},
+      {"en": "My work combines advocacy-oriented research and resource mobilization.",
+       "my": "ကျွန်တော့်လုပ်ငန်းမှာ ထောက်ခံအားပေးရေးဦးတည်သည့် သုတေသနနှင့် အရင်းအမြစ်စုစည်းရေး ပါဝင်ပါတယ်။"},
+      {"en": "I have worked in cross-cultural, security-sensitive environments, and I am committed to Burma's democracy movement.",
+       "my": "ယဉ်ကျေးမှုကွဲပြားပြီး လုံခြုံရေးအရ ထိခိုက်လွယ်သော ပတ်ဝန်းကျင်များတွင် လုပ်ကိုင်ခဲ့ပြီး ဗမာပြည် ဒီမိုကရေစီလှုပ်ရှားမှုအတွက် ကတိကဝတ်ပြုထားပါတယ်။"}
+    ]
+  },
+  "outro": {
+    "type": "outro",
+    "title": "Subscribe for more research-based true stories",
+    "actions": [
+      {"icon": "comment", "text": "Have a similar experience? Share it in the comments."},
+      {"icon": "mail", "text": "Want your research animated on this channel? Send me a private message."}
+    ],
+    "safety": "Stay safe: don't post names, places or details that could identify you or your family.",
+    "lines": [
+      {"en": "Subscribe to the channel for more research-based true stories.",
+       "my": "သုတေသနအခြေခံ ဖြစ်ရပ်မှန်ဇာတ်လမ်းများ ထပ်မံကြည့်ရှုရန် ချန်နယ်ကို Subscribe လုပ်ထားပါ။"},
+      {"en": "If you have a similar experience, you can share it by writing in the comment section.",
+       "my": "သင့်မှာ ဆင်တူတဲ့ အတွေ့အကြုံရှိရင် Comment ကဏ္ဍမှာ ရေးသားမျှဝေနိုင်ပါတယ်။"},
+      {"en": "And if you would like to share your research as an animated video on my channel, please feel free to contact me by private message.",
+       "my": "သင့်သုတေသနကို ကျွန်တော့်ချန်နယ်တွင် အန်နီမေးရှင်းဗီဒီယိုအဖြစ် မျှဝေလိုပါက Private Message မှတစ်ဆင့် လွတ်လပ်စွာ ဆက်သွယ်နိုင်ပါတယ်။"}
+    ]
+  },
+  "short_cta": "Subscribe for more research-based true stories"
+}
