@@ -70,7 +70,7 @@ body {{ background: {COLORS['bg']}; color: {COLORS['text']}; font-family: Inter,
 .p {{ position: absolute; border-radius: 50%; background: rgba(255,236,200,.55); filter: blur(1px);
   animation-name: drift; {scene_long} }}
 @keyframes drift {{ from {{ transform: translate(0, 0); opacity: 0; }} 15% {{ opacity: var(--o); }} 85% {{ opacity: var(--o); }} to {{ transform: translate(var(--dx), var(--dy)); opacity: 0; }} }}
-.credit {{ position: absolute; {'top: 262px; right: 40px;' if v else 'bottom: 14px; right: 24px;'} font-size: {18 if v else 15}px; color: rgba(255,255,255,.55); }}
+.credit {{ position: absolute; {'bottom: 20px; left: 0; right: 0; text-align: center;' if v else 'bottom: 14px; right: 24px;'} font-size: {18 if v else 15}px; color: rgba(255,255,255,.55); }}
 .fade {{ position: absolute; inset: 0; background: #000; pointer-events: none; opacity: 0; }}
 body.enter .fade {{ animation: fadeout .5s ease-out both; }}
 @keyframes fadeout {{ from {{ opacity: 1; }} to {{ opacity: 0; }} }}
@@ -79,7 +79,7 @@ body.enter .fade {{ animation: fadeout .5s ease-out both; }}
 .brand {{ position: absolute; {'top: 60px; left: 0; right: 0; text-align: center;' if v else 'top: 44px; left: 64px;'}
   font-size: {26 if v else 20}px; letter-spacing: .14em; text-transform: uppercase; color: {COLORS['muted']}; font-weight: 600; }}
 .brand b {{ color: {COLORS['gold']}; }}
-.source {{ position: absolute; {'top: 262px; left: 40px; right: 560px; text-align: left; font-size: 18px !important;' if v else 'top: 44px; right: 64px; text-align: right; max-width: 700px;'}
+.source {{ position: absolute; {'bottom: 46px; left: 40px; right: 40px; text-align: center; font-size: 17px !important;' if v else 'top: 44px; right: 64px; text-align: right; max-width: 700px;'}
   font-size: {24 if v else 19}px; color: {COLORS['muted']}; }}
 .hook {{ position: absolute; top: 100px; left: 50px; right: 50px; text-align: center; font-weight: 800;
   font-size: 62px; line-height: 1.08; color: {COLORS['text']}; text-shadow: 0 4px 24px rgba(0,0,0,.6); }}
