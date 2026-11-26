@@ -12,6 +12,7 @@ Outputs: output/<episode-id>/
 """
 import argparse
 import hashlib
+import os
 import json
 import math
 import re
@@ -300,7 +301,11 @@ def build_video(ep, segs, items, audio, total, out_dir, work, vertical, name, fa
         htmlp.write_text(S.render_scene(sc, tag, stt, hook=hook if si >= 0 else "", ctx=ctx, seed=si * 7 + 3),
                          encoding="utf-8")
         mp4 = work / f"{key}.mp4"
-        sig = hashlib.sha1(f"{htmlp.read_text(encoding='utf-8')}|{frames}|{W}x{H}|{fast}".encode()).hexdigest()
+        html_text = htmlp.read_text(encoding="utf-8")
+        # include every referenced file's size and mtime, so a replaced photo is re-rendered
+        refs = sorted(set(re.findall(r"file://([^'\")]+)", html_text)))
+        stamp = "|".join(f"{r}:{os.path.getsize(r)}:{os.path.getmtime(r)}" for r in refs if os.path.exists(r))
+        sig = hashlib.sha1(f"{html_text}|{stamp}|{frames}|{W}x{H}|{fast}".encode()).hexdigest()
         sigf = mp4.with_suffix(".sig")
         files.append(mp4)
         if mp4.exists() and sigf.exists() and sigf.read_text() == sig:
