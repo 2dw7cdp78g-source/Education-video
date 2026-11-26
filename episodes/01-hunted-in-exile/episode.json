@@ -34,7 +34,13 @@
      "en": "He was not in Myanmar. He was in Thailand.",
      "my": "သူက မြန်မာပြည်မှာ မဟုတ်ပါဘူး။ ထိုင်းနိုင်ငံမှာ ရောက်နေတာပါ။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/09.jpg",
+    "credit": "咽頭べさ / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Thailand, Burma Mae Sot border.jpg by 咽頭べさ, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Thailand,_Burma_Mae_Sot_border.jpg",
+    "dim": 0.55
+   }
   },
   {
    "type": "title",
@@ -63,7 +69,13 @@
      "en": "This is the story of how a military regime hunts its critics, even after they escape.",
      "my": "ဤသည်မှာ စစ်အစိုးရတစ်ရပ်က ၎င်းကိုဝေဖန်သူများကို လွတ်မြောက်သွားပြီးနောက်တွင်ပင် မည်သို့လိုက်လံဖိနှိပ်သည်ဆိုသည့် ဇာတ်လမ်းဖြစ်သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/22.jpg",
+    "credit": "VOA Burmese / Public domain (Wikimedia Commons)",
+    "credit_full": "2021 Myanmar Protest in Hleden.jpg by VOA Burmese, Public domain, https://commons.wikimedia.org/wiki/File:2021_Myanmar_Protest_in_Hleden.jpg",
+    "dim": 0.5
+   }
   },
   {
    "type": "map",
@@ -139,7 +151,13 @@
      "en": "There is a name for what is happening.",
      "my": "ဖြစ်ပျက်နေသည့်အရာအတွက် အမည်တစ်ခု ရှိသည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/17.jpg",
+    "credit": "Lerdsuwa / CC BY-SA 3.0 (Wikimedia Commons)",
+    "credit_full": "Thai-Myanmar friendship bridge.jpg by Lerdsuwa, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Thai-Myanmar_friendship_bridge.jpg",
+    "dim": 0.45
+   }
   },
   {
    "type": "text",
@@ -169,7 +187,13 @@
      "en": "So how does a regime with limited resources still reach people abroad? That is the question my research set out to answer.",
      "my": "အရင်းအမြစ်နည်းသော အစိုးရတစ်ရပ်က ပြည်ပရှိလူများထံ မည်သို့လက်လှမ်းမီနေသနည်း။ ထိုမေးခွန်းကို ကျွန်ုပ်၏သုတေသနက ဖြေရှင်းရန် ကြိုးစားခဲ့သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/13.jpg",
+    "credit": "Paingpeace / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Myanmar Thailand Border Myawaddy.jpg by Paingpeace, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Myanmar_Thailand_Border_Myawaddy.jpg",
+    "dim": 0.6
+   }
   },
   {
    "type": "points",
@@ -209,7 +233,13 @@
      "en": "And surveillance online.",
      "my": "နှင့် အွန်လိုင်းစောင့်ကြည့်မှု။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/26.jpg",
+    "credit": "Ninjastrikers / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest against military coup (9 Feb 2021, Hpa-An, Kayin State, Myanmar) (4).jpg by Ninjastrikers, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_against_military_coup_(9_Feb_2021,_Hpa-An,_Kayin_State,_Myanmar)_(4).jpg",
+    "dim": 0.68
+   }
   },
   {
    "type": "chapter",
@@ -220,7 +250,13 @@
      "en": "Let's start with the most direct one.",
      "my": "အတိုက်ရိုက်ဆုံးနည်းလမ်းကနေ စကြည့်ရအောင်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/44.jpg",
+    "credit": "kallerna / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Thanlwin Bridge Hpa-An 2.jpg by kallerna, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Thanlwin_Bridge_Hpa-An_2.jpg",
+    "dim": 0.4
+   }
   },
   {
    "type": "phone",
@@ -272,7 +308,13 @@
      "en": "Later, his mother called. Her son had been sentenced to seven years in prison.",
      "my": "နောက်ပိုင်းတွင် သူ့မိခင်က ဖုန်းဆက်လာသည်။ သူ့သားသည် ထောင်ဒဏ် ခုနစ်နှစ် ချမှတ်ခံခဲ့ရပြီ ဖြစ်သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/38.jpg",
+    "credit": "Go-Myanmar / CC BY-SA 3.0 (Wikimedia Commons)",
+    "credit_full": "Hpa An, Kayin (Karen) State 001.JPG by Go-Myanmar, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Hpa_An,_Kayin_(Karen)_State_001.JPG",
+    "dim": 0.62
+   }
   },
   {
    "type": "quote",
@@ -297,7 +339,13 @@
      "en": "The officers threatened to take her document, and told her to go back to Myanmar for resignation papers.",
      "my": "အရာရှိများက သူမ၏စာရွက်စာတမ်းကို သိမ်းမည်ဟု ခြိမ်းခြောက်ပြီး နုတ်ထွက်စာအတွက် မြန်မာပြည်ပြန်ရန် ပြောခဲ့သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/46.jpg",
+    "credit": "MgHla / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest in Myanmar against Military Coup 14-Feb-2021 14.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_14.jpg",
+    "dim": 0.62
+   }
   },
   {
    "type": "chapter",
@@ -308,7 +356,13 @@
      "en": "But the most painful pressure doesn't target the activists themselves.",
      "my": "သို့သော် အနာကျင်ဆုံးဖိအားက တက်ကြွလှုပ်ရှားသူများကိုယ်တိုင်ကို ပစ်မှတ်ထားခြင်း မဟုတ်ပါ။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/34.jpg",
+    "credit": "Tayzar44 / CC BY 4.0 (Wikimedia Commons)",
+    "credit_full": "Mae La refugee camp from Thailand.jpg by Tayzar44, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Mae_La_refugee_camp_from_Thailand.jpg",
+    "dim": 0.45
+   }
   },
   {
    "type": "flow",
@@ -374,7 +428,13 @@
      "my": "\"ဒီဖိအားတွေကြောင့် မဲဆောက်မှာတောင် ကြောက်နေရတယ်။\"",
      "say": "These pressures make me afraid, even in May Sot."
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/10.jpg",
+    "credit": "咽頭べさ / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Thailand, Burma Mae Sot border 1.jpg by 咽頭べさ, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Thailand,_Burma_Mae_Sot_border_1.jpg",
+    "dim": 0.62
+   }
   },
   {
    "type": "chapter",
@@ -385,7 +445,13 @@
      "en": "The junta doesn't only use threats. It also makes offers.",
      "my": "စစ်ကောင်စီသည် ခြိမ်းခြောက်မှုကိုသာ အသုံးမပြုပါ။ ကမ်းလှမ်းမှုများလည်း ပြုလုပ်သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/24.jpg",
+    "credit": "Ninjastrikers / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest against military coup (9 Feb 2021, Hpa-An, Kayin State, Myanmar) (10).jpg by Ninjastrikers, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_against_military_coup_(9_Feb_2021,_Hpa-An,_Kayin_State,_Myanmar)_(10).jpg",
+    "dim": 0.45
+   }
   },
   {
    "type": "quote",
@@ -420,7 +486,13 @@
      "en": "Thailand is not the one doing the targeting. But its system can make the junta's job easier.",
      "my": "ပစ်မှတ်ထားနေသူမှာ ထိုင်းနိုင်ငံ မဟုတ်ပါ။ သို့သော် ၎င်း၏စနစ်က စစ်ကောင်စီ၏အလုပ်ကို ပိုလွယ်ကူစေနိုင်သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/12.jpg",
+    "credit": "Manop / CC BY-SA 3.0 (Wikimedia Commons)",
+    "credit_full": "Moei River.jpg by Manop, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Moei_River.jpg",
+    "dim": 0.45
+   }
   },
   {
    "type": "stat",
@@ -451,7 +523,13 @@
      "en": "So the very regime they fled controls the paper that lets them move.",
      "my": "ထို့ကြောင့် သူတို့ထွက်ပြေးလာခဲ့သော အစိုးရကိုယ်တိုင်က သူတို့သွားလာခွင့်ပြုသည့် စာရွက်ကို ထိန်းချုပ်ထားသည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/34.jpg",
+    "credit": "Tayzar44 / CC BY 4.0 (Wikimedia Commons)",
+    "credit_full": "Mae La refugee camp from Thailand.jpg by Tayzar44, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Mae_La_refugee_camp_from_Thailand.jpg",
+    "dim": 0.6
+   }
   },
   {
    "type": "quote",
@@ -463,7 +541,13 @@
      "my": "ပါဝင်သူတစ်ဦးက ပြောသည်- \"သူတို့ကိုယ်သူတို့ အစိုးရလို့ခေါ်တယ်။ ဒါပေမဲ့ တက်ကြွလှုပ်ရှားသူ ၉၀ ရာခိုင်နှုန်းက ပတ်စပို့ ဒါမှမဟုတ် CI မရနိုင်ဘူး။\"",
      "say": "One participant said: They call themselves the government. But ninety percent of activists cannot get passports or C I."
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/13.jpg",
+    "credit": "Paingpeace / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Myanmar Thailand Border Myawaddy.jpg by Paingpeace, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Myanmar_Thailand_Border_Myawaddy.jpg",
+    "dim": 0.66
+   }
   },
   {
    "type": "flow",
@@ -543,7 +627,13 @@
      "en": "Some stop seeing friends at all.",
      "my": "အချို့မှာ သူငယ်ချင်းများနှင့်ပင် လုံးဝမတွေ့တော့ပါ။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/10.jpg",
+    "credit": "咽頭べさ / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Thailand, Burma Mae Sot border 1.jpg by 咽頭べさ, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Thailand,_Burma_Mae_Sot_border_1.jpg",
+    "dim": 0.66
+   }
   },
   {
    "type": "chapter",
@@ -643,7 +733,13 @@
      "en": "One told me: \"I can't let my whole family suffer because of something I did. There are many things I want to say, but I will keep quiet about them.\"",
      "my": "တစ်ဦးက ပြောသည်- \"ကိုယ်လုပ်တဲ့အရာကြောင့် မိသားစုတစ်ခုလုံး ဒုက္ခမရောက်စေချင်ဘူး။ ပြောချင်တာတွေ အများကြီးရှိပေမဲ့ နှုတ်ဆိတ်နေမယ်။\""
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/31.jpg",
+    "credit": "MgHla / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest in Myanmar against Military Coup 14-Feb-2021 03.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_03.jpg",
+    "dim": 0.66
+   }
   },
   {
    "type": "chapter",
@@ -654,7 +750,13 @@
      "en": "But this is not only a story about fear.",
      "my": "သို့သော် ဤသည်မှာ ကြောက်ရွံ့မှုအကြောင်းသက်သက် မဟုတ်ပါ။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/33.jpg",
+    "credit": "MgHla / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest in Myanmar against Military Coup 14-Feb-2021 05.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_05.jpg",
+    "dim": 0.42
+   }
   },
   {
    "type": "points",
@@ -696,7 +798,13 @@
      "en": "And some work quietly with lawyers and rights groups to document what is happening.",
      "my": "အချို့က ဖြစ်ပျက်နေသည်များကို မှတ်တမ်းတင်ရန် ရှေ့နေများနှင့် လူ့အခွင့်အရေးအဖွဲ့များနှင့် တိတ်တဆိတ် လုပ်ဆောင်ကြသည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/47.jpg",
+    "credit": "MgHla / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest in Myanmar against Military Coup 14-Feb-2021 17.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_17.jpg",
+    "dim": 0.68
+   }
   },
   {
    "type": "text",
@@ -720,7 +828,13 @@
      "en": "Protecting them means recognising them as refugees, stopping deportations into the hands of the military, and taking online threats seriously.",
      "my": "သူတို့ကို ကာကွယ်ရန်ဆိုသည်မှာ ဒုက္ခသည်အဖြစ် အသိအမှတ်ပြုခြင်း၊ စစ်တပ်လက်ထဲ ပြန်ပို့ခြင်းကို ရပ်တန့်ခြင်းနှင့် အွန်လိုင်းခြိမ်းခြောက်မှုများကို အလေးအနက်ထားခြင်း ဖြစ်သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/23.jpg",
+    "credit": "Ninjastrikers / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest against military coup (9 Feb 2021, Hpa-An, Kayin State, Myanmar) (1).jpg by Ninjastrikers, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_against_military_coup_(9_Feb_2021,_Hpa-An,_Kayin_State,_Myanmar)_(1).jpg",
+    "dim": 0.6
+   }
   },
   {
    "type": "endcard",
@@ -736,7 +850,13 @@
      "en": "And subscribe for more research-based stories from Myanmar and its borderlands.",
      "my": "မြန်မာနိုင်ငံနှင့် နယ်စပ်ဒေသများမှ သုတေသနအခြေပြု ဇာတ်လမ်းများအတွက် Subscribe လုပ်ထားပါ။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/30.jpg",
+    "credit": "MgHla / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest in Myanmar against Military Coup 14-Feb-2021 02.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_02.jpg",
+    "dim": 0.6
+   }
   }
  ],
  "shorts": [
@@ -790,9 +910,12 @@
  "thumbnail": {
   "kicker": "Myanmar → Thailand",
   "text": "Hunted|in exile",
-  "size": 160,
-  "highlight": {
-   "Kayin": "red"
+  "size": 170,
+  "bg": {
+   "src": "images/33.jpg",
+   "credit": "MgHla / CC BY-SA 4.0 (Wikimedia Commons)",
+   "credit_full": "Protest in Myanmar against Military Coup 14-Feb-2021 05.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_05.jpg",
+   "pos": "70% 30%"
   }
  },
  "sources": [

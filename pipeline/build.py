@@ -228,18 +228,6 @@ def render_pngs(jobs, work):
     run(["node", str(HERE / "render.js"), str(jf)], cwd=str(HERE))
 
 
-def encode_segment(png, out, frames, vertical, zoom, fast):
-    W, H = (1080, 1920) if vertical else (1920, 1080)
-    if zoom:
-        vf = (f"scale={W * 2}:{H * 2},zoompan=z='1+0.045*on/{max(frames, 1)}':x='iw/2-(iw/zoom/2)':"
-              f"y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={FPS},format=yuv420p")
-    else:
-        vf = f"scale={W}:{H},format=yuv420p"
-    run(["ffmpeg", "-y", "-loop", "1", "-framerate", str(FPS), "-i", str(png), "-frames:v", str(frames),
-         "-vf", vf, "-c:v", "libx264", "-preset", "ultrafast" if fast else "veryfast", "-crf", "16",
-         "-pix_fmt", "yuv420p", "-r", str(FPS), str(out)])
-
-
 def assemble(seg_files, audio, ass, out, fast, audio_filter=None):
     lst = out.with_suffix(".txt")
     lst.write_text("".join(f"file '{p}'\n" for p in seg_files))
@@ -254,30 +242,63 @@ def assemble(seg_files, audio, ass, out, fast, audio_filter=None):
     lst.unlink()
 
 
+def render_parallel(jobs, work, name, workers=3):
+    """Render animated segment jobs across several Chromium processes."""
+    if not jobs:
+        return
+    # longest first, round-robin, so workers finish at about the same time
+    order = sorted(range(len(jobs)), key=lambda i: -jobs[i]["dur"])
+    chunks = [[jobs[i] for i in order[w::workers]] for w in range(workers)]
+    procs = []
+    for w, ch in enumerate(chunks):
+        if not ch:
+            continue
+        jf = work / f"{name}_jobs{w}.json"
+        jf.write_text(json.dumps(ch))
+        procs.append(subprocess.Popen(["node", str(HERE / "render.js"), str(jf)], cwd=str(HERE),
+                                      stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True))
+    for p in procs:
+        _, err = p.communicate()
+        if p.returncode:
+            sys.exit(f"Render failed:\n{err[-2000:]}")
+
+
+def segment_context(segs):
+    """For each segment: does its scene start here, is a new item revealed, scene-relative time."""
+    span = {}
+    for si, stt, a, b in segs:
+        lo, hi = span.get(si, (a, b))
+        span[si] = (min(lo, a), max(hi, b))
+    ctx, prev = [], None
+    for si, stt, a, b in segs:
+        first = prev is None or prev[0] != si
+        new = (not first) and stt is not None and prev[1] is not None and stt > prev[1]
+        ctx.append({"enter": first, "new": new,
+                    "t0": a - span[si][0], "sd": span[si][1] - span[si][0]})
+        prev = (si, stt)
+    return ctx
+
+
 def build_video(ep, segs, items, audio, total, out_dir, work, vertical, name, fast, hook="", endcard=None,
                 audio_filter=None, english=None):
     tag = "v" if vertical else "h"
     W, H = (1080, 1920) if vertical else (1920, 1080)
-    jobs, pngs = [], []
-    for i, (si, stt, a, b) in enumerate(segs):
+    jobs, files = [], []
+    ctxs = segment_context(segs)
+    for i, ((si, stt, a, b), ctx) in enumerate(zip(segs, ctxs)):
         sc = ep["scenes"][si] if si >= 0 else endcard
+        ctx["hook_enter"] = i == 0
+        frames = round(b * FPS) - round(a * FPS)
         key = f"{name}_{i:03d}"
         htmlp = work / f"{key}.html"
-        htmlp.write_text(S.render_scene(sc, tag, stt, hook=hook if si >= 0 else ""), encoding="utf-8")
-        png = work / f"{key}.png"
-        jobs.append({"html": str(htmlp), "png": str(png), "w": W, "h": H, "scale": 2})
-        pngs.append(png)
-    render_pngs(jobs, work)
-    files = []
-    for i, (si, stt, a, b) in enumerate(segs):
-        frames = round(b * FPS) - round(a * FPS)
-        f = work / f"{name}_{i:03d}.mp4"
-        sc = ep["scenes"][si] if si >= 0 else endcard
-        zoom = stt is None and sc.get("zoom", True)
-        encode_segment(pngs[i], f, frames, vertical, zoom, fast)
-        files.append(f)
-        print(f"  [{name}] segment {i + 1}/{len(segs)}", end="\r", flush=True)
-    print()
+        htmlp.write_text(S.render_scene(sc, tag, stt, hook=hook if si >= 0 else "", ctx=ctx, seed=si * 7 + 3),
+                         encoding="utf-8")
+        mp4 = work / f"{key}.mp4"
+        jobs.append({"html": str(htmlp), "mp4": str(mp4), "w": W, "h": H, "dur": frames / FPS, "fps": FPS,
+                     "preset": "ultrafast" if fast else "veryfast"})
+        files.append(mp4)
+    print(f"  [{name}] rendering {len(jobs)} animated segments ...", flush=True)
+    render_parallel(jobs, work, name)
     ass = work / f"{name}.ass"
     if english is None:
         english = vertical or ep.get("burn_english_long", False)
@@ -313,6 +334,13 @@ def write_upload(ep, segs, total, out_dir, draft):
         lines += ["Chapters"] + [f"{fmt_clock(t)} {n}" for t, n in chapters] + [""]
     if ep.get("sources"):
         lines += ["Sources"] + [f"- {s}" for s in ep["sources"]] + [""]
+    credits = []
+    for sc in ep["scenes"] + [ep.get("thumbnail") or {}]:
+        c = (sc.get("bg") or {}).get("credit_full")
+        if c and c not in credits:
+            credits.append(c)
+    if credits:
+        lines += ["Photo credits (Wikimedia Commons)"] + [f"- {c}" for c in credits] + [""]
     lines += [up.get("footer", "")]
     lines += ["```", "", f"**Tags:** {', '.join(up.get('tags', []))}", "",
               "**Subtitles:** upload `en.srt` (English) and `my.srt` (Burmese) under Subtitles.", "",
@@ -335,9 +363,14 @@ def main():
     ep_dir = Path(args.episode).resolve()
     ep = json.loads((ep_dir / "episode.json").read_text(encoding="utf-8"))
     S.BRAND = ep.get("channel_html", S.BRAND)
-    for sc in ep["scenes"]:  # image paths are relative to the episode folder
-        if sc["type"] == "image":
-            sc["src"] = str((ep_dir / sc["src"]).resolve())
+    for sc in ep["scenes"] + [ep.get("thumbnail") or {}]:  # image paths are relative to the episode folder
+        if sc.get("bg"):
+            p = (ep_dir / sc["bg"]["src"]).resolve()
+            if p.exists():
+                sc["bg"]["src"] = str(p)
+            else:
+                print(f"  (photo missing, skipped: {sc['bg']['src']})")
+                del sc["bg"]
     out_dir = ROOT / "output" / ep["id"]
     work = out_dir / "_work"
     work.mkdir(parents=True, exist_ok=True)
