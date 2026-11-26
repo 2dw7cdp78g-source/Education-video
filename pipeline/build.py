@@ -316,7 +316,7 @@ def write_upload(ep, segs, total, out_dir, draft):
     lines += [up.get("footer", "")]
     lines += ["```", "", f"**Tags:** {', '.join(up.get('tags', []))}", "",
               "**Subtitles:** upload `en.srt` (English) and `my.srt` (Burmese) under Subtitles.", "",
-              "**Altered or synthetic content:** answer *No* unless the video uses realistic AI images, video or voice.", ""]
+              "**Altered or synthetic content:** answer *No*. An AI narrator that doesn't imitate a real person doesn't need this label. The AI voice is already disclosed in the description.", ""]
     for sh in ep.get("shorts", []):
         lines += [f"## Short: `{sh['id']}.mp4`", "", f"**Caption:** {sh.get('caption', sh.get('hook', ''))}", "",
                   f"**Hashtags:** {' '.join(sh.get('hashtags', up.get('hashtags', [])))}", ""]

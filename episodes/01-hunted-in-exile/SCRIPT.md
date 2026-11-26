@@ -1,6 +1,6 @@
 # Hunted in Exile: How Myanmar's Junta Reaches Activists in Thailand: narration script
 
-About 1018 words, roughly 7 minutes at a calm pace.
+About 1082 words, roughly 7 minutes at a calm pace.
 
 Pause about 1 second between sentences and 2 seconds between parts. If you stumble, re-record that whole part file.
 
@@ -41,6 +41,8 @@ It includes threats and surveillance, pressure on family members back home, onli
 It is usually linked to powerful states, like China, Russia or Iran.
 
 But Myanmar's junta, a much weaker regime that called itself the State Administration Council, or SAC, does it too.
+
+So how does a regime with limited resources still reach people abroad? That is the question my research set out to answer.
 
 In my interviews, four tools stand out.
 
@@ -116,6 +118,8 @@ To move around the country, many need a CI, a document issued by the junta itsel
 
 As one participant put it: "Without CI, we cannot travel around Thailand."
 
+Several participants also worried that Thai and Myanmar immigration systems share information about them.
+
 So the very regime they fled controls the paper that lets them move.
 
 One participant said: "They call themselves the government. But ninety percent of activists cannot get passports or CI."
@@ -177,6 +181,8 @@ And some work quietly with lawyers and rights groups to document what is happeni
 My research shows that for Myanmar's exiles, crossing the border did not end the danger.
 
 The junta reaches them through phones, families, paperwork and the internet, and through gaps in the system of the country that hosts them.
+
+And it works partly because it is cheap. A phone call, a visit to a parent's home, or a document renewal can be enough to make someone afraid.
 
 Protecting them means recognising them as refugees, stopping deportations into the hands of the military, and taking online threats seriously.
 
