@@ -1,0 +1,714 @@
+{
+ "id": "01-civil-war-explained",
+ "title": "Myanmar's Civil War, Explained",
+ "channel_html": "Maung Yel Hkawng <b>· Myanmar Community Researcher</b>",
+ "short_endcard_title": "Myanmar's Civil War, Explained",
+ "short_cta": "Full video on YouTube",
+ "burn_english_long": false,
+ "scenes": [
+  {
+   "type": "title",
+   "kicker": "Myanmar Explained · Episode 1",
+   "title": "Myanmar's Civil War, Explained",
+   "subtitle": "How a coup turned into a nationwide revolution",
+   "byline": "Maung Yel Hkawng · Myanmar Community Researcher",
+   "brand": false,
+   "lines": [
+    {
+     "en": "In February 2021, Myanmar's military seized power in a coup.",
+     "my": "၂၀၂၁ ခုနှစ် ဖေဖော်ဝါရီလတွင် မြန်မာ့စစ်တပ်က အာဏာသိမ်းခဲ့သည်။"
+    },
+    {
+     "en": "What followed became one of the biggest wars in the world today.",
+     "my": "ထို့နောက် ဖြစ်ပေါ်လာသည်မှာ ယနေ့ကမ္ဘာ့အကြီးဆုံး စစ်ပွဲများထဲမှ တစ်ခု ဖြစ်လာခဲ့သည်။"
+    },
+    {
+     "en": "Yet most people outside Myanmar have never heard the full story.",
+     "my": "သို့သော် မြန်မာပြည်ပရှိ လူအများစုသည် ဇာတ်လမ်းအပြည့်အစုံကို မကြားဖူးကြပါ။"
+    },
+    {
+     "en": "In the next ten minutes, I'll explain how it started, who is fighting, and what could happen next.",
+     "my": "နောက် ဆယ်မိနစ်အတွင်း ဘယ်လိုစတင်ခဲ့သလဲ၊ ဘယ်သူတွေ တိုက်နေကြသလဲ၊ နောက်ဘာဖြစ်လာနိုင်သလဲ ဆိုတာ ရှင်းပြပါမယ်။"
+    }
+   ]
+  },
+  {
+   "type": "map",
+   "kicker": "The country",
+   "heading": "Myanmar at a glance",
+   "caption": "Seven ethnic states around the edges, seven regions in the centre.",
+   "highlight": {
+    "Kachin": "gold",
+    "Chin": "gold",
+    "Shan": "gold",
+    "Kayah": "gold",
+    "Kayin": "gold",
+    "Mon": "gold",
+    "Rakhine": "gold"
+   },
+   "dim_others": false,
+   "legend": [
+    {
+     "color": "gold",
+     "label": "Ethnic states"
+    },
+    {
+     "color": "#26384a",
+     "label": "Regions (mostly Bamar)"
+    }
+   ],
+   "markers": [
+    {
+     "name": "Naypyidaw",
+     "lon": 96.13,
+     "lat": 19.75
+    },
+    {
+     "name": "Yangon",
+     "lon": 96.16,
+     "lat": 16.87,
+     "dx": -1
+    },
+    {
+     "name": "Mandalay",
+     "lon": 96.08,
+     "lat": 21.97,
+     "dx": -1
+    }
+   ],
+   "labels": false,
+   "lines": [
+    {
+     "en": "Myanmar sits between India, China and Thailand, and is home to around 55 million people.",
+     "my": "မြန်မာနိုင်ငံသည် အိန္ဒိယ၊ တရုတ်နှင့် ထိုင်းနိုင်ငံတို့ကြားတွင် တည်ရှိပြီး လူဦးရေ သန်း ၅၅ ခန့် နေထိုင်သည်။"
+    },
+    {
+     "en": "The central lowlands are home mostly to the Bamar, the largest ethnic group.",
+     "my": "အလယ်ပိုင်း မြေပြန့်ဒေသတွင် အကြီးဆုံးတိုင်းရင်းသားဖြစ်သော ဗမာလူမျိုးများ အဓိကနေထိုင်ကြသည်။"
+    },
+    {
+     "en": "In the hills and borderlands live many ethnic peoples, like the Kachin, Karen, Shan, Chin and Rakhine.",
+     "my": "တောင်တန်းနှင့် နယ်စပ်ဒေသများတွင် ကချင်၊ ကရင်၊ ရှမ်း၊ ချင်း၊ ရခိုင် စသည့် တိုင်းရင်းသားများစွာ နေထိုင်ကြသည်။"
+    },
+    {
+     "en": "Many of these groups have had their own armed forces for decades.",
+     "my": "ဤအုပ်စုအများအပြားတွင် ဆယ်စုနှစ်ပေါင်းများစွာကတည်းက ကိုယ်ပိုင်လက်နက်ကိုင်တပ်များ ရှိခဲ့ကြသည်။"
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 1,
+   "title": "Seventy years of conflict",
+   "lines": [
+    {
+     "en": "To understand this war, we need to go back to the beginning.",
+     "my": "ဤစစ်ပွဲကို နားလည်ရန် အစကနေ ပြန်ကြည့်ရပါမည်။"
+    }
+   ]
+  },
+  {
+   "type": "timeline",
+   "kicker": "Background",
+   "heading": "From independence to democracy",
+   "reveal": true,
+   "reveal_at": [
+    0,
+    2,
+    3,
+    4,
+    5
+   ],
+   "items": [
+    {
+     "date": "1948",
+     "text": "Independence from Britain"
+    },
+    {
+     "date": "1962",
+     "text": "Military coup; army rules for ~50 years"
+    },
+    {
+     "date": "1988",
+     "text": "Democracy uprising crushed"
+    },
+    {
+     "date": "2011",
+     "text": "Controlled shift to civilian government"
+    },
+    {
+     "date": "2015",
+     "text": "Aung San Suu Kyi's NLD wins landslide"
+    }
+   ],
+   "lines": [
+    {
+     "en": "Burma, as it was then called, became independent from Britain in 1948.",
+     "my": "ထိုစဉ်က ဗမာပြည်ဟုခေါ်သော မြန်မာနိုင်ငံသည် ၁၉၄၈ ခုနှစ်တွင် ဗြိတိသျှထံမှ လွတ်လပ်ရေးရခဲ့သည်။"
+    },
+    {
+     "en": "Fighting with ethnic armed groups began almost immediately.",
+     "my": "တိုင်းရင်းသားလက်နက်ကိုင်အဖွဲ့များနှင့် တိုက်ပွဲများ ချက်ချင်းနီးပါး စတင်ခဲ့သည်။"
+    },
+    {
+     "en": "In 1962, General Ne Win seized power, and the military ruled for almost fifty years.",
+     "my": "၁၉၆၂ ခုနှစ်တွင် ဗိုလ်ချုပ်နေဝင်း အာဏာသိမ်းပြီး စစ်တပ်က နှစ်ငါးဆယ်နီးပါး အုပ်ချုပ်ခဲ့သည်။"
+    },
+    {
+     "en": "In 1988, a mass uprising for democracy was violently crushed.",
+     "my": "၁၉၈၈ ခုနှစ်တွင် ဒီမိုကရေစီအတွက် လူထုအုံကြွမှုကို အကြမ်းဖက်နှိမ်နင်းခဲ့သည်။"
+    },
+    {
+     "en": "In 2011, the generals began a controlled shift to a civilian government.",
+     "my": "၂၀၁၁ ခုနှစ်တွင် စစ်ခေါင်းဆောင်များသည် အရပ်သားအစိုးရထံသို့ ထိန်းချုပ်ထားသော အပြောင်းအလဲကို စတင်ခဲ့သည်။"
+    },
+    {
+     "en": "And in 2015, Aung San Suu Kyi's party, the National League for Democracy, won a landslide election.",
+     "my": "၂၀၁၅ ခုနှစ်တွင် ဒေါ်အောင်ဆန်းစုကြည်၏ အမျိုးသားဒီမိုကရေစီအဖွဲ့ချုပ်က ရွေးကောက်ပွဲတွင် အပြတ်အသတ်အနိုင်ရခဲ့သည်။"
+    },
+    {
+     "en": "But the military kept a quarter of the seats in parliament, and control of the army, police and borders.",
+     "my": "သို့သော် စစ်တပ်က လွှတ်တော်နေရာ လေးပုံတစ်ပုံနှင့် တပ်မတော်၊ ရဲနှင့် နယ်စပ်ရေးရာကို ဆက်လက်ထိန်းချုပ်ထားခဲ့သည်။"
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 2,
+   "title": "The coup",
+   "lines": [
+    {
+     "en": "So how did the coup happen?",
+     "my": "ဒါဆို အာဏာသိမ်းမှု ဘယ်လိုဖြစ်ခဲ့သလဲ။"
+    }
+   ]
+  },
+  {
+   "type": "stat",
+   "kicker": "The coup",
+   "value": "1 Feb 2021",
+   "color": "red",
+   "label": "The military seizes power",
+   "detail": "Aung San Suu Kyi, President Win Myint and other leaders detained",
+   "lines": [
+    {
+     "en": "In November 2020, the NLD won another landslide election.",
+     "my": "၂၀၂၀ နိုဝင်ဘာလတွင် NLD က ရွေးကောက်ပွဲ၌ ထပ်မံအပြတ်အသတ် အနိုင်ရခဲ့သည်။"
+    },
+    {
+     "en": "The military claimed fraud, but election observers found no evidence of widespread cheating.",
+     "my": "စစ်တပ်က မဲလိမ်မှုရှိသည်ဟု စွပ်စွဲသော်လည်း ရွေးကောက်ပွဲလေ့လာသူများက ကျယ်ပြန့်သော လိမ်လည်မှုအထောက်အထား မတွေ့ခဲ့ပါ။"
+    },
+    {
+     "en": "On the first of February 2021, the day the new parliament was due to meet, soldiers detained Aung San Suu Kyi and other leaders.",
+     "my": "၂၀၂၁ ဖေဖော်ဝါရီ ၁ ရက်၊ လွှတ်တော်သစ် စတင်မည့်နေ့တွင် စစ်သားများက ဒေါ်အောင်ဆန်းစုကြည်နှင့် အခြားခေါင်းဆောင်များကို ဖမ်းဆီးခဲ့သည်။"
+    },
+    {
+     "en": "Army chief Min Aung Hlaing took control of the country.",
+     "my": "စစ်ဦးစီးချုပ် မင်းအောင်လှိုင်က နိုင်ငံကို ထိန်းချုပ်လိုက်သည်။"
+    }
+   ]
+  },
+  {
+   "type": "points",
+   "kicker": "The response",
+   "heading": "The people push back",
+   "reveal": true,
+   "reveal_at": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "items": [
+    "Peaceful protests across the country",
+    "Civil Disobedience Movement: doctors, teachers, civil servants walk out",
+    "Nightly pot-banging to drive out \"evil\"",
+    "A deadly crackdown by security forces"
+   ],
+   "lines": [
+    {
+     "en": "The response was immediate.",
+     "my": "တုံ့ပြန်မှုက ချက်ချင်းပင် ဖြစ်ပေါ်လာခဲ့သည်။"
+    },
+    {
+     "en": "Millions of people joined peaceful protests across the country.",
+     "my": "လူသန်းပေါင်းများစွာက တစ်နိုင်ငံလုံးတွင် ငြိမ်းချမ်းစွာ ဆန္ဒပြကြသည်။"
+    },
+    {
+     "en": "Doctors, teachers and civil servants walked off the job, in what became known as the Civil Disobedience Movement.",
+     "my": "ဆရာဝန်၊ ဆရာ၊ ဆရာမနှင့် ဝန်ထမ်းများက အလုပ်မှထွက်ခဲ့ကြပြီး ၎င်းကို အာဏာဖီဆန်ရေးလှုပ်ရှားမှု (CDM) ဟု သိလာကြသည်။"
+    },
+    {
+     "en": "Every night, people banged pots and pans, a traditional way to drive out evil.",
+     "my": "ညစဉ် လူများက မကောင်းဆိုးဝါးနှင်ထုတ်သည့် ရိုးရာနည်းဖြစ်သော အိုးခွက်ပန်းကန်များကို တီးခဲ့ကြသည်။"
+    },
+    {
+     "en": "Security forces answered with live bullets, and hundreds of protesters were killed in the first months.",
+     "my": "လုံခြုံရေးတပ်ဖွဲ့များက ကျည်အစစ်များဖြင့် တုံ့ပြန်ခဲ့ပြီး ပထမလများအတွင်း ဆန္ဒပြသူ ရာနှင့်ချီ သေဆုံးခဲ့သည်။"
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 3,
+   "title": "From protest to war",
+   "lines": [
+    {
+     "en": "And that is when the protests turned into an armed revolution.",
+     "my": "ထိုအချိန်မှစ၍ ဆန္ဒပြမှုများသည် လက်နက်ကိုင်တော်လှန်ရေးအဖြစ် ပြောင်းလဲသွားခဲ့သည်။"
+    }
+   ]
+  },
+  {
+   "type": "points",
+   "kicker": "The resistance",
+   "heading": "How the resistance formed",
+   "reveal": true,
+   "reveal_at": [
+    1,
+    3,
+    4
+   ],
+   "items": [
+    "National Unity Government (NUG) formed by ousted lawmakers",
+    "People's Defence Forces (PDFs) take up arms",
+    "Ethnic armed groups train and shelter them"
+   ],
+   "lines": [
+    {
+     "en": "With peaceful protest crushed, many young people fled to the jungle and the border areas.",
+     "my": "ငြိမ်းချမ်းစွာ ဆန္ဒပြမှုကို နှိမ်နင်းခံရသဖြင့် လူငယ်များစွာ တောနှင့် နယ်စပ်ဒေသများသို့ ထွက်ပြေးခဲ့ကြသည်။"
+    },
+    {
+     "en": "Elected lawmakers who escaped arrest formed a parallel government, the National Unity Government, or NUG.",
+     "my": "ဖမ်းဆီးခံရခြင်းမှ လွတ်မြောက်ခဲ့သော ရွေးကောက်ခံ လွှတ်တော်ကိုယ်စားလှယ်များက အမျိုးသားညီညွတ်ရေးအစိုးရ (NUG) ကို ဖွဲ့စည်းခဲ့သည်။"
+    },
+    {
+     "en": "In September 2021, the NUG declared a \"people's defensive war\".",
+     "my": "၂၀၂၁ စက်တင်ဘာလတွင် NUG က \"ပြည်သူ့ခုခံစစ်\" ကို ကြေညာခဲ့သည်။"
+    },
+    {
+     "en": "Local resistance groups called People's Defence Forces formed across the country.",
+     "my": "ပြည်သူ့ကာကွယ်ရေးတပ် (PDF) ဟုခေါ်သော ဒေသခံတော်လှန်ရေးအဖွဲ့များ တစ်နိုင်ငံလုံးတွင် ပေါ်ပေါက်လာသည်။"
+    },
+    {
+     "en": "Many were trained and sheltered by ethnic armed groups that had fought the military for decades.",
+     "my": "၎င်းတို့အများစုကို ဆယ်စုနှစ်များစွာ စစ်တပ်ကို တိုက်ခိုက်ခဲ့သော တိုင်းရင်းသားလက်နက်ကိုင်အဖွဲ့များက လေ့ကျင့်ပေးပြီး ခိုလှုံခွင့်ပေးခဲ့သည်။"
+    }
+   ]
+  },
+  {
+   "type": "map",
+   "kicker": "The battlefield",
+   "heading": "Fighting on almost every front",
+   "caption": "Major resistance forces and where they fight.",
+   "highlight": {
+    "Kachin": "red",
+    "Rakhine": "red",
+    "Chin": "red",
+    "Kayin": "red",
+    "Kayah": "red",
+    "Sagaing": "red",
+    "Magway": "red",
+    "Shan": "red"
+   },
+   "labels": false,
+   "legend": [
+    {
+     "color": "red",
+     "label": "Major areas of fighting"
+    }
+   ],
+   "markers": [
+    {
+     "name": "Kachin Independence Army",
+     "lon": 97.4,
+     "lat": 26.0,
+     "color": "gold",
+     "dx": -1
+    },
+    {
+     "name": "PDFs: Sagaing & Magway",
+     "lon": 95.0,
+     "lat": 22.4,
+     "color": "gold",
+     "dx": -1
+    },
+    {
+     "name": "Arakan Army",
+     "lon": 93.6,
+     "lat": 19.8,
+     "color": "gold",
+     "dx": -1
+    },
+    {
+     "name": "Karenni forces",
+     "lon": 97.25,
+     "lat": 19.3,
+     "color": "gold"
+    },
+    {
+     "name": "Karen National Union",
+     "lon": 97.9,
+     "lat": 17.4,
+     "color": "gold"
+    },
+    {
+     "name": "Northern Shan armies",
+     "lon": 98.0,
+     "lat": 23.2,
+     "color": "gold"
+    }
+   ],
+   "lines": [
+    {
+     "en": "Today, the military faces armed opposition on almost every front.",
+     "my": "ယနေ့ စစ်တပ်သည် စစ်မျက်နှာတိုင်းနီးပါးတွင် လက်နက်ကိုင်ဆန့်ကျင်မှုကို ရင်ဆိုင်နေရသည်။"
+    },
+    {
+     "en": "In the far north, the Kachin Independence Army.",
+     "my": "မြောက်ဖျားတွင် ကချင်လွတ်မြောက်ရေးတပ် (KIA)။"
+    },
+    {
+     "en": "In the west, the Arakan Army and Chin resistance groups.",
+     "my": "အနောက်ဘက်တွင် ရက္ခိုင့်တပ်တော် (AA) နှင့် ချင်းတော်လှန်ရေးအဖွဲ့များ။"
+    },
+    {
+     "en": "In the east, Karen and Karenni forces.",
+     "my": "အရှေ့ဘက်တွင် ကရင်နှင့် ကရင်နီတပ်ဖွဲ့များ။"
+    },
+    {
+     "en": "And in the central dry zone, the Bamar heartland, People's Defence Forces fight in places like Sagaing and Magway.",
+     "my": "ဗမာလူမျိုးများ၏ ဗဟိုချက်ဖြစ်သော အလယ်ပိုင်းအပူပိုင်းဒေသတွင် စစ်ကိုင်းနှင့် မကွေးကဲ့သို့ နေရာများ၌ PDF များ တိုက်ခိုက်နေကြသည်။"
+    },
+    {
+     "en": "This matters. For the first time, many Bamar are fighting the military side by side with ethnic minorities.",
+     "my": "ဤအချက်က အရေးကြီးသည်။ ပထမဆုံးအကြိမ်အဖြစ် ဗမာအများအပြားက တိုင်းရင်းသားများနှင့် ပခုံးချင်းယှဉ်၍ စစ်တပ်ကို တိုက်ခိုက်နေကြသည်။"
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 4,
+   "title": "Operation 1027",
+   "lines": [
+    {
+     "en": "Then, in late 2023, everything changed.",
+     "my": "ထို့နောက် ၂၀၂၃ နှောင်းပိုင်းတွင် အရာအားလုံး ပြောင်းလဲသွားခဲ့သည်။"
+    }
+   ]
+  },
+  {
+   "type": "map",
+   "kicker": "Northern Shan State",
+   "heading": "Operation 1027",
+   "caption": "A surprise offensive along the Chinese border.",
+   "focus": [
+    95.6,
+    20.6,
+    100.4,
+    25.4
+   ],
+   "highlight": {
+    "Shan": "red"
+   },
+   "labels": [
+    "Shan",
+    "Kachin"
+   ],
+   "markers": [
+    {
+     "name": "Lashio",
+     "lon": 97.75,
+     "lat": 22.93,
+     "color": "gold",
+     "dx": -1
+    },
+    {
+     "name": "Laukkaing",
+     "lon": 98.63,
+     "lat": 23.69,
+     "color": "gold"
+    }
+   ],
+   "source": "Natural Earth (map data)",
+   "lines": [
+    {
+     "en": "On the 27th of October 2023, three ethnic armies, known as the Three Brotherhood Alliance, launched a surprise offensive in northern Shan State.",
+     "my": "၂၀၂၃ အောက်တိုဘာ ၂၇ ရက်တွင် ညီနောင်မဟာမိတ်သုံးဖွဲ့ဟုခေါ်သော တိုင်းရင်းသားတပ်သုံးဖွဲ့က ရှမ်းပြည်နယ်မြောက်ပိုင်းတွင် ရုတ်တရက်ထိုးစစ်ဆင်ခဲ့သည်။"
+    },
+    {
+     "en": "They named it Operation 1027, after the date it began.",
+     "my": "စတင်သည့်ရက်စွဲကို အစွဲပြု၍ ၎င်းကို ၁၀၂၇ စစ်ဆင်ရေးဟု အမည်ပေးခဲ့သည်။"
+    }
+   ]
+  },
+  {
+   "type": "timeline",
+   "kicker": "Operation 1027",
+   "heading": "The military's biggest losses",
+   "reveal": true,
+   "items": [
+    {
+     "date": "Late 2023",
+     "text": "Dozens of posts and border towns captured"
+    },
+    {
+     "date": "Aug 2024",
+     "text": "Lashio: a regional army HQ falls"
+    },
+    {
+     "date": "Dec 2024",
+     "text": "Arakan Army takes Western Command HQ"
+    },
+    {
+     "date": "Apr 2025",
+     "text": "Lashio returned under Chinese pressure"
+    }
+   ],
+   "lines": [
+    {
+     "en": "Within weeks, they had captured dozens of military posts and several towns along the Chinese border.",
+     "my": "ရက်သတ္တပတ်အနည်းငယ်အတွင်း တရုတ်နယ်စပ်တစ်လျှောက်ရှိ စစ်စခန်းဒါဇင်နှင့်ချီ၍ မြို့အများအပြားကို သိမ်းပိုက်နိုင်ခဲ့သည်။"
+    },
+    {
+     "en": "In August 2024, they took Lashio, the first regional military command headquarters ever to fall.",
+     "my": "၂၀၂၄ ဩဂုတ်လတွင် ပထမဆုံးကျဆုံးသော တိုင်းစစ်ဌာနချုပ်ဖြစ်သည့် လားရှိုးကို သိမ်းယူခဲ့ကြသည်။"
+    },
+    {
+     "en": "In Rakhine State, the Arakan Army captured the Western Command headquarters at the end of 2024.",
+     "my": "ရခိုင်ပြည်နယ်တွင် ရက္ခိုင့်တပ်တော်က ၂၀၂၄ နှစ်ကုန်တွင် အနောက်ပိုင်းတိုင်းစစ်ဌာနချုပ်ကို သိမ်းပိုက်ခဲ့သည်။"
+    },
+    {
+     "en": "But China, worried about its border and investments, pushed for ceasefires, and Lashio was handed back in 2025.",
+     "my": "သို့သော် ၎င်း၏နယ်စပ်နှင့် ရင်းနှီးမြှုပ်နှံမှုများကို စိုးရိမ်သော တရုတ်က အပစ်ရပ်ရန် ဖိအားပေးခဲ့ပြီး ၂၀၂၅ တွင် လားရှိုးကို ပြန်လည်လွှဲပေးခဲ့သည်။"
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 5,
+   "title": "The human cost",
+   "lines": [
+    {
+     "en": "But behind the battle lines are ordinary people.",
+     "my": "သို့သော် စစ်မျက်နှာများနောက်ကွယ်တွင် သာမန်ပြည်သူများ ရှိနေသည်။"
+    }
+   ]
+  },
+  {
+   "type": "stat",
+   "kicker": "Displaced",
+   "value": "3 million+",
+   "label": "people forced from their homes",
+   "detail": "Airstrikes often hit villages, schools and monasteries",
+   "source": "UN OCHA [VERIFY latest figure]",
+   "lines": [
+    {
+     "en": "According to the United Nations, more than three million people have been forced from their homes.",
+     "my": "ကုလသမဂ္ဂ၏ အဆိုအရ လူသုံးသန်းကျော် ၎င်းတို့၏နေအိမ်များမှ အတင်းအကြပ် ထွက်ခွာခဲ့ရသည်။"
+    },
+    {
+     "en": "The military relies more and more on airstrikes, which often hit villages, schools and monasteries.",
+     "my": "စစ်တပ်သည် လေကြောင်းတိုက်ခိုက်မှုများကို ပိုမိုအားကိုးလာပြီး ၎င်းတို့က ကျေးရွာ၊ ကျောင်းနှင့် ဘုန်းကြီးကျောင်းများကို မကြာခဏ ထိမှန်လေ့ရှိသည်။"
+    },
+    {
+     "en": "Many hospitals and clinics have closed, and food prices have soared.",
+     "my": "ဆေးရုံနှင့် ဆေးခန်းများစွာ ပိတ်သွားပြီး စားနပ်ရိက္ခာဈေးနှုန်းများ အဆမတန်မြင့်တက်လာသည်။"
+    }
+   ]
+  },
+  {
+   "type": "stat",
+   "kicker": "Conscription",
+   "value": "Feb 2024",
+   "label": "Forced military service begins",
+   "detail": "Tens of thousands of young people flee, many to Thailand",
+   "lines": [
+    {
+     "en": "Short of soldiers, the military began enforcing a conscription law in February 2024.",
+     "my": "စစ်သားလိုအပ်ချက်ကြောင့် စစ်တပ်က ၂၀၂၄ ဖေဖော်ဝါရီလတွင် စစ်မှုထမ်းဥပဒေကို စတင်အကောင်အထည်ဖော်ခဲ့သည်။"
+    },
+    {
+     "en": "Tens of thousands of young people fled, many of them across the border to Thailand.",
+     "my": "လူငယ် ထောင်နှင့်သောင်းချီ ထွက်ပြေးခဲ့ကြပြီး အများစုမှာ နယ်စပ်ကိုဖြတ်၍ ထိုင်းနိုင်ငံသို့ ရောက်ရှိခဲ့ကြသည်။"
+    }
+   ]
+  },
+  {
+   "type": "stat",
+   "kicker": "28 March 2025",
+   "value": "7.7",
+   "label": "magnitude earthquake near Mandalay",
+   "detail": "Thousands killed, in the middle of a war",
+   "lines": [
+    {
+     "en": "Then, in March 2025, a magnitude 7.7 earthquake struck near Mandalay.",
+     "my": "ထို့နောက် ၂၀၂၅ မတ်လတွင် မန္တလေးအနီး ရစ်ချ်တာစကေး ၇.၇ အင်အားရှိ ငလျင်ကြီး လှုပ်ခတ်ခဲ့သည်။"
+    },
+    {
+     "en": "Thousands died. And even then, the fighting did not stop.",
+     "my": "ထောင်နှင့်ချီ သေဆုံးခဲ့သည်။ ထိုအချိန်၌ပင် တိုက်ပွဲများ မရပ်တန့်ခဲ့ပါ။"
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 6,
+   "title": "What happens next?",
+   "lines": [
+    {
+     "en": "So, where does Myanmar go from here?",
+     "my": "ဒါဆို မြန်မာနိုင်ငံ ဒီကနေ ဘယ်ကိုဦးတည်မလဲ။"
+    }
+   ]
+  },
+  {
+   "type": "points",
+   "kicker": "The future",
+   "heading": "Four things to watch",
+   "reveal": true,
+   "items": [
+    "Military-run elections widely rejected as a sham",
+    "Resistance holds much of the borderlands, but is divided",
+    "China and other neighbours shape the outcome",
+    "Millions still need humanitarian help"
+   ],
+   "lines": [
+    {
+     "en": "The military has staged elections that critics and many governments reject as a sham, meant to give its rule a civilian face.",
+     "my": "စစ်တပ်က ကျင်းပခဲ့သော ရွေးကောက်ပွဲကို ဝေဖန်သူများနှင့် အစိုးရများစွာက ၎င်း၏အုပ်ချုပ်မှုကို အရပ်သားမျက်နှာဖုံးစွပ်ရန် အယောင်ဆောင်ရွေးကောက်ပွဲအဖြစ် ငြင်းပယ်ကြသည်။"
+    },
+    {
+     "en": "Resistance groups now control large parts of the borderlands, but they are divided, and the military still holds the big cities.",
+     "my": "တော်လှန်ရေးအဖွဲ့များက နယ်စပ်ဒေသအများအပြားကို ထိန်းချုပ်ထားသော်လည်း စည်းလုံးမှုမရှိသေးဘဲ စစ်တပ်က မြို့ကြီးများကို ထိန်းထားဆဲဖြစ်သည်။"
+    },
+    {
+     "en": "Neighbouring countries, especially China, have a big say in what happens next.",
+     "my": "အိမ်နီးချင်းနိုင်ငံများ၊ အထူးသဖြင့် တရုတ်က နောက်ဖြစ်လာမည့်အရာအပေါ် လွှမ်းမိုးမှုကြီးမားသည်။"
+    },
+    {
+     "en": "And through it all, millions of ordinary people still need help.",
+     "my": "ဤအရာအားလုံးကြားတွင် သာမန်ပြည်သူ သန်းပေါင်းများစွာ အကူအညီ လိုအပ်နေဆဲဖြစ်သည်။"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "kicker": "Next episode",
+   "heading": "Inside Myanmar's scam compounds",
+   "body": "Subscribe so you don't miss it, and share this video with someone who should know this story.",
+   "lines": [
+    {
+     "en": "Myanmar's war rarely makes the headlines, but it affects millions of lives, and the whole region.",
+     "my": "မြန်မာ့စစ်ပွဲသည် သတင်းခေါင်းစီးများတွင် ရှားပါးသော်လည်း လူသန်းပေါင်းများစွာနှင့် ဒေသတစ်ခုလုံးကို ထိခိုက်နေသည်။"
+    },
+    {
+     "en": "In the next videos, I'll look at the scam compounds on the border, the refugee crisis in Thailand, and how you can help.",
+     "my": "နောက်ဗီဒီယိုများတွင် နယ်စပ်ရှိ လိမ်လည်မှုစခန်းများ၊ ထိုင်းနိုင်ငံရှိ ဒုက္ခသည်အကျပ်အတည်းနှင့် သင်ဘယ်လိုကူညီနိုင်သလဲ ဆိုတာကို ကြည့်ပါမယ်။"
+    },
+    {
+     "en": "If you want to understand Myanmar, subscribe, and share this video with someone who should hear this story.",
+     "my": "မြန်မာနိုင်ငံကို နားလည်ချင်ရင် Subscribe လုပ်ပြီး ဒီဇာတ်လမ်းကို သိသင့်တဲ့သူတစ်ယောက်ကို မျှဝေပေးပါ။"
+    }
+   ]
+  }
+ ],
+ "shorts": [
+  {
+   "id": "short-01-the-coup",
+   "hook": "How Myanmar's *2021 coup* started a war",
+   "scenes": [
+    5,
+    6,
+    8
+   ],
+   "caption": "How a coup in 2021 turned into one of the world's biggest wars. Full story on my channel.",
+   "hashtags": [
+    "#Myanmar",
+    "#Burma",
+    "#History",
+    "#Explained",
+    "#SoutheastAsia"
+   ]
+  },
+  {
+   "id": "short-02-operation-1027",
+   "hook": "The offensive that *shook* Myanmar's military",
+   "scenes": [
+    11,
+    12
+   ],
+   "caption": "Operation 1027: the offensive that changed Myanmar's war.",
+   "hashtags": [
+    "#Myanmar",
+    "#Operation1027",
+    "#Explained",
+    "#Geopolitics"
+   ]
+  },
+  {
+   "id": "short-03-human-cost",
+   "hook": "Myanmar's war in *3 numbers*",
+   "scenes": [
+    14,
+    15,
+    16
+   ],
+   "caption": "The human cost of Myanmar's war, in three numbers.",
+   "hashtags": [
+    "#Myanmar",
+    "#Refugees",
+    "#HumanRights",
+    "#Explained"
+   ]
+  }
+ ],
+ "thumbnail": {
+  "kicker": "Explained in 10 minutes",
+  "text": "Myanmar's|hidden war",
+  "size": 150,
+  "highlight": {
+   "Kachin": "red",
+   "Rakhine": "red",
+   "Chin": "red",
+   "Kayin": "red",
+   "Kayah": "red",
+   "Sagaing": "red",
+   "Magway": "red",
+   "Shan": "red"
+  }
+ },
+ "sources": [
+  "ADD the links from your research here (Reuters, AP, BBC, UN OCHA, AAPP, ICG, Frontier Myanmar, The Irrawaddy...)",
+  "Map data: Natural Earth (public domain)"
+ ],
+ "upload": {
+  "titles": [
+   "Myanmar's Civil War, Explained",
+   "Myanmar's Hidden War: How a Coup Became a Revolution",
+   "Why Myanmar Is at War (Explained in 10 Minutes)"
+  ],
+  "description": "In 2021, Myanmar's military seized power. What followed became one of the biggest wars in the world, and one of the least reported. Here is how it started, who is fighting, and what could happen next.\n\nEnglish narration · မြန်မာစာတန်းထိုး (Burmese subtitles)",
+  "footer": "Narrated by Maung Yel Hkawng, Myanmar Community Researcher.\nVisuals are original maps and graphics. No AI-generated images of real events.\nSpotted a mistake? Tell me in the comments and I'll correct it here.",
+  "tags": [
+   "Myanmar",
+   "Burma",
+   "Myanmar civil war",
+   "Myanmar coup",
+   "Operation 1027",
+   "Aung San Suu Kyi",
+   "Southeast Asia",
+   "explained",
+   "documentary",
+   "NUG",
+   "PDF"
+  ],
+  "hashtags": [
+   "#Myanmar",
+   "#Burma",
+   "#Explained"
+  ]
+ }
+}
