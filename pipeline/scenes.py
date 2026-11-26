@@ -311,6 +311,12 @@ def render_scene(scene, orient, state=None, hook="", ctx=None, seed=0):
                     f"<div class='artwrap' style='position:absolute;right:90px;top:170px;width:700px;height:700px'>{svg}</div>")
         elif mode == "side" and v:
             body = f"<div class='artwrap' style='position:absolute;left:190px;top:290px;width:700px;height:700px;opacity:.22'>{svg}</div>{body}"
+        elif mode == "top":
+            sz = 330 if not v else 300
+            disc = (f"background:radial-gradient(circle, rgba(14,20,27,.92) 0%, rgba(14,20,27,.85) 58%, rgba(14,20,27,0) 71%);"
+                    f"border-radius:50%;box-shadow:inset 0 0 0 3px rgba(232,176,75,.35);padding:{sz * .13:.0f}px")
+            body = (f"<div class='artwrap' style='position:absolute;left:50%;top:{'320' if v else '70'}px;width:{sz}px;height:{sz}px;"
+                    f"margin-left:-{sz // 2}px;{disc}'>{svg}</div><style>.stage{{top:{'580' if v else '330'}px !important}}</style>{body}")
         else:  # back
             body = (f"<div class='artwrap' style='position:absolute;left:50%;top:{'640' if v else '540'}px;width:{900 if v else 980}px;height:{900 if v else 980}px;"
                     f"transform:translate(-50%,-50%);opacity:{art.get('opacity', .5)}'>{svg}</div>{body}")

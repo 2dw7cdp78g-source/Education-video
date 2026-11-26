@@ -259,3 +259,161 @@ def network():
 
 ART = {"eye": eye, "family": family, "hook": hook, "documents": documents, "truck": truck,
        "megaphone": megaphone, "hiding": hiding, "network": network}
+
+
+# ---------------------------------------------------------------- an arm reaching across the border
+def reach():
+    style = f"""
+    @keyframes grab {{ 0%,100% {{ transform: translateX(-150px); }} 45%,60% {{ transform: translateX(0); }} }}
+    @keyframes flee {{ 0%,35% {{ transform: translateX(0); }} 50%,62% {{ transform: translateX(26px); }} 100% {{ transform: translateX(0); }} }}
+    @keyframes dash {{ to {{ stroke-dashoffset: -40; }} }}
+    @keyframes glow {{ 0%,100% {{ opacity: .3; }} 50% {{ opacity: .9; }} }}
+    .arm {{ {A('grab', 4)} }} .run {{ {A('flee', 4)} }} .bd {{ {A('dash', 1, timing='linear')} }} .gl {{ {A('glow', 2)} }}
+    """
+    sides = (f"<text x='150' y='110' font-size='30' font-weight='800' fill='{MUTED}' text-anchor='middle' letter-spacing='3'>MYANMAR</text>"
+             f"<text x='450' y='110' font-size='30' font-weight='800' fill='{MUTED}' text-anchor='middle' letter-spacing='3'>THAILAND</text>"
+             f"<line class='bd' x1='300' y1='140' x2='300' y2='560' stroke='{GOLD}' stroke-width='6' stroke-dasharray='22 18'/>")
+    arm = (f"<g class='arm'><rect x='-120' y='300' width='420' height='46' rx='23' fill='#4a2a30'/>"
+           f"<rect x='-140' y='290' width='70' height='66' rx='10' fill='#3a1f25'/>"
+           f"<path d='M300,292 q40,-10 56,14 q-24,4 -30,18 q30,4 40,22 q-30,6 -66,0 Z' fill='#4a2a30'/>"
+           f"<circle class='gl' cx='356' cy='324' r='40' fill='none' stroke='{RED}' stroke-width='4'/></g>")
+    person = f"<g class='run'>{_person(440, 360, 1.1, LAND)}</g>"
+    return _svg(sides + person + arm, style)
+
+
+# ---------------------------------------------------------------- globe with arrows crossing a border
+def globe():
+    style = f"""
+    @keyframes spin {{ from {{ transform: translateX(0); }} to {{ transform: translateX(-120px); }} }}
+    @keyframes arc {{ from {{ stroke-dashoffset: 520; }} 60%,100% {{ stroke-dashoffset: 0; }} }}
+    @keyframes hit {{ 0%,55% {{ transform: scale(0); }} 65% {{ transform: scale(1.3); }} 75%,100% {{ transform: scale(1); }} }}
+    .mer {{ {A('spin', 4, timing='linear')} }}
+    .a1 {{ {A('arc', 3.2, 0, timing='ease-out')} }} .a2 {{ {A('arc', 3.2, 1.6, timing='ease-out')} }}
+    .t1 {{ {A('hit', 3.2, 0, extra='transform-origin:455px 210px;')} }} .t2 {{ {A('hit', 3.2, 1.6, extra='transform-origin:470px 400px;')} }}
+    """
+    mer = "".join(f"<ellipse cx='{x}' cy='300' rx='60' ry='200' fill='none' stroke='{LINE}' stroke-width='3'/>" for x in range(120, 600, 120))
+    lat = "".join(f"<line x1='100' y1='{y}' x2='500' y2='{y}' stroke='{LINE}' stroke-width='3'/>" for y in (200, 300, 400))
+    globe = (f"<defs><clipPath id='gc'><circle cx='300' cy='300' r='200'/></clipPath></defs>"
+             f"<circle cx='300' cy='300' r='200' fill='{PANEL}' stroke='{GOLD}' stroke-width='5'/>"
+             f"<g clip-path='url(#gc)'>{lat}<g class='mer'>{mer}</g>"
+             f"<path d='M190,240 q30,-40 70,-10 q20,40 -10,80 q-50,20 -60,-70 Z' fill='{LAND}'/></g>")
+    arcs = (f"<path class='a1' d='M230,280 Q330,80 455,210' fill='none' stroke='{RED}' stroke-width='6' stroke-dasharray='520' stroke-linecap='round'/>"
+            f"<path class='a2' d='M240,300 Q380,470 470,400' fill='none' stroke='{RED}' stroke-width='6' stroke-dasharray='520' stroke-linecap='round'/>"
+            f"<g class='t1'><circle cx='455' cy='210' r='20' fill='{RED}'/>{_person(455, 220, .3, '#fff')}</g>"
+            f"<g class='t2'><circle cx='470' cy='400' r='20' fill='{RED}'/>{_person(470, 410, .3, '#fff')}</g>")
+    return _svg(globe + arcs, style)
+
+
+# ---------------------------------------------------------------- testimony waveform + microphone
+def waveform():
+    import random as _r
+    rnd = _r.Random(7)
+    style = f"""
+    @keyframes bar {{ 0%,100% {{ transform: scaleY(.25); }} 50% {{ transform: scaleY(1); }} }}
+    @keyframes ring {{ from {{ transform: scale(.8); opacity: .8; }} to {{ transform: scale(1.5); opacity: 0; }} }}
+    .rg {{ {A('ring', 2, timing='ease-out', extra='transform-origin:300px 170px;')} }}
+    """
+    bars = ""
+    for i in range(17):
+        x = 60 + i * 30
+        h = 60 + 220 * abs(math.sin(i * .55)) * rnd.uniform(.5, 1)
+        d = rnd.uniform(0, 1.2)
+        dur = rnd.uniform(.7, 1.3)
+        bars += (f"<rect x='{x}' y='{440 - h / 2:.0f}' width='16' height='{h:.0f}' rx='8' fill='{GOLD if i % 4 else RED}' "
+                 f"style='animation:bar {dur:.2f}s ease-in-out infinite both;animation-delay:calc(var(--t0)*-1s + {d:.2f}s);"
+                 f"transform-box:fill-box;transform-origin:center'/>")
+    mic = (f"<circle class='rg' cx='300' cy='170' r='80' fill='none' stroke='{GOLD}' stroke-width='4'/>"
+           f"<rect x='262' y='90' width='76' height='130' rx='38' fill='{PANEL}' stroke='{TEXT}' stroke-width='6'/>"
+           + "".join(f"<line x1='276' y1='{y}' x2='324' y2='{y}' stroke='{LINE}' stroke-width='4'/>" for y in (120, 140, 160, 180))
+           + f"<path d='M240,180 q0,70 60,70 q60,0 60,-70' fill='none' stroke='{TEXT}' stroke-width='6'/><line x1='300' y1='250' x2='300' y2='285' stroke='{TEXT}' stroke-width='6'/>")
+    return _svg(mic + bars, style)
+
+
+# ---------------------------------------------------------------- phone flashing a warning
+def alert():
+    style = f"""
+    @keyframes buzz {{ 0%,40%,100% {{ transform: rotate(0); }} 5%,15%,25%,35% {{ transform: rotate(-6deg); }} 10%,20%,30% {{ transform: rotate(6deg); }} }}
+    @keyframes flash {{ 0%,100% {{ opacity: .35; }} 50% {{ opacity: 1; }} }}
+    @keyframes wave {{ from {{ transform: scale(.7); opacity: .8; }} to {{ transform: scale(1.6); opacity: 0; }} }}
+    .ph {{ {A('buzz', 1.8, extra='transform-origin:300px 300px;')} }} .fl {{ {A('flash', .9)} }}
+    .w1 {{ {A('wave', 1.8, 0, timing='ease-out', extra='transform-origin:300px 300px;')} }} .w2 {{ {A('wave', 1.8, .9, timing='ease-out', extra='transform-origin:300px 300px;')} }}
+    """
+    body = (f"<circle class='w1' cx='300' cy='300' r='170' fill='none' stroke='{RED}' stroke-width='6'/>"
+            f"<circle class='w2' cx='300' cy='300' r='170' fill='none' stroke='{RED}' stroke-width='6'/>"
+            f"<g class='ph'><rect x='210' y='130' width='180' height='340' rx='30' fill='{PANEL}' stroke='{TEXT}' stroke-width='8'/>"
+            f"<path class='fl' d='M300,200 L380,350 L220,350 Z' fill='{RED}'/><rect x='292' y='240' width='16' height='60' rx='8' fill='#fff'/>"
+            f"<circle cx='300' cy='322' r='10' fill='#fff'/><rect x='260' y='400' width='80' height='16' rx='8' fill='{LINE}'/></g>")
+    return _svg(body, style)
+
+
+# ---------------------------------------------------------------- three-finger salute
+def salute():
+    style = f"""
+    @keyframes rise {{ 0%,100% {{ transform: translateY(14px); }} 50% {{ transform: translateY(-14px); }} }}
+    @keyframes rays {{ to {{ transform: rotate(360deg); }} }}
+    .hand {{ {A('rise', 3)} }} .rays {{ {A('rays', 18, timing='linear', extra='transform-origin:300px 300px;')} }}
+    """
+    rays = "<g class='rays'>" + "".join(
+        f"<path d='M300,300 L{300 + 320 * math.cos(a):.0f},{300 + 320 * math.sin(a):.0f} L{300 + 320 * math.cos(a + .14):.0f},{300 + 320 * math.sin(a + .14):.0f} Z' fill='{GOLD}' opacity='.12'/>"
+        for a in [i * math.pi / 8 for i in range(16)]) + "</g>"
+    hand = (f"<g class='hand'><rect x='225' y='290' width='150' height='170' rx='40' fill='{GOLD}'/>"
+            + "".join(f"<rect x='{x}' y='{y}' width='40' height='{h}' rx='20' fill='{GOLD}'/>" for x, y, h in ((228, 140, 190), (280, 115, 215), (332, 140, 190)))
+            + f"<rect x='370' y='300' width='40' height='70' rx='20' fill='#c48f2f'/>"
+            f"<path d='M215,330 q-20,40 30,70' fill='none' stroke='#c48f2f' stroke-width='34' stroke-linecap='round'/>"
+            f"<rect x='250' y='460' width='100' height='120' fill='{GOLD}'/></g>")
+    return _svg(rays + hand, style)
+
+
+# ---------------------------------------------------------------- four tools (icons in tiles)
+def tools():
+    style = f"""
+    @keyframes hl {{ 0%,20%,100% {{ stroke: {LINE}; transform: scale(1); }} 6%,14% {{ stroke: {GOLD}; transform: scale(1.08); }} }}
+    """
+    icons = [
+        f"<rect x='-26' y='-46' width='52' height='92' rx='10' fill='none' stroke='{TEXT}' stroke-width='6'/><path d='M0,-20 L20,16 L-20,16 Z' fill='{RED}'/>",
+        f"<path d='M-50,0 L0,-40 L50,0 Z' fill='{TEXT}'/><rect x='-38' y='0' width='76' height='46' fill='{TEXT}'/><rect x='-10' y='16' width='20' height='30' fill='{PANEL}'/>",
+        f"<rect x='-48' y='-32' width='96' height='64' rx='8' fill='#e9e3d4'/><rect x='-38' y='-20' width='26' height='34' rx='4' fill='#bdb4a0'/><rect x='-4' y='-16' width='40' height='8' rx='4' fill='#bdb4a0'/><rect x='-4' y='0' width='30' height='8' rx='4' fill='#bdb4a0'/>",
+        f"<path d='M-50,0 Q0,-44 50,0 Q0,44 -50,0 Z' fill='none' stroke='{TEXT}' stroke-width='6'/><circle r='16' fill='{GOLD}'/>",
+    ]
+    tiles = ""
+    for i, (x, y) in enumerate(((165, 165), (435, 165), (165, 435), (435, 435))):
+        tiles += (f"<g style='animation:hl 4s ease-in-out infinite both;animation-delay:calc(var(--t0)*-1s + {i}s);transform-box:fill-box;transform-origin:center'"
+                  f" stroke='{LINE}'><rect x='{x - 115}' y='{y - 115}' width='230' height='230' rx='34' fill='{PANEL}' stroke-width='6'/></g>"
+                  f"<g transform='translate({x} {y}) scale(1.3)'>{icons[i]}</g>")
+    return _svg(tiles, style)
+
+
+# ---------------------------------------------------------------- protective shield
+def shield():
+    style = f"""
+    @keyframes pulse {{ from {{ transform: scale(.85); opacity: .7; }} to {{ transform: scale(1.35); opacity: 0; }} }}
+    @keyframes draw {{ from {{ stroke-dashoffset: 200; }} 40%,100% {{ stroke-dashoffset: 0; }} }}
+    .p1 {{ {A('pulse', 2.4, 0, timing='ease-out', extra='transform-origin:300px 300px;')} }} .p2 {{ {A('pulse', 2.4, 1.2, timing='ease-out', extra='transform-origin:300px 300px;')} }}
+    .ck {{ {A('draw', 3, timing='ease-out')} }}
+    """
+    sh = "M300,100 L470,160 Q470,400 300,500 Q130,400 130,160 Z"
+    body = (f"<path class='p1' d='{sh}' fill='none' stroke='{GOLD}' stroke-width='5'/><path class='p2' d='{sh}' fill='none' stroke='{GOLD}' stroke-width='5'/>"
+            f"<path d='{sh}' fill='{PANEL}' stroke='{GOLD}' stroke-width='10'/>"
+            f"{_person(300, 300, 1.1, LAND)}"
+            f"<path class='ck' d='M360,380 l30,30 l60,-70' fill='none' stroke='{GREEN}' stroke-width='18' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='200'/>")
+    return _svg(body, style)
+
+
+# ---------------------------------------------------------------- subscribe bell
+def bell():
+    style = f"""
+    @keyframes ring {{ 0%,50%,100% {{ transform: rotate(0); }} 5%,15%,25% {{ transform: rotate(-16deg); }} 10%,20%,30% {{ transform: rotate(16deg); }} }}
+    @keyframes wave {{ from {{ transform: scale(.7); opacity: .8; }} to {{ transform: scale(1.5); opacity: 0; }} }}
+    .bl {{ {A('ring', 2, extra='transform-origin:300px 130px;')} }} .w {{ {A('wave', 2, timing='ease-out', extra='transform-origin:300px 300px;')} }}
+    """
+    body = (f"<circle class='w' cx='300' cy='300' r='190' fill='none' stroke='{GOLD}' stroke-width='6'/>"
+            f"<g class='bl'><path d='M300,130 q-110,0 -110,140 v80 l-40,50 h300 l-40,-50 v-80 q0,-140 -110,-140 Z' fill='{GOLD}'/>"
+            f"<circle cx='300' cy='120' r='18' fill='{GOLD}'/><circle cx='300' cy='430' r='34' fill='#c48f2f'/></g>"
+            f"<circle cx='400' cy='170' r='34' fill='{RED}'/><text x='400' y='183' font-size='38' font-weight='900' fill='#fff' text-anchor='middle'>1</text>")
+    return _svg(body, style)
+
+
+import math  # noqa: E402  (used by the illustrations above)
+
+ART.update({"reach": reach, "globe": globe, "waveform": waveform, "alert": alert, "salute": salute,
+            "tools": tools, "shield": shield, "bell": bell})
