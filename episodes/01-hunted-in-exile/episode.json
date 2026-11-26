@@ -1,0 +1,827 @@
+{
+ "id": "01-hunted-in-exile",
+ "title": "Hunted in Exile: How Myanmar's Junta Reaches Activists in Thailand",
+ "channel_html": "Maung Yel Hkawng <b>· Myanmar Community Researcher</b>",
+ "short_endcard_title": "Hunted in Exile",
+ "short_cta": "Full story on YouTube",
+ "ai_voice": {
+  "voice": "george",
+  "speed": 0.95
+ },
+ "scenes": [
+  {
+   "type": "phone",
+   "brand": false,
+   "kicker": "Mae Sot, Thailand",
+   "heading": "The call",
+   "caption": "Based on interview testimony",
+   "caller": "+95 · Unknown number",
+   "call_label": "Incoming call · Myanmar",
+   "lines": [
+    {
+     "en": "They kept calling, from a Myanmar number, again and again.",
+     "my": "မြန်မာဖုန်းနံပါတ်တစ်ခုကနေ ထပ်ခါထပ်ခါ ဖုန်းဆက်နေကြတယ်။"
+    },
+    {
+     "en": "When he finally answered, afraid it was a family emergency, a voice said:",
+     "my": "မိသားစုအရေးပေါ်ကိစ္စလားဆိုပြီး စိုးရိမ်ကာ နောက်ဆုံးဖုန်းကိုင်လိုက်တော့ အသံတစ်ခုက ပြောတယ်-"
+    },
+    {
+     "en": "\"Where are you now? I can guess where you are. And I know you joined the revolution.\"",
+     "my": "\"အခု ဘယ်မှာလဲ။ မင်းဘယ်မှာရှိလဲ ငါခန့်မှန်းနိုင်တယ်။ မင်း တော်လှန်ရေးမှာ ပါခဲ့တာ ငါသိတယ်။\""
+    },
+    {
+     "en": "He was not in Myanmar. He was in Thailand.",
+     "my": "သူက မြန်မာပြည်မှာ မဟုတ်ပါဘူး။ ထိုင်းနိုင်ငံမှာ ရောက်နေတာပါ။"
+    }
+   ]
+  },
+  {
+   "type": "title",
+   "kicker": "Original field research · Mae Sot, Thailand",
+   "title": "Hunted in Exile",
+   "subtitle": "How Myanmar's junta reaches activists across the border",
+   "byline": "Maung Yel Hkawng · Myanmar Community Researcher",
+   "highlight": {
+    "Kayin": "red"
+   },
+   "brand": false,
+   "lines": [
+    {
+     "en": "After the 2021 coup, thousands of activists, journalists, students and civil servants fled Myanmar.",
+     "my": "၂၀၂၁ အာဏာသိမ်းပြီးနောက် တက်ကြွလှုပ်ရှားသူ၊ သတင်းထောက်၊ ကျောင်းသားနှင့် ဝန်ထမ်း ထောင်ပေါင်းများစွာ မြန်မာပြည်မှ ထွက်ပြေးခဲ့ကြသည်။"
+    },
+    {
+     "en": "They believed that crossing the border meant safety.",
+     "my": "နယ်စပ်ကို ဖြတ်ကျော်လိုက်ရင် လုံခြုံပြီဟု သူတို့ ယုံကြည်ခဲ့ကြသည်။"
+    },
+    {
+     "en": "My research, based on interviews with seven activists living in exile, shows that for many of them, it did not.",
+     "my": "ပြည်ပရောက် တက်ကြွလှုပ်ရှားသူ ခုနစ်ဦးနှင့် တွေ့ဆုံမေးမြန်းချက်များအပေါ် အခြေခံသည့် ကျွန်ုပ်၏သုတေသနက ၎င်းတို့အများစုအတွက် ထိုသို့မဟုတ်ကြောင်း ပြသနေသည်။"
+    },
+    {
+     "en": "This is the story of how a military regime hunts its critics, even after they escape.",
+     "my": "ဤသည်မှာ စစ်အစိုးရတစ်ရပ်က ၎င်းကိုဝေဖန်သူများကို လွတ်မြောက်သွားပြီးနောက်တွင်ပင် မည်သို့လိုက်လံဖိနှိပ်သည်ဆိုသည့် ဇာတ်လမ်းဖြစ်သည်။"
+    }
+   ]
+  },
+  {
+   "type": "map",
+   "kicker": "The border",
+   "heading": "Mae Sot, Thailand",
+   "caption": "A Thai border town facing Myanmar's Karen State.",
+   "focus": [
+    95.6,
+    14.9,
+    101.6,
+    18.7
+   ],
+   "highlight": {
+    "Kayin": "gold"
+   },
+   "labels": [
+    "Kayin",
+    "Mon",
+    "Bago"
+   ],
+   "markers": [
+    {
+     "name": "Mae Sot",
+     "lon": 98.57,
+     "lat": 16.71,
+     "color": "red"
+    },
+    {
+     "name": "Hpa-an",
+     "lon": 97.63,
+     "lat": 16.89,
+     "dx": -1
+    }
+   ],
+   "legend": [
+    {
+     "color": "gold",
+     "label": "Karen (Kayin) State"
+    },
+    {
+     "color": "red",
+     "label": "Mae Sot, Thailand"
+    }
+   ],
+   "lines": [
+    {
+     "en": "Many of them went to Mae Sot, a Thai town just across the river from Myanmar's Karen State.",
+     "my": "၎င်းတို့အများအပြားသည် မြန်မာနိုင်ငံ ကရင်ပြည်နယ်နှင့် မြစ်တစ်စင်းသာခြားသော ထိုင်းမြို့ မဲဆောက်သို့ ရောက်ရှိခဲ့ကြသည်။",
+     "say": "Many of them went to May Sot, a Thai town just across the river from Myanmar's Karen State."
+    },
+    {
+     "en": "For decades, Mae Sot has been a refuge for people fleeing Myanmar's military.",
+     "my": "ဆယ်စုနှစ်များစွာကတည်းက မဲဆောက်သည် မြန်မာစစ်တပ်ထံမှ ထွက်ပြေးသူများအတွက် ခိုလှုံရာနေရာ ဖြစ်ခဲ့သည်။",
+     "say": "For decades, May Sot has been a refuge for people fleeing Myanmar's military."
+    },
+    {
+     "en": "Today it is home to many members of the Civil Disobedience Movement, or CDM, who refused to work for the junta.",
+     "my": "ယနေ့တွင် စစ်ကောင်စီအတွက် အလုပ်မလုပ်ရန် ငြင်းဆန်ခဲ့သော အာဏာဖီဆန်ရေးလှုပ်ရှားမှု (CDM) ဝင်များစွာ နေထိုင်ကြသည်။",
+     "say": "Today it is home to many members of the Civil Disobedience Movement, or C D M, who refused to work for the junta."
+    },
+    {
+     "en": "But the military has followed them there.",
+     "my": "သို့သော် စစ်တပ်က သူတို့နောက်ကို ထိုနေရာအထိ လိုက်လာခဲ့သည်။"
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 1,
+   "title": "A long arm",
+   "lines": [
+    {
+     "en": "There is a name for what is happening.",
+     "my": "ဖြစ်ပျက်နေသည့်အရာအတွက် အမည်တစ်ခု ရှိသည်။"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "kicker": "Definition",
+   "heading": "Transnational repression",
+   "body": "When governments silence critics beyond their own borders: threats, surveillance, pressure on families, online harassment, and help from other states.",
+   "source": "Freedom House (2023); Tsourapas (2021)",
+   "lines": [
+    {
+     "en": "Researchers call it transnational repression: when a government silences its critics beyond its own borders.",
+     "my": "သုတေသီများက ၎င်းကို နယ်ကျော်ဖိနှိပ်မှု ဟုခေါ်သည်။ အစိုးရတစ်ရပ်က ၎င်း၏နယ်နိမိတ်ပြင်ပရှိ ဝေဖန်သူများကို နှုတ်ပိတ်ခြင်း ဖြစ်သည်။"
+    },
+    {
+     "en": "It includes threats and surveillance, pressure on family members back home, online harassment, and help from the countries where exiles live.",
+     "my": "ခြိမ်းခြောက်မှု၊ စောင့်ကြည့်မှု၊ နေရပ်ရှိ မိသားစုဝင်များကို ဖိအားပေးမှု၊ အွန်လိုင်းနှောင့်ယှက်မှုနှင့် ပြည်ပရောက်များ နေထိုင်ရာနိုင်ငံ၏ အကူအညီတို့ ပါဝင်သည်။"
+    },
+    {
+     "en": "It is usually linked to powerful states, like China, Russia or Iran.",
+     "my": "၎င်းကို တရုတ်၊ ရုရှား သို့မဟုတ် အီရန်ကဲ့သို့ အင်အားကြီးနိုင်ငံများနှင့် ချိတ်ဆက်လေ့ရှိသည်။"
+    },
+    {
+     "en": "But Myanmar's junta, a much weaker regime that called itself the State Administration Council, or SAC, does it too.",
+     "my": "သို့သော် နိုင်ငံတော်စီမံအုပ်ချုပ်ရေးကောင်စီ (SAC) ဟု ကိုယ့်ကိုယ်ကိုခေါ်သော အားနည်းသည့် မြန်မာစစ်ကောင်စီကလည်း ထိုသို့ပြုလုပ်နေသည်။",
+     "say": "But Myanmar's junta, a much weaker regime that called itself the State Administration Council, or S A C, does it too."
+    }
+   ]
+  },
+  {
+   "type": "points",
+   "kicker": "What I found",
+   "heading": "Four tools of repression",
+   "reveal": true,
+   "reveal_at": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "items": [
+    "Direct threats",
+    "Pressure on families",
+    "Control through paperwork and borders",
+    "Surveillance online"
+   ],
+   "lines": [
+    {
+     "en": "In my interviews, four tools stand out.",
+     "my": "ကျွန်ုပ်၏ တွေ့ဆုံမေးမြန်းချက်များတွင် နည်းလမ်းလေးခု ထင်ရှားသည်။"
+    },
+    {
+     "en": "Direct threats.",
+     "my": "တိုက်ရိုက်ခြိမ်းခြောက်မှု။"
+    },
+    {
+     "en": "Pressure on families.",
+     "my": "မိသားစုများကို ဖိအားပေးမှု။"
+    },
+    {
+     "en": "Control through paperwork and the border system.",
+     "my": "စာရွက်စာတမ်းနှင့် နယ်စပ်စနစ်မှတစ်ဆင့် ထိန်းချုပ်မှု။"
+    },
+    {
+     "en": "And surveillance online.",
+     "my": "နှင့် အွန်လိုင်းစောင့်ကြည့်မှု။"
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 2,
+   "title": "Direct threats",
+   "lines": [
+    {
+     "en": "Let's start with the most direct one.",
+     "my": "အတိုက်ရိုက်ဆုံးနည်းလမ်းကနေ စကြည့်ရအောင်။"
+    }
+   ]
+  },
+  {
+   "type": "phone",
+   "kicker": "Hpa-an checkpoint",
+   "heading": "His phone kept talking",
+   "caption": "Reconstruction based on interview testimony",
+   "reveal": true,
+   "reveal_at": [
+    2,
+    3,
+    4
+   ],
+   "messages": [
+    {
+     "text": "Where are you staying now? Send me your address."
+    },
+    {
+     "me": true,
+     "text": "What did we eat the last time we met?"
+    },
+    {
+     "text": "We know where you are. We're going to arrest you."
+    }
+   ],
+   "lines": [
+    {
+     "en": "One activist told me about a friend who secretly went back to Myanmar.",
+     "my": "တက်ကြွလှုပ်ရှားသူတစ်ဦးက မြန်မာပြည်သို့ တိတ်တဆိတ်ပြန်သွားခဲ့သော သူငယ်ချင်းတစ်ဦးအကြောင်း ပြောပြခဲ့သည်။"
+    },
+    {
+     "en": "He was arrested at a checkpoint near Hpa-an, the capital of Karen State.",
+     "my": "သူသည် ကရင်ပြည်နယ်မြို့တော် ဘားအံအနီးရှိ စစ်ဆေးရေးဂိတ်တွင် ဖမ်းဆီးခံခဲ့ရသည်။",
+     "say": "He was arrested at a checkpoint near Pa-an, the capital of Karen State."
+    },
+    {
+     "en": "Soon after, his phone started messaging his friends in Mae Sot, asking for their home addresses.",
+     "my": "မကြာမီ သူ့ဖုန်းမှ မဲဆောက်ရှိ သူငယ်ချင်းများထံ ၎င်းတို့၏ နေရပ်လိပ်စာများကို မေးမြန်းသည့် မက်ဆေ့ချ်များ ရောက်လာသည်။",
+     "say": "Soon after, his phone started messaging his friends in May Sot, asking for their home addresses."
+    },
+    {
+     "en": "When they asked something only he would know, the replies stopped making sense.",
+     "my": "သူတစ်ယောက်တည်းသာ သိနိုင်သည့်အရာကို မေးကြည့်သောအခါ အဖြေများက အဓိပ္ပာယ်မရှိတော့ပါ။"
+    },
+    {
+     "en": "Then the messages changed: \"We know where you are. We're going to arrest you.\"",
+     "my": "ထို့နောက် မက်ဆေ့ချ်များ ပြောင်းသွားသည်- \"မင်းတို့ ဘယ်မှာရှိလဲ ငါတို့သိတယ်။ ငါတို့ ဖမ်းမယ်။\""
+    },
+    {
+     "en": "Later, his mother called. Her son had been sentenced to seven years in prison.",
+     "my": "နောက်ပိုင်းတွင် သူ့မိခင်က ဖုန်းဆက်လာသည်။ သူ့သားသည် ထောင်ဒဏ် ခုနစ်နှစ် ချမှတ်ခံခဲ့ရပြီ ဖြစ်သည်။"
+    }
+   ]
+  },
+  {
+   "type": "quote",
+   "text": "The immigration officer took her to a private room and asked, 'Are you a CDM?'",
+   "who": "Interview participant, Mae Sot",
+   "lines": [
+    {
+     "en": "Even routine paperwork can become a trap.",
+     "my": "ပုံမှန်စာရွက်စာတမ်းကိစ္စပင် ထောင်ချောက်တစ်ခု ဖြစ်လာနိုင်သည်။"
+    },
+    {
+     "en": "Many exiles must renew a Myanmar identity document, called a Certificate of Identity, or CI, through junta officials.",
+     "my": "ပြည်ပရောက်အများအပြားသည် CI ဟုခေါ်သော မြန်မာ့သက်သေခံကတ်ပြားကို စစ်ကောင်စီအရာရှိများမှတစ်ဆင့် သက်တမ်းတိုးရသည်။",
+     "say": "Many exiles must renew a Myanmar identity document, called a Certificate of Identity, or C I, through junta officials."
+    },
+    {
+     "en": "One participant described how a woman was taken to a private room and asked: \"Are you a CDM?\"",
+     "my": "အမျိုးသမီးတစ်ဦးကို သီးသန့်အခန်းထဲခေါ်သွားပြီး \"မင်း CDM လား\" ဟု မေးခဲ့ကြောင်း ပါဝင်သူတစ်ဦးက ပြောပြသည်။",
+     "say": "One participant described how a woman was taken to a private room and asked: Are you a C D M?"
+    },
+    {
+     "en": "The officers threatened to take her document, and told her to go back to Myanmar for resignation papers.",
+     "my": "အရာရှိများက သူမ၏စာရွက်စာတမ်းကို သိမ်းမည်ဟု ခြိမ်းခြောက်ပြီး နုတ်ထွက်စာအတွက် မြန်မာပြည်ပြန်ရန် ပြောခဲ့သည်။"
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 3,
+   "title": "Hostages at home",
+   "lines": [
+    {
+     "en": "But the most painful pressure doesn't target the activists themselves.",
+     "my": "သို့သော် အနာကျင်ဆုံးဖိအားက တက်ကြွလှုပ်ရှားသူများကိုယ်တိုင်ကို ပစ်မှတ်ထားခြင်း မဟုတ်ပါ။"
+    }
+   ]
+  },
+  {
+   "type": "flow",
+   "kicker": "Coercion by proxy",
+   "heading": "Punish the family, silence the exile",
+   "reveal": true,
+   "reveal_at": [
+    0,
+    1,
+    2
+   ],
+   "items": [
+    {
+     "title": "The junta",
+     "text": "Inside Myanmar",
+     "color": "red"
+    },
+    {
+     "title": "The family",
+     "text": "Questioned, threatened, arrested"
+    },
+    {
+     "title": "The activist",
+     "text": "In Mae Sot, afraid to speak"
+    }
+   ],
+   "source": "Adamson & Tsourapas (2020); interviews",
+   "lines": [
+    {
+     "en": "It targets their families.",
+     "my": "၎င်းက သူတို့၏ မိသားစုများကို ပစ်မှတ်ထားသည်။"
+    },
+    {
+     "en": "Researchers call this coercion by proxy: punishing relatives at home to silence people abroad.",
+     "my": "သုတေသီများက ၎င်းကို ကိုယ်စားလှယ်မှတစ်ဆင့် အနိုင်ကျင့်ခြင်းဟုခေါ်သည်။ ပြည်ပရှိသူများကို နှုတ်ပိတ်ရန် နေရပ်ရှိ ဆွေမျိုးများကို အပြစ်ပေးခြင်း ဖြစ်သည်။"
+    },
+    {
+     "en": "Several participants described family members being questioned, threatened or watched.",
+     "my": "ပါဝင်သူအများအပြားက မိသားစုဝင်များ မေးမြန်းခံရခြင်း၊ ခြိမ်းခြောက်ခံရခြင်း သို့မဟုတ် စောင့်ကြည့်ခံရခြင်းအကြောင်း ပြောပြကြသည်။"
+    },
+    {
+     "en": "Strangers came asking about the houses where activists used to live.",
+     "my": "တက်ကြွလှုပ်ရှားသူများ ယခင်နေထိုင်ခဲ့သော အိမ်များအကြောင်း မသိသူများ လာရောက်စုံစမ်းကြသည်။"
+    }
+   ]
+  },
+  {
+   "type": "quote",
+   "text": "After I left, they arrested my mother for 40 days. Later they arrested my uncle. These pressures make me afraid, even in Mae Sot.",
+   "who": "CDM member in exile",
+   "lines": [
+    {
+     "en": "One CDM member told me:",
+     "my": "CDM ဝင်တစ်ဦးက ကျွန်ုပ်ကို ပြောခဲ့သည်-",
+     "say": "One C D M member told me:"
+    },
+    {
+     "en": "\"After I left, they arrested my mother for forty days. Later, they arrested my uncle.\"",
+     "my": "\"ကျွန်မထွက်လာပြီးနောက် အမေ့ကို ရက်လေးဆယ် ဖမ်းထားခဲ့တယ်။ နောက်တော့ ဦးလေးကို ဖမ်းခဲ့တယ်။\""
+    },
+    {
+     "en": "\"These pressures make me afraid, even in Mae Sot.\"",
+     "my": "\"ဒီဖိအားတွေကြောင့် မဲဆောက်မှာတောင် ကြောက်နေရတယ်။\"",
+     "say": "These pressures make me afraid, even in May Sot."
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 4,
+   "title": "The carrot",
+   "lines": [
+    {
+     "en": "The junta doesn't only use threats. It also makes offers.",
+     "my": "စစ်ကောင်စီသည် ခြိမ်းခြောက်မှုကိုသာ အသုံးမပြုပါ။ ကမ်းလှမ်းမှုများလည်း ပြုလုပ်သည်။"
+    }
+   ]
+  },
+  {
+   "type": "quote",
+   "text": "If you return, we will give you your previous position and the same salary… and we will not punish you.",
+   "who": "Offer described by a CDM member",
+   "lines": [
+    {
+     "en": "Every participant had heard of attempts to lure exiles home, through officials, former bosses, or go-betweens.",
+     "my": "ပါဝင်သူတိုင်းသည် အရာရှိများ၊ ယခင်အထက်လူကြီးများ သို့မဟုတ် ကြားလူများမှတစ်ဆင့် ပြည်ပရောက်များကို အိမ်ပြန်ရန် မြူဆွယ်သည့်အကြောင်း ကြားဖူးကြသည်။"
+    },
+    {
+     "en": "One was promised: \"If you return, we will give you your previous position and the same salary, and we will not punish you.\"",
+     "my": "တစ်ဦးကို ကတိပေးခဲ့သည်- \"ပြန်လာရင် မင်းရဲ့ ရာထူးဟောင်းနဲ့ လစာအတိုင်း ပြန်ပေးမယ်၊ အပြစ်မပေးဘူး။\""
+    },
+    {
+     "en": "Sometimes, the junta shows off returnees as \"forgiven\".",
+     "my": "တစ်ခါတစ်ရံ စစ်ကောင်စီက ပြန်လာသူများကို \"ခွင့်လွှတ်ခံရသူများ\" အဖြစ် ပြသလေ့ရှိသည်။"
+    },
+    {
+     "en": "But one CDM major who went back was never heard from again. Later, rumours said he had been sentenced to death.",
+     "my": "သို့သော် ပြန်သွားခဲ့သော CDM ဗိုလ်မှူးတစ်ဦးမှာ သတင်းအစအန မကြားရတော့ပါ။ နောက်ပိုင်း သူ့ကို သေဒဏ်ချမှတ်ခဲ့သည်ဟု ကောလာဟလများ ထွက်ပေါ်ခဲ့သည်။",
+     "say": "But one C D M major who went back was never heard from again. Later, rumours said he had been sentenced to death."
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 5,
+   "title": "The paper trap",
+   "lines": [
+    {
+     "en": "Thailand is not the one doing the targeting. But its system can make the junta's job easier.",
+     "my": "ပစ်မှတ်ထားနေသူမှာ ထိုင်းနိုင်ငံ မဟုတ်ပါ။ သို့သော် ၎င်း၏စနစ်က စစ်ကောင်စီ၏အလုပ်ကို ပိုလွယ်ကူစေနိုင်သည်။"
+    }
+   ]
+  },
+  {
+   "type": "stat",
+   "kicker": "No legal protection",
+   "value": "1951",
+   "label": "Refugee Convention: Thailand has not signed it",
+   "detail": "So Myanmar exiles have no legal refugee status",
+   "lines": [
+    {
+     "en": "Thailand has not signed the 1951 UN Refugee Convention, so Myanmar exiles have no legal refugee status.",
+     "my": "ထိုင်းနိုင်ငံသည် ၁၉၅၁ ကုလသမဂ္ဂ ဒုက္ခသည်ဆိုင်ရာ ကွန်ဗင်းရှင်းကို လက်မှတ်မထိုးထားသဖြင့် မြန်မာပြည်ပရောက်များတွင် တရားဝင်ဒုက္ခသည်အဆင့်အတန်း မရှိပါ။"
+    },
+    {
+     "en": "To move around the country, many need a CI, a document issued by the junta itself.",
+     "my": "နိုင်ငံအတွင်း သွားလာရန် အများအပြားမှာ စစ်ကောင်စီကိုယ်တိုင်ထုတ်ပေးသော CI လိုအပ်သည်။",
+     "say": "To move around the country, many need a C I, a document issued by the junta itself."
+    },
+    {
+     "en": "As one participant put it: \"Without CI, we cannot travel around Thailand.\"",
+     "my": "ပါဝင်သူတစ်ဦးက ပြောသလို- \"CI မရှိရင် ထိုင်းမှာ ဘယ်မှ သွားလို့မရဘူး။\"",
+     "say": "As one participant put it: Without C I, we cannot travel around Thailand."
+    },
+    {
+     "en": "So the very regime they fled controls the paper that lets them move.",
+     "my": "ထို့ကြောင့် သူတို့ထွက်ပြေးလာခဲ့သော အစိုးရကိုယ်တိုင်က သူတို့သွားလာခွင့်ပြုသည့် စာရွက်ကို ထိန်းချုပ်ထားသည်။"
+    }
+   ]
+  },
+  {
+   "type": "quote",
+   "text": "They call themselves the government, but 90% of activists cannot get passports or CI.",
+   "who": "CDM member in exile",
+   "lines": [
+    {
+     "en": "One participant said: \"They call themselves the government. But ninety percent of activists cannot get passports or CI.\"",
+     "my": "ပါဝင်သူတစ်ဦးက ပြောသည်- \"သူတို့ကိုယ်သူတို့ အစိုးရလို့ခေါ်တယ်။ ဒါပေမဲ့ တက်ကြွလှုပ်ရှားသူ ၉၀ ရာခိုင်နှုန်းက ပတ်စပို့ ဒါမှမဟုတ် CI မရနိုင်ဘူး။\"",
+     "say": "One participant said: They call themselves the government. But ninety percent of activists cannot get passports or C I."
+    }
+   ]
+  },
+  {
+   "type": "flow",
+   "kicker": "Without papers",
+   "heading": "From Mae Sot back to the junta",
+   "reveal": true,
+   "reveal_at": [
+    0,
+    1,
+    2
+   ],
+   "items": [
+    {
+     "title": "Arrested",
+     "text": "For not holding enough documents"
+    },
+    {
+     "title": "Deported",
+     "text": "Handed over at border gates"
+    },
+    {
+     "title": "Conscripted",
+     "text": "Reportedly forced into the army",
+     "color": "red"
+    }
+   ],
+   "lines": [
+    {
+     "en": "Without papers, exiles risk arrest.",
+     "my": "စာရွက်စာတမ်းမရှိလျှင် ပြည်ပရောက်များ ဖမ်းဆီးခံရနိုင်သည်။"
+    },
+    {
+     "en": "Participants described deportations at border gates, directly into the hands of junta officials.",
+     "my": "နယ်စပ်ဂိတ်များတွင် စစ်ကောင်စီအရာရှိများလက်ထဲ တိုက်ရိုက်ပြန်ပို့ခံရမှုများအကြောင်း ပါဝင်သူများက ပြောပြကြသည်။"
+    },
+    {
+     "en": "Some returnees were reportedly forced into military service right after being deported.",
+     "my": "ပြန်ပို့ခံရသူအချို့မှာ ပြန်ပို့ခံရပြီးချက်ချင်း စစ်မှုထမ်းရန် အတင်းအကြပ်ခိုင်းစေခံရသည်ဟု သိရသည်။"
+    },
+    {
+     "en": "Others described local police asking for money instead of making arrests.",
+     "my": "အချို့က ဒေသခံရဲများက ဖမ်းဆီးမည့်အစား ငွေတောင်းသည့်အကြောင်း ပြောပြကြသည်။"
+    }
+   ]
+  },
+  {
+   "type": "points",
+   "kicker": "Everyday life",
+   "heading": "Living in hiding",
+   "reveal": true,
+   "reveal_at": [
+    1,
+    2,
+    2,
+    3
+   ],
+   "items": [
+    "Staying indoors for days during crackdowns",
+    "Paying extra to have food delivered",
+    "Falling into debt",
+    "Avoiding friends and social life"
+   ],
+   "lines": [
+    {
+     "en": "The result is daily fear.",
+     "my": "ရလဒ်မှာ နေ့စဉ်ကြောက်ရွံ့မှု ဖြစ်သည်။"
+    },
+    {
+     "en": "During crackdowns, people stay indoors for days.",
+     "my": "ဖမ်းဆီးစစ်ဆေးမှုများ ရှိချိန်တွင် လူများ ရက်ပေါင်းများစွာ အိမ်ထဲတွင်သာ နေကြရသည်။"
+    },
+    {
+     "en": "They pay extra to have food delivered, and many fall into debt.",
+     "my": "အစားအစာ ပို့ဆောင်ခအတွက် ပိုပေးရပြီး အများအပြား အကြွေးတင်ကြသည်။"
+    },
+    {
+     "en": "Some stop seeing friends at all.",
+     "my": "အချို့မှာ သူငယ်ချင်းများနှင့်ပင် လုံးဝမတွေ့တော့ပါ။"
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 6,
+   "title": "Watched online",
+   "lines": [
+    {
+     "en": "And then there's the internet.",
+     "my": "ပြီးတော့ အင်တာနက် ရှိသေးသည်။"
+    }
+   ]
+  },
+  {
+   "type": "phone",
+   "kicker": "Online repression",
+   "heading": "\"We're always watching\"",
+   "caption": "An online education meeting, interrupted",
+   "reveal": true,
+   "reveal_at": [
+    1,
+    1
+   ],
+   "messages": [
+    {
+     "text": "We know who you are."
+    },
+    {
+     "text": "We're always watching."
+    }
+   ],
+   "lines": [
+    {
+     "en": "Digital repression came up again and again: hacked accounts, anonymous threats, doxxing and online monitoring.",
+     "my": "ဒစ်ဂျစ်တယ်ဖိနှိပ်မှုက ထပ်ခါထပ်ခါ ပေါ်လာသည်- အကောင့်ခိုးယူခံရခြင်း၊ အမည်မသိခြိမ်းခြောက်မှု၊ ကိုယ်ရေးအချက်အလက်ဖော်ထုတ်ခြင်းနှင့် အွန်လိုင်းစောင့်ကြည့်မှု။"
+    },
+    {
+     "en": "During one online education meeting, an unknown account joined and wrote: \"We know who you are. We're always watching.\"",
+     "my": "အွန်လိုင်းပညာရေးအစည်းအဝေးတစ်ခုအတွင်း အမည်မသိအကောင့်တစ်ခု ဝင်လာပြီး ရေးသည်- \"မင်းတို့ ဘယ်သူလဲ ငါတို့သိတယ်။ ငါတို့ အမြဲစောင့်ကြည့်နေတယ်။\""
+    },
+    {
+     "en": "The meeting was cancelled immediately.",
+     "my": "အစည်းအဝေးကို ချက်ချင်း ဖျက်သိမ်းလိုက်ရသည်။"
+    }
+   ]
+  },
+  {
+   "type": "points",
+   "kicker": "The propaganda machine",
+   "heading": "What pro-military channels do",
+   "reveal": true,
+   "reveal_at": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "items": [
+    "Spread disinformation",
+    "Stir up religious division",
+    "Drown real news in entertainment",
+    "Paint a false picture of a \"peaceful Myanmar\""
+   ],
+   "source": "Interviews; Facebook, TikTok & Telegram channels",
+   "lines": [
+    {
+     "en": "Pro-military channels on Facebook, TikTok and Telegram spread disinformation,",
+     "my": "Facebook၊ TikTok နှင့် Telegram ပေါ်ရှိ စစ်တပ်လိုလားသောချန်နယ်များက သတင်းမှားများ ဖြန့်ဝေကြပြီး"
+    },
+    {
+     "en": "stir up religious division,",
+     "my": "ဘာသာရေးကွဲပြားမှုကို လှုံ့ဆော်ကြကာ"
+    },
+    {
+     "en": "drown out real news with entertainment,",
+     "my": "အမှန်တကယ်သတင်းများကို ဖျော်ဖြေရေးအကြောင်းအရာများဖြင့် ဖုံးလွှမ်းကြပြီး"
+    },
+    {
+     "en": "and paint a false picture of a peaceful Myanmar.",
+     "my": "ငြိမ်းချမ်းသော မြန်မာနိုင်ငံဟူသည့် မှားယွင်းသောပုံရိပ်ကို ဖော်ပြကြသည်။"
+    }
+   ]
+  },
+  {
+   "type": "quote",
+   "text": "There are many things I want to say, but I will keep quiet about them.",
+   "who": "CDM member in exile",
+   "lines": [
+    {
+     "en": "Even a social media post can reach your family. Relatives get calls asking what their child is posting now.",
+     "my": "ဆိုရှယ်မီဒီယာပို့စ်တစ်ခုကပင် မိသားစုထံ ရောက်သွားနိုင်သည်။ ဆွေမျိုးများထံ သားသမီးက ဘာတွေတင်နေပြန်ပြီလဲဟု ဖုန်းဆက်မေးကြသည်။"
+    },
+    {
+     "en": "So many people simply go quiet.",
+     "my": "ထို့ကြောင့် လူအများအပြား နှုတ်ဆိတ်သွားကြသည်။"
+    },
+    {
+     "en": "One told me: \"I can't let my whole family suffer because of something I did. There are many things I want to say, but I will keep quiet about them.\"",
+     "my": "တစ်ဦးက ပြောသည်- \"ကိုယ်လုပ်တဲ့အရာကြောင့် မိသားစုတစ်ခုလုံး ဒုက္ခမရောက်စေချင်ဘူး။ ပြောချင်တာတွေ အများကြီးရှိပေမဲ့ နှုတ်ဆိတ်နေမယ်။\""
+    }
+   ]
+  },
+  {
+   "type": "chapter",
+   "number": 7,
+   "title": "Resisting in exile",
+   "lines": [
+    {
+     "en": "But this is not only a story about fear.",
+     "my": "သို့သော် ဤသည်မှာ ကြောက်ရွံ့မှုအကြောင်းသက်သက် မဟုတ်ပါ။"
+    }
+   ]
+  },
+  {
+   "type": "points",
+   "kicker": "Resilience",
+   "heading": "How activists push back",
+   "reveal": true,
+   "reveal_at": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "items": [
+    "Everyday caution: moving, staying discreet",
+    "Mutual aid: CDM circles, community groups, NGOs",
+    "Digital security training",
+    "Documenting abuses with lawyers and rights groups"
+   ],
+   "lines": [
+    {
+     "en": "Activists in Mae Sot have learned to survive.",
+     "my": "မဲဆောက်ရှိ တက်ကြွလှုပ်ရှားသူများသည် ရှင်သန်နည်းကို သင်ယူခဲ့ကြသည်။",
+     "say": "Activists in May Sot have learned to survive."
+    },
+    {
+     "en": "They move when they feel watched, and they are careful about who knows where they live.",
+     "my": "စောင့်ကြည့်ခံရသည်ဟု ခံစားရလျှင် နေရာပြောင်းကြပြီး မိမိနေထိုင်ရာကို မည်သူသိသည်ကို သတိထားကြသည်။"
+    },
+    {
+     "en": "CDM circles, community groups and local NGOs share legal advice, emergency help and warnings.",
+     "my": "CDM အသိုင်းအဝိုင်းများ၊ အသိုက်အဝန်းအဖွဲ့များနှင့် ဒေသခံ NGO များက ဥပဒေအကြံဉာဏ်၊ အရေးပေါ်အကူအညီနှင့် သတိပေးချက်များ မျှဝေကြသည်။",
+     "say": "C D M circles, community groups and local N G Os share legal advice, emergency help and warnings."
+    },
+    {
+     "en": "Many have taken digital security training to protect their accounts.",
+     "my": "အများအပြားက ၎င်းတို့၏အကောင့်များကို ကာကွယ်ရန် ဒစ်ဂျစ်တယ်လုံခြုံရေးသင်တန်းများ တက်ရောက်ခဲ့ကြသည်။"
+    },
+    {
+     "en": "And some work quietly with lawyers and rights groups to document what is happening.",
+     "my": "အချို့က ဖြစ်ပျက်နေသည်များကို မှတ်တမ်းတင်ရန် ရှေ့နေများနှင့် လူ့အခွင့်အရေးအဖွဲ့များနှင့် တိတ်တဆိတ် လုပ်ဆောင်ကြသည်။"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "kicker": "Conclusion",
+   "heading": "Exile is not safety",
+   "body": "Transnational repression crosses borders. Protecting exiles has to cross borders too.",
+   "lines": [
+    {
+     "en": "My research shows that for Myanmar's exiles, crossing the border did not end the danger.",
+     "my": "မြန်မာပြည်ပရောက်များအတွက် နယ်စပ်ဖြတ်ကျော်ခြင်းက အန္တရာယ်ကို မအဆုံးသတ်ခဲ့ကြောင်း ကျွန်ုပ်၏သုတေသနက ပြသသည်။"
+    },
+    {
+     "en": "The junta reaches them through phones, families, paperwork and the internet, and through gaps in the system of the country that hosts them.",
+     "my": "စစ်ကောင်စီသည် ဖုန်း၊ မိသားစု၊ စာရွက်စာတမ်းနှင့် အင်တာနက်မှတစ်ဆင့်၊ လက်ခံထားသောနိုင်ငံ၏ စနစ်ရှိ ကွက်လပ်များမှတစ်ဆင့် သူတို့ထံ လက်လှမ်းမီနေသည်။"
+    },
+    {
+     "en": "Protecting them means recognising them as refugees, stopping deportations into the hands of the military, and taking online threats seriously.",
+     "my": "သူတို့ကို ကာကွယ်ရန်ဆိုသည်မှာ ဒုက္ခသည်အဖြစ် အသိအမှတ်ပြုခြင်း၊ စစ်တပ်လက်ထဲ ပြန်ပို့ခြင်းကို ရပ်တန့်ခြင်းနှင့် အွန်လိုင်းခြိမ်းခြောက်မှုများကို အလေးအနက်ထားခြင်း ဖြစ်သည်။"
+    }
+   ]
+  },
+  {
+   "type": "endcard",
+   "kicker": "Share this story",
+   "title": "Exiles should not have to hide",
+   "cta": "Subscribe for more stories from Myanmar",
+   "lines": [
+    {
+     "en": "If this story matters to you, please share it. Most people have no idea this is happening.",
+     "my": "ဤဇာတ်လမ်းက သင့်အတွက် အရေးကြီးလျှင် မျှဝေပေးပါ။ လူအများစုသည် ဤအရာဖြစ်ပျက်နေကြောင်း မသိကြပါ။"
+    },
+    {
+     "en": "And subscribe for more research-based stories from Myanmar and its borderlands.",
+     "my": "မြန်မာနိုင်ငံနှင့် နယ်စပ်ဒေသများမှ သုတေသနအခြေပြု ဇာတ်လမ်းများအတွက် Subscribe လုပ်ထားပါ။"
+    }
+   ]
+  }
+ ],
+ "shorts": [
+  {
+   "id": "short-01-the-phone",
+   "hook": "Myanmar's junta *hunts* activists in Thailand",
+   "scenes": [
+    0,
+    7
+   ],
+   "caption": "He escaped Myanmar's military. Then his phone rang. From my field research in Mae Sot, Thailand.",
+   "hashtags": [
+    "#Myanmar",
+    "#Thailand",
+    "#MaeSot",
+    "#HumanRights",
+    "#TrueStory"
+   ]
+  },
+  {
+   "id": "short-02-families",
+   "hook": "How the junta silences exiles *through their families*",
+   "scenes": [
+    10,
+    11
+   ],
+   "caption": "Coercion by proxy: how Myanmar's junta punishes families to silence activists abroad.",
+   "hashtags": [
+    "#Myanmar",
+    "#Exile",
+    "#HumanRights",
+    "#Explained"
+   ]
+  },
+  {
+   "id": "short-03-paper-trap",
+   "hook": "Why Myanmar exiles in Thailand *can't move freely*",
+   "scenes": [
+    15,
+    17
+   ],
+   "caption": "No refugee status, junta-issued papers, and deportation into the army: the paper trap.",
+   "hashtags": [
+    "#Myanmar",
+    "#Thailand",
+    "#Refugees",
+    "#Explained"
+   ]
+  }
+ ],
+ "thumbnail": {
+  "kicker": "Myanmar → Thailand",
+  "text": "Hunted|in exile",
+  "size": 160,
+  "highlight": {
+   "Kayin": "red"
+  }
+ },
+ "sources": [
+  "Original research: interviews with 7 Myanmar activists in Mae Sot, Thailand (2025). Identities protected.",
+  "Freedom House (2023). Defending Democracy in Exile.",
+  "Human Rights Watch (2024). \"We Thought We Were Safe\": Repression and Forced Return of Refugees in Thailand.",
+  "Human Rights Watch (2024). \"We Will Find You\": A Global Look at Government Silencing of Exiles.",
+  "Fortify Rights (2023). Myanmar: Cross-Border Crackdown on Democracy Activists in Thailand.",
+  "Adamson & Tsourapas (2020). At Home and Abroad: Coercion-by-Proxy. Freedom House.",
+  "Tsourapas (2021). Global Autocracies. International Studies Review.",
+  "Glasius (2018). Extraterritorial authoritarian practices. Globalizations.",
+  "Michaelsen & Ruijgrok (2024). Autocracy's long reach. Democratization.",
+  "UN OHCHR (2023). Transnational Repression.",
+  "Map data: Natural Earth (public domain)"
+ ],
+ "upload": {
+  "titles": [
+   "Hunted in Exile: How Myanmar's Junta Reaches Activists in Thailand",
+   "They Escaped Myanmar's Military. It Followed Them to Thailand.",
+   "Myanmar's Junta Is Hunting Activists in Thailand. Here's How."
+  ],
+  "description": "After the 2021 coup, thousands of Myanmar activists fled to Mae Sot, Thailand. But the military followed them: through threatening phone calls, pressure on their families, junta-issued identity papers, and online surveillance.\n\nThis video is based on my own field research: in-depth interviews with seven Myanmar activists living in exile in Mae Sot. All identities are protected.\n\nEnglish narration · မြန်မာစာတန်းထိုး (Burmese subtitles)",
+  "footer": "Research and script: Maung Yel Hkawng, Myanmar Community Researcher.\nNarration: AI voice. Visuals: original maps and graphics; phone screens are reconstructions based on interview testimony.\nSpotted a mistake? Tell me in the comments and I'll correct it here.",
+  "tags": [
+   "Myanmar",
+   "Burma",
+   "Thailand",
+   "Mae Sot",
+   "transnational repression",
+   "Myanmar junta",
+   "CDM",
+   "Myanmar refugees",
+   "human rights",
+   "exile",
+   "Myanmar coup",
+   "documentary"
+  ],
+  "hashtags": [
+   "#Myanmar",
+   "#Thailand",
+   "#HumanRights"
+  ]
+ }
+}

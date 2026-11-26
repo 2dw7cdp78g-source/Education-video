@@ -47,7 +47,7 @@ body {{ background: radial-gradient(ellipse at 70% 30%, #17222e 0%, {COLORS['bg'
   font-size: {24 if v else 19}px; color: {COLORS['muted']}; }}
 .hook {{ position: absolute; top: 110px; left: 60px; right: 60px; text-align: center; font-weight: 800;
   font-size: 60px; line-height: 1.1; color: {COLORS['text']}; }}
-.mapbox {{ -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%); }}
+.mapbox {{ -webkit-mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 72%, transparent 100%); }}
 .hook span {{ color: {COLORS['gold']}; }}
 .kicker {{ color: {COLORS['gold']}; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; font-size: {32 if v else 26}px; }}
 h1 {{ font-weight: 800; letter-spacing: -.02em; line-height: 1.05; }}
@@ -128,7 +128,7 @@ def map_svg(scene, w, h, focus=None):
         for name, (lo, la) in COUNTRY_POS.items():
             x, y = P(lo, la)
             if 0 < x < w and 0 < y < h:
-                out.append(f"<text x='{x:.0f}' y='{y:.0f}' fill='#4d5d6d' font-size='{max(16, s*0.32):.0f}' font-weight='700' letter-spacing='4' text-anchor='middle'>{name.upper()}</text>")
+                out.append(f"<text x='{x:.0f}' y='{y:.0f}' fill='#4d5d6d' font-size='{min(30, max(16, s*0.32)):.0f}' font-weight='700' letter-spacing='4' text-anchor='middle'>{name.upper()}</text>")
     for f in regions["features"]:
         name = f["properties"]["name"]
         c = hl.get(name)
@@ -136,7 +136,7 @@ def map_svg(scene, w, h, focus=None):
         dim = hl and not c and scene.get("dim_others", True)
         out.append(f"<path d='{path(f['geometry'])}' fill='{fill}' fill-opacity='{0.55 if dim else 1}' stroke='{COLORS['land_line']}' stroke-width='2.2' stroke-linejoin='round'/>")
     if scene.get("labels", True):
-        fs = max(14, s * 0.27)
+        fs = min(30, max(14, s * 0.27))
         for f in regions["features"]:
             name = f["properties"]["name"]
             if scene.get("labels") not in (True, None) and name not in scene["labels"]:
@@ -150,9 +150,9 @@ def map_svg(scene, w, h, focus=None):
     for m in scene.get("markers", []):
         x, y = P(m["lon"], m["lat"])
         col = COLORS.get(m.get("color", "gold"), m.get("color"))
-        out.append(f"<circle cx='{x:.0f}' cy='{y:.0f}' r='{max(9, s*0.14):.0f}' fill='{col}' stroke='#0e141b' stroke-width='4'/>")
+        out.append(f"<circle cx='{x:.0f}' cy='{y:.0f}' r='{min(13, max(9, s*0.14)):.0f}' fill='{col}' stroke='#0e141b' stroke-width='4'/>")
         dx = m.get("dx", 1)
-        out.append(f"<text x='{x + dx*max(18, s*0.25):.0f}' y='{y + 9:.0f}' fill='#fff' font-size='{max(22, s*0.34):.0f}' font-weight='800' text-anchor='{'start' if dx > 0 else 'end'}' paint-order='stroke' stroke='#0e141b' stroke-width='6'>{e(m['name'])}</text>")
+        out.append(f"<text x='{x + dx*min(24, max(18, s*0.25)):.0f}' y='{y + 9:.0f}' fill='#fff' font-size='{min(38, max(22, s*0.34)):.0f}' font-weight='800' text-anchor='{'start' if dx > 0 else 'end'}' paint-order='stroke' stroke='#0e141b' stroke-width='6'>{e(m['name'])}</text>")
     out.append("</svg>")
     return "".join(out)
 
@@ -294,3 +294,51 @@ def thumbnail(t):
         <h1 style='font-size:{t.get('size', 128)}px;margin-top:20px;line-height:.98;text-transform:uppercase'>{big}</h1>
         <div style='width:160px;height:12px;background:{COLORS['gold']};margin-top:40px'></div></div>"""
     return page("h", body, brand=False)
+
+
+def scene_phone(s, v, state):
+    """A phone screen showing an incoming call or threatening messages."""
+    shown = len(s.get("messages", [])) if state is None else state
+    bubbles = "".join(
+        f"<div style='align-self:{'flex-end' if m.get('me') else 'flex-start'};max-width:82%;margin-top:22px;padding:22px 28px;border-radius:26px;"
+        f"background:{'#2f6fd6' if m.get('me') else '#2a3542'};font-size:30px;line-height:1.35;opacity:{1 if i < shown else 0}'>{e(m['text'])}</div>"
+        for i, m in enumerate(s.get("messages", [])))
+    call = ""
+    if s.get("caller"):
+        call = f"""<div style='text-align:center;margin-top:60px'><div style='font-size:26px;color:{COLORS['muted']}'>{e(s.get('call_label', 'Incoming call'))}</div>
+          <div style='font-size:46px;font-weight:700;margin-top:14px'>{e(s['caller'])}</div>
+          <div style='display:flex;justify-content:center;gap:120px;margin-top:{300 if not s.get('messages') else 40}px'>
+            <div style='width:110px;height:110px;border-radius:50%;background:{COLORS['red']}'></div>
+            <div style='width:110px;height:110px;border-radius:50%;background:{COLORS['green']}'></div></div></div>"""
+    phone = f"""<div style='width:560px;height:1000px;border-radius:70px;background:#0b1016;border:14px solid #2c3742;box-shadow:0 40px 120px rgba(0,0,0,.6);
+        padding:70px 34px 40px;display:flex;flex-direction:column;overflow:hidden'>
+        <div style='width:160px;height:34px;border-radius:20px;background:#000;align-self:center;margin-top:-50px'></div>
+        {call}<div style='display:flex;flex-direction:column;margin-top:20px'>{bubbles}</div></div>"""
+    if v:
+        return f"<div style='position:absolute;top:290px;left:0;right:0;display:flex;justify-content:center;transform:scale(.78);transform-origin:top center'>{phone}</div>"
+    return f"""<div style='position:absolute;left:110px;top:0;bottom:0;width:760px;display:flex;flex-direction:column;justify-content:center'>
+        <div class='kicker'>{e(s.get('kicker', ''))}</div><h2 style='margin-top:18px'>{e(s.get('heading', ''))}</h2>
+        <div class='muted' style='font-size:32px;line-height:1.4;margin-top:24px'>{e(s.get('caption', ''))}</div></div>
+      <div style='position:absolute;right:200px;top:40px'>{phone}</div>"""
+
+
+def scene_flow(s, v, state):
+    """Boxes connected by arrows, e.g. Junta -> Family -> Activist."""
+    shown = len(s["items"]) if state is None else state
+    boxes = []
+    for i, it in enumerate(s["items"]):
+        on, cur = i < shown, i == shown - 1
+        col = COLORS.get(it.get("color", ""), it.get("color")) or ("#2a3846")
+        box = f"""<div style='opacity:{1 if on else .12};flex:1;background:{COLORS['panel']};border:3px solid {COLORS['gold'] if cur else col};border-radius:24px;
+            padding:{30 if v else 38}px;text-align:center'>
+            <div style='font-size:{44 if v else 46}px;font-weight:800'>{e(it['title'])}</div>
+            <div class='muted' style='font-size:{28 if v else 28}px;margin-top:12px;line-height:1.3'>{e(it.get('text', ''))}</div></div>"""
+        boxes.append(box)
+        if i < len(s["items"]) - 1:
+            arrow = "↓" if v else "→"
+            boxes.append(f"<div style='opacity:{1 if i + 1 < shown else .12};font-size:{60 if v else 80}px;color:{COLORS['gold']};text-align:center;padding:{'6px 0' if v else '0 22px'};align-self:center'>{arrow}</div>")
+    direction = "column" if v else "row"
+    return f"""<div class='stage' style='display:flex;flex-direction:column;justify-content:center'>
+      <div class='kicker' style='{'text-align:center' if v else ''}'>{e(s.get('kicker', ''))}</div>
+      <h2 style='margin:16px 0 {40 if v else 70}px;{'text-align:center;font-size:54px' if v else ''}'>{e(s.get('heading', ''))}</h2>
+      <div style='display:flex;flex-direction:{direction};align-items:stretch'>{''.join(boxes)}</div></div>"""

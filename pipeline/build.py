@@ -200,7 +200,7 @@ def reveal_states(scene):
     m = len(scene["lines"])
     if not scene.get("reveal"):
         return [None] * m
-    n = len(scene["items"])
+    n = len(scene.get("items") or scene.get("messages"))
     at = scene.get("reveal_at") or [min(i, m - 1) if m >= n else math.floor(i * m / n) for i in range(n)]
     return [sum(1 for x in at if x <= j) for j in range(m)]
 
@@ -329,6 +329,7 @@ def main():
     ap.add_argument("episode")
     ap.add_argument("--only", choices=["long", "shorts", "thumb"])
     ap.add_argument("--fast", action="store_true", help="quicker, lower-quality encode for previews")
+    ap.add_argument("--silent", action="store_true", help="skip AI voice; silent draft with estimated timing")
     args = ap.parse_args()
 
     ep_dir = Path(args.episode).resolve()
@@ -343,9 +344,16 @@ def main():
 
     lines = [dict(l, scene=si) for si, sc in enumerate(ep["scenes"]) for l in sc["lines"]]
     found = find_audio(ep_dir)
-    draft = not found
+    use_ai = not found and ep.get("ai_voice") and not args.silent
+    draft = not found and not use_ai
     src = join_audio(found, work / "narration_joined.wav") if found else None
-    if draft:
+    if use_ai:
+        import tts
+        print(f"Generating AI narration (voice: {ep['ai_voice'].get('voice')})")
+        audio = out_dir / "narration_ai.wav"
+        chapters = {i for i, sc in enumerate(ep["scenes"]) if sc["type"] == "chapter"}
+        times, total = tts.narrate(lines, [l["scene"] for l in lines], chapters, ep["ai_voice"], audio)
+    elif draft:
         print("No narration found in audio/: building a silent DRAFT with estimated timing.")
         times, total = estimate(lines)
         audio = work / "silence.wav"
