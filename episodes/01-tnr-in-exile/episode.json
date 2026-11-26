@@ -1,8 +1,8 @@
 {
- "id": "01-hunted-in-exile",
- "title": "Hunted in Exile: How Myanmar's Junta Reaches Activists in Thailand",
+ "id": "01-tnr-in-exile",
+ "title": "Transnational Repression in Exile: How Myanmar's Junta Reaches Activists in Thailand",
  "channel_html": "Maung Yel Hkawng <b>· Myanmar Community Researcher</b>",
- "short_endcard_title": "Hunted in Exile",
+ "short_endcard_title": "Transnational Repression in Exile",
  "ai_voice": {
   "voice": "george",
   "speed": 0.95
@@ -43,8 +43,8 @@
   },
   {
    "type": "title",
-   "kicker": "Original field research · Mae Sot, Thailand",
-   "title": "Hunted in Exile",
+   "kicker": "TNR · Original field research · Mae Sot, Thailand",
+   "title": "Transnational Repression in Exile",
    "subtitle": "How Myanmar's junta reaches activists across the border",
    "byline": "Maung Yel Hkawng · Myanmar Community Researcher",
    "highlight": {
@@ -997,9 +997,9 @@
   }
  ],
  "thumbnail": {
-  "kicker": "Myanmar → Thailand",
-  "text": "Hunted|in exile",
-  "size": 170,
+  "kicker": "TNR · Myanmar → Thailand",
+  "text": "Transnational|Repression|in Exile",
+  "size": 118,
   "bg": {
    "src": "images/33.jpg",
    "credit": "MgHla / CC BY-SA 4.0 (Wikimedia Commons)",
@@ -1022,9 +1022,9 @@
  ],
  "upload": {
   "titles": [
-   "Hunted in Exile: How Myanmar's Junta Reaches Activists in Thailand",
-   "They Escaped Myanmar's Military. It Followed Them to Thailand.",
-   "Myanmar's Junta Is Hunting Activists in Thailand. Here's How."
+   "Transnational Repression in Exile: How Myanmar's Junta Reaches Activists in Thailand",
+   "Transnational Repression in Exile (TNR): Myanmar's Junta Follows Activists to Thailand",
+   "They Escaped Myanmar's Military. It Followed Them to Thailand."
   ],
   "description": "After the 2021 coup, thousands of Myanmar activists fled to Mae Sot, Thailand. But the military followed them: through threatening phone calls, pressure on their families, junta-issued identity papers, and online surveillance.\n\nThis video is based on my own field research: in-depth interviews with seven Myanmar activists living in exile in Mae Sot. All identities are protected.\n\nEnglish narration · မြန်မာစာတန်းထိုး (Burmese subtitles)",
   "footer": "Research and script: Maung Yel Hkawng, Myanmar Community Researcher.\nNarration: AI voice. Visuals: original maps and graphics; phone screens are reconstructions based on interview testimony.\nSpotted a mistake? Tell me in the comments and I'll correct it here.",

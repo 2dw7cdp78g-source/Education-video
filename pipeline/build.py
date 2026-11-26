@@ -388,6 +388,15 @@ def apply_channel_defaults(ep):
         o["reveal"], o["reveal_at"] = True, [0, 1, 2]
         sc.append(o)
     ep.setdefault("short_cta", CHANNEL.get("short_cta", "Full video on YouTube"))
+    # Pronunciation rules: change only what the AI voice says, never the on-screen spelling.
+    pron = CHANNEL.get("pronunciations", {})
+    for s in sc:
+        for l in s.get("lines", []):
+            say = l.get("say", l["en"])
+            for word, spoken in pron.items():
+                say = say.replace(word, spoken)
+            if say != l["en"]:
+                l["say"] = say
 
 
 # ---------------------------------------------------------------- main

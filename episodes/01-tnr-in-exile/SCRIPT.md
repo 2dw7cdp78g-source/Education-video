@@ -1,4 +1,4 @@
-# Hunted in Exile: How Myanmar's Junta Reaches Activists in Thailand: narration script
+# Transnational Repression in Exile: How Myanmar's Junta Reaches Activists in Thailand: narration script
 
 About 1082 words, roughly 7 minutes at a calm pace.
 
