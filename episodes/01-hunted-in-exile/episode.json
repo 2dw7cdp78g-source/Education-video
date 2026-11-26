@@ -83,9 +83,9 @@
    "heading": "Mae Sot, Thailand",
    "caption": "A Thai border town facing Myanmar's Karen State.",
    "focus": [
-    95.6,
+    94.9,
     14.9,
-    101.6,
+    101.1,
     18.7
    ],
    "highlight": {
@@ -93,8 +93,7 @@
    },
    "labels": [
     "Kayin",
-    "Mon",
-    "Bago"
+    "Mon"
    ],
    "markers": [
     {
@@ -107,6 +106,12 @@
      "name": "Hpa-an",
      "lon": 97.63,
      "lat": 16.89,
+     "dx": -1
+    },
+    {
+     "name": "Yangon",
+     "lon": 96.16,
+     "lat": 16.87,
      "dx": -1
     }
    ],
@@ -139,6 +144,31 @@
     {
      "en": "But the military has followed them there.",
      "my": "သို့သော် စစ်တပ်က သူတို့နောက်ကို ထိုနေရာအထိ လိုက်လာခဲ့သည်။"
+    }
+   ],
+   "routes": [
+    {
+     "from": [
+      96.16,
+      16.87
+     ],
+     "to": [
+      98.57,
+      16.71
+     ],
+     "bend": 0.3
+    },
+    {
+     "from": [
+      97.63,
+      16.89
+     ],
+     "to": [
+      98.57,
+      16.71
+     ],
+     "bend": 0.5,
+     "delay": 1.2
     }
    ]
   },
@@ -407,7 +437,10 @@
      "en": "Strangers came asking about the houses where activists used to live.",
      "my": "တက်ကြွလှုပ်ရှားသူများ ယခင်နေထိုင်ခဲ့သော အိမ်များအကြောင်း မသိသူများ လာရောက်စုံစမ်းကြသည်။"
     }
-   ]
+   ],
+   "art": {
+    "name": "family"
+   }
   },
   {
    "type": "quote",
@@ -475,7 +508,10 @@
      "my": "သို့သော် ပြန်သွားခဲ့သော CDM ဗိုလ်မှူးတစ်ဦးမှာ သတင်းအစအန မကြားရတော့ပါ။ နောက်ပိုင်း သူ့ကို သေဒဏ်ချမှတ်ခဲ့သည်ဟု ကောလာဟလများ ထွက်ပေါ်ခဲ့သည်။",
      "say": "But one C D M major who went back was never heard from again. Later, rumours said he had been sentenced to death."
     }
-   ]
+   ],
+   "art": {
+    "name": "hook"
+   }
   },
   {
    "type": "chapter",
@@ -542,11 +578,8 @@
      "say": "One participant said: They call themselves the government. But ninety percent of activists cannot get passports or C I."
     }
    ],
-   "bg": {
-    "src": "images/13.jpg",
-    "credit": "Paingpeace / CC BY-SA 4.0 (Wikimedia Commons)",
-    "credit_full": "Myanmar Thailand Border Myawaddy.jpg by Paingpeace, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Myanmar_Thailand_Border_Myawaddy.jpg",
-    "dim": 0.66
+   "art": {
+    "name": "documents"
    }
   },
   {
@@ -591,7 +624,10 @@
      "en": "Others described local police asking for money instead of making arrests.",
      "my": "အချို့က ဒေသခံရဲများက ဖမ်းဆီးမည့်အစား ငွေတောင်းသည့်အကြောင်း ပြောပြကြသည်။"
     }
-   ]
+   ],
+   "art": {
+    "name": "truck"
+   }
   },
   {
    "type": "points",
@@ -628,11 +664,8 @@
      "my": "အချို့မှာ သူငယ်ချင်းများနှင့်ပင် လုံးဝမတွေ့တော့ပါ။"
     }
    ],
-   "bg": {
-    "src": "images/10.jpg",
-    "credit": "咽頭べさ / CC BY-SA 4.0 (Wikimedia Commons)",
-    "credit_full": "Thailand, Burma Mae Sot border 1.jpg by 咽頭べさ, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Thailand,_Burma_Mae_Sot_border_1.jpg",
-    "dim": 0.66
+   "art": {
+    "name": "hiding"
    }
   },
   {
@@ -644,7 +677,12 @@
      "en": "And then there's the internet.",
      "my": "ပြီးတော့ အင်တာနက် ရှိသေးသည်။"
     }
-   ]
+   ],
+   "art": {
+    "name": "eye",
+    "mode": "back",
+    "opacity": 0.45
+   }
   },
   {
    "type": "phone",
@@ -714,7 +752,10 @@
      "en": "and paint a false picture of a peaceful Myanmar.",
      "my": "ငြိမ်းချမ်းသော မြန်မာနိုင်ငံဟူသည့် မှားယွင်းသောပုံရိပ်ကို ဖော်ပြကြသည်။"
     }
-   ]
+   ],
+   "art": {
+    "name": "megaphone"
+   }
   },
   {
    "type": "quote",
@@ -799,11 +840,8 @@
      "my": "အချို့က ဖြစ်ပျက်နေသည်များကို မှတ်တမ်းတင်ရန် ရှေ့နေများနှင့် လူ့အခွင့်အရေးအဖွဲ့များနှင့် တိတ်တဆိတ် လုပ်ဆောင်ကြသည်။"
     }
    ],
-   "bg": {
-    "src": "images/47.jpg",
-    "credit": "MgHla / CC BY-SA 4.0 (Wikimedia Commons)",
-    "credit_full": "Protest in Myanmar against Military Coup 14-Feb-2021 17.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_17.jpg",
-    "dim": 0.68
+   "art": {
+    "name": "network"
    }
   },
   {

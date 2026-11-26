@@ -13,6 +13,8 @@ import random
 import re
 from pathlib import Path
 
+from art import ART
+
 HERE = Path(__file__).resolve().parent
 FONTS = HERE / "fonts"
 
@@ -77,7 +79,7 @@ body.enter .fade {{ animation: fadeout .5s ease-out both; }}
 .brand {{ position: absolute; {'top: 60px; left: 0; right: 0; text-align: center;' if v else 'top: 44px; left: 64px;'}
   font-size: {26 if v else 20}px; letter-spacing: .14em; text-transform: uppercase; color: {COLORS['muted']}; font-weight: 600; }}
 .brand b {{ color: {COLORS['gold']}; }}
-.source {{ position: absolute; {'top: 1100px; left: 60px; right: 60px; text-align: center;' if v else 'top: 44px; right: 64px; text-align: right; max-width: 700px;'}
+.source {{ position: absolute; {'top: 262px; left: 40px; right: 560px; text-align: left; font-size: 18px !important;' if v else 'top: 44px; right: 64px; text-align: right; max-width: 700px;'}
   font-size: {24 if v else 19}px; color: {COLORS['muted']}; }}
 .hook {{ position: absolute; top: 100px; left: 50px; right: 50px; text-align: center; font-weight: 800;
   font-size: 62px; line-height: 1.08; color: {COLORS['text']}; text-shadow: 0 4px 24px rgba(0,0,0,.6); }}
@@ -105,6 +107,8 @@ h2 {{ font-weight: 800; letter-spacing: -.015em; line-height: 1.1; font-size: {6
 @keyframes typing {{ 0% {{ opacity: 0; }} 12% {{ opacity: 1; }} 88% {{ opacity: 1; }} 100% {{ opacity: 0; }} }}
 @keyframes dot {{ 0%, 100% {{ transform: translateY(0); opacity: .4; }} 50% {{ transform: translateY(-8px); opacity: 1; }} }}
 @keyframes ghost {{ from {{ transform: translate(-50%, -50%) scale(1.15); opacity: 0; }} to {{ transform: translate(-50%, -50%) scale(1); opacity: .06; }} }}
+@keyframes dash {{ to {{ stroke-dashoffset: -26; }} }}
+@keyframes travel {{ 0% {{ stroke-dashoffset: 0; opacity: 0; }} 10% {{ opacity: 1; }} 90% {{ opacity: 1; }} 100% {{ stroke-dashoffset: calc(var(--L) * -1px); opacity: 0; }} }}
 @keyframes hlin {{ from {{ fill: {COLORS['land']}; }} }}
 body.enter .stage > *, body.enter .col > * {{ animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }}
 body.enter .stage > *:nth-child(2), body.enter .col > *:nth-child(2) {{ animation-delay: .12s; }}
@@ -116,6 +120,7 @@ body.enter .stage > *:nth-child(n+7) {{ animation-delay: .72s; }}
 .newi {{ animation: pop .6s cubic-bezier(.2,.9,.3,1.2) both; }}
 .newi .badge {{ animation: flash .9s .2s ease-out both; }}
 body.enter .line {{ animation: grow .8s .3s cubic-bezier(.2,.8,.2,1) both; transform-origin: left; }}
+body.enter .artwrap {{ animation: pop 1s .25s cubic-bezier(.2,.9,.3,1.1) both; }}
 body.enter .phonewrap {{ animation: pop .8s cubic-bezier(.2,.9,.3,1.1) both; }}
 .count {{ counter-reset: n var(--n); }}
 .count::after {{ content: counter(n); }}
@@ -209,6 +214,10 @@ COUNTRY_POS = {"Thailand": (100.6, 16.0), "China": (100.5, 25.8), "India": (93.2
                "Bangladesh": (90.6, 23.4), "Laos": (102.2, 20.5)}
 
 
+def _q(x1, y1, mx, my, x2, y2, t):
+    return ((1 - t) ** 2 * x1 + 2 * (1 - t) * t * mx + t * t * x2, (1 - t) ** 2 * y1 + 2 * (1 - t) * t * my + t * t * y2)
+
+
 def map_svg(scene, w, h, focus=None):
     """Myanmar map. focus=(lon_min, lat_min, lon_max, lat_max) zooms in."""
     regions, neighbours = _geo()
@@ -256,6 +265,16 @@ def map_svg(scene, w, h, focus=None):
             x, y = P(lo, la)
             on = name in hl
             out.append(f"<text x='{x:.0f}' y='{y:.0f}' fill='{'#fff' if on else '#b7c2cc'}' font-size='{fs*(1.12 if on else 1):.0f}' font-weight='{700 if on else 600}' text-anchor='middle' paint-order='stroke' stroke='rgba(14,20,27,.7)' stroke-width='4'>{e(name)}</text>")
+    for k, r in enumerate(scene.get("routes", [])):
+        (x1, y1), (x2, y2) = P(*r["from"]), P(*r["to"])
+        mx, my = (x1 + x2) / 2, (y1 + y2) / 2 - abs(x2 - x1) * r.get("bend", .35)
+        L = sum(math.dist(_q(x1, y1, mx, my, x2, y2, i / 40), _q(x1, y1, mx, my, x2, y2, (i + 1) / 40)) for i in range(40))
+        d = f"M{x1:.0f},{y1:.0f} Q{mx:.0f},{my:.0f} {x2:.0f},{y2:.0f}"
+        dl = r.get("delay", k * .6)
+        out.append(f"<path d='{d}' fill='none' stroke='{COLORS["gold"]}' stroke-width='5' stroke-dasharray='14 12' stroke-linecap='round' opacity='.85' "
+                   f"style='animation:dash 1s linear infinite;animation-delay:calc(var(--t0)*-1s)'/>")
+        out.append(f"<path d='{d}' fill='none' stroke='#fff' stroke-width='16' stroke-linecap='round' stroke-dasharray='1 {L + 40:.0f}' "
+                   f"style='--L:{L:.0f};animation:travel 3s cubic-bezier(.5,0,.5,1) infinite;animation-delay:calc(var(--t0)*-1s + {dl}s)'/>")
     for m in scene.get("markers", []):
         x, y = P(m["lon"], m["lat"])
         col = COLORS.get(m.get("color", "gold"), m.get("color"))
@@ -282,7 +301,20 @@ def render_scene(scene, orient, state=None, hook="", ctx=None, seed=0):
     CTX.update(ctx or {})
     v = orient == "v"
     fn = globals()["scene_" + scene["type"]]
-    return page(orient, fn(scene, v, state), source=scene.get("source", ""), hook=hook,
+    body = fn(scene, v, state)
+    art = scene.get("art")
+    if art and scene["type"] != "flow":
+        svg = ART[art["name"]]()
+        mode = art.get("mode", "side")
+        if mode == "side" and not v:
+            body = (f"<style>.stage{{right:860px !important;padding:0 !important}}</style>{body}"
+                    f"<div class='artwrap' style='position:absolute;right:90px;top:170px;width:700px;height:700px'>{svg}</div>")
+        elif mode == "side" and v:
+            body = f"<div class='artwrap' style='position:absolute;left:190px;top:290px;width:700px;height:700px;opacity:.22'>{svg}</div>{body}"
+        else:  # back
+            body = (f"<div class='artwrap' style='position:absolute;left:50%;top:{'640' if v else '540'}px;width:{900 if v else 980}px;height:{900 if v else 980}px;"
+                    f"transform:translate(-50%,-50%);opacity:{art.get('opacity', .5)}'>{svg}</div>{body}")
+    return page(orient, body, source=scene.get("source", ""), hook=hook,
                 brand=scene.get("brand", True), bg=scene.get("bg"), seed=seed)
 
 
@@ -448,17 +480,24 @@ def scene_flow(s, v, state):
         on, cur = i < shown, i == shown - 1
         col = COLORS.get(it.get("color", ""), it.get("color")) or ("#2a3846")
         boxes.append(f"""<div class='{_new(cur).strip()} badge' style='opacity:{1 if on else .12};flex:1;background:rgba(22,32,43,.92);border:3px solid {COLORS['gold'] if cur else col};border-radius:24px;
-            padding:{20 if v else 38}px;text-align:center'>
-            <div style='font-size:{40 if v else 48}px;font-weight:800'>{e(it['title'])}</div>
+            padding:{(12 if s.get('art') else 20) if v else (26 if s.get('art') else 38)}px;text-align:center'>
+            <div style='font-size:{36 if v else 46}px;font-weight:800'>{e(it['title'])}</div>
             <div class='muted' style='font-size:{28 if v else 29}px;margin-top:12px;line-height:1.3'>{e(it.get('text', ''))}</div></div>""")
         if i < len(s["items"]) - 1:
             arrow = "↓" if v else "→"
             na = _new(i + 2 == shown)
-            boxes.append(f"<div class='{na}' style='opacity:{1 if i + 1 < shown else .12};font-size:{48 if v else 80}px;color:{COLORS['gold']};text-align:center;padding:{'0' if v else '0 22px'};align-self:center'>{arrow}</div>")
+            boxes.append(f"<div class='{na}' style='opacity:{1 if i + 1 < shown else .12};font-size:{36 if v else 80}px;line-height:1.1;color:{COLORS['gold']};text-align:center;padding:{'0' if v else '0 22px'};align-self:center'>{arrow}</div>")
     direction = "column" if v else "row"
+    art_html = ""
+    if s.get("art"):
+        hh = 250 if v else 400
+        svg = ART[s["art"]["name"]]().replace("viewBox='0 0 600 600'", "viewBox='0 60 600 480' preserveAspectRatio='xMidYMid meet'")
+        art_html = (f"<div class='artwrap' style='height:{hh}px;margin:{'0 0 10px' if v else '6px 0 10px'};display:flex;justify-content:center'>"
+                    f"<div style='width:{hh * 1.25:.0f}px;height:{hh}px'>{svg}</div></div>")
     return f"""<div class='stage' style='display:flex;flex-direction:column;justify-content:center'>
       <div class='kicker' style='{'text-align:center' if v else ''}'>{e(s.get('kicker', ''))}</div>
-      <h2 style='margin:16px 0 {40 if v else 70}px;{'text-align:center;font-size:54px' if v else ''}'>{e(s.get('heading', ''))}</h2>
+      <h2 style='margin:16px 0 {30 if v else (30 if s.get('art') else 70)}px;{'text-align:center;font-size:54px' if v else ''}'>{e(s.get('heading', ''))}</h2>
+      {art_html}
       <div style='display:flex;flex-direction:{direction};align-items:stretch'>{''.join(boxes)}</div></div>"""
 
 
