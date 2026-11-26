@@ -448,13 +448,13 @@ def scene_flow(s, v, state):
         on, cur = i < shown, i == shown - 1
         col = COLORS.get(it.get("color", ""), it.get("color")) or ("#2a3846")
         boxes.append(f"""<div class='{_new(cur).strip()} badge' style='opacity:{1 if on else .12};flex:1;background:rgba(22,32,43,.92);border:3px solid {COLORS['gold'] if cur else col};border-radius:24px;
-            padding:{30 if v else 38}px;text-align:center'>
-            <div style='font-size:{44 if v else 48}px;font-weight:800'>{e(it['title'])}</div>
+            padding:{20 if v else 38}px;text-align:center'>
+            <div style='font-size:{40 if v else 48}px;font-weight:800'>{e(it['title'])}</div>
             <div class='muted' style='font-size:{28 if v else 29}px;margin-top:12px;line-height:1.3'>{e(it.get('text', ''))}</div></div>""")
         if i < len(s["items"]) - 1:
             arrow = "↓" if v else "→"
             na = _new(i + 2 == shown)
-            boxes.append(f"<div class='{na}' style='opacity:{1 if i + 1 < shown else .12};font-size:{60 if v else 80}px;color:{COLORS['gold']};text-align:center;padding:{'6px 0' if v else '0 22px'};align-self:center'>{arrow}</div>")
+            boxes.append(f"<div class='{na}' style='opacity:{1 if i + 1 < shown else .12};font-size:{48 if v else 80}px;color:{COLORS['gold']};text-align:center;padding:{'0' if v else '0 22px'};align-self:center'>{arrow}</div>")
     direction = "column" if v else "row"
     return f"""<div class='stage' style='display:flex;flex-direction:column;justify-content:center'>
       <div class='kicker' style='{'text-align:center' if v else ''}'>{e(s.get('kicker', ''))}</div>
