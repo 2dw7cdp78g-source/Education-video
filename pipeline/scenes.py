@@ -539,13 +539,17 @@ def scene_author(s, v, state):
         f"<div class='{_new(i == shown - 1).strip()}' style='opacity:{1 if i < shown else .15};display:flex;align-items:center;gap:18px;margin-top:{18 if v else 22}px'>"
         f"<span class='badge' style='width:16px;height:16px;border-radius:50%;background:{COLORS['gold'] if i < shown else COLORS['muted']}'></span>"
         f"<span style='font-size:{34 if v else 38}px;font-weight:600'>{e(t)}</span></div>" for i, t in enumerate(s["tags"]))
-    badge = (f"<div class='artwrap' style='position:relative;width:{300 if v else 380}px;height:{300 if v else 380}px;flex:none'>"
+    badge = (f"<div class='artwrap' style='position:relative;width:{340 if v else 440}px;height:{340 if v else 440}px;flex:none'>"
              f"<svg viewBox='0 0 400 400' width='100%' height='100%'><style>"
              f"@keyframes spinr {{ to {{ transform: rotate(360deg); }} }}"
              f".rr {{ animation: spinr 14s linear infinite; animation-delay: calc(var(--t0) * -1s); transform-box: view-box; transform-origin: 200px 200px; }}</style>"
-             f"<circle cx='200' cy='200' r='150' fill='{COLORS['panel']}' stroke='{COLORS['gold']}' stroke-width='8'/>"
+             + (f"<defs><clipPath id='ap'><circle cx='200' cy='200' r='150'/></clipPath></defs>"
+                f"<image href='file://{s['photo']}' x='50' y='50' width='300' height='300' clip-path='url(#ap)' preserveAspectRatio='xMidYMid slice'/>"
+                f"<circle cx='200' cy='200' r='150' fill='none' stroke='{COLORS['gold']}' stroke-width='8'/>" if s.get('photo') else
+                f"<circle cx='200' cy='200' r='150' fill='{COLORS['panel']}' stroke='{COLORS['gold']}' stroke-width='8'/>") +
              f"<g class='rr'><circle cx='200' cy='200' r='182' fill='none' stroke='{COLORS['gold']}' stroke-width='4' stroke-dasharray='30 22' opacity='.7'/></g>"
-             f"<text x='200' y='232' font-size='96' font-weight='800' fill='{COLORS['text']}' text-anchor='middle' letter-spacing='4'>{e(initials)}</text></svg></div>")
+             + ("" if s.get('photo') else f"<text x='200' y='232' font-size='96' font-weight='800' fill='{COLORS['text']}' text-anchor='middle' letter-spacing='4'>{e(initials)}</text>")
+             + "</svg></div>")
     text = (f"<div class='col' style='display:flex;flex-direction:column;{'align-items:center;text-align:center' if v else ''}'>"
             f"<div class='kicker'>About the author</div>"
             f"<h2 style='margin-top:14px;font-size:{60 if v else 72}px'>{e(s['name'])}</h2>"

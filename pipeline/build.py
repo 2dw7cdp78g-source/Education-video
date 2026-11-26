@@ -11,6 +11,7 @@ Inputs (in the episode folder):
 Outputs: output/<episode-id>/
 """
 import argparse
+import hashlib
 import json
 import math
 import re
@@ -257,10 +258,15 @@ def render_parallel(jobs, work, name, workers=3):
         jf.write_text(json.dumps(ch))
         procs.append(subprocess.Popen(["node", str(HERE / "render.js"), str(jf)], cwd=str(HERE),
                                       stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True))
+    failed = None
     for p in procs:
         _, err = p.communicate()
         if p.returncode:
-            sys.exit(f"Render failed:\n{err[-2000:]}")
+            failed = err
+    if failed:
+        for j in jobs:
+            Path(j.get("sig", "/nonexistent")).unlink(missing_ok=True)
+        sys.exit(f"Render failed:\n{failed[-2000:]}")
 
 
 def segment_context(segs):
@@ -294,10 +300,15 @@ def build_video(ep, segs, items, audio, total, out_dir, work, vertical, name, fa
         htmlp.write_text(S.render_scene(sc, tag, stt, hook=hook if si >= 0 else "", ctx=ctx, seed=si * 7 + 3),
                          encoding="utf-8")
         mp4 = work / f"{key}.mp4"
-        jobs.append({"html": str(htmlp), "mp4": str(mp4), "w": W, "h": H, "dur": frames / FPS, "fps": FPS,
-                     "preset": "ultrafast" if fast else "veryfast"})
+        sig = hashlib.sha1(f"{htmlp.read_text(encoding='utf-8')}|{frames}|{W}x{H}|{fast}".encode()).hexdigest()
+        sigf = mp4.with_suffix(".sig")
         files.append(mp4)
-    print(f"  [{name}] rendering {len(jobs)} animated segments ...", flush=True)
+        if mp4.exists() and sigf.exists() and sigf.read_text() == sig:
+            continue  # unchanged since the last build: reuse the rendered segment
+        sigf.write_text(sig)
+        jobs.append({"html": str(htmlp), "mp4": str(mp4), "w": W, "h": H, "dur": frames / FPS, "fps": FPS,
+                     "preset": "ultrafast" if fast else "veryfast", "sig": str(sigf)})
+    print(f"  [{name}] rendering {len(jobs)} of {len(files)} animated segments (rest unchanged) ...", flush=True)
     render_parallel(jobs, work, name)
     ass = work / f"{name}.ass"
     if english is None:
@@ -364,6 +375,7 @@ def apply_channel_defaults(ep):
         ti = next((i for i, s in enumerate(sc) if s["type"] == "title"), 0)
         tags = a["tags"]
         author = {"type": "author", "name": a["name"], "role": a["role"], "tags": tags, "items": tags,
+                  "photo": str((HERE / a["photo"]).resolve()) if a.get("photo") else None,
                   "reveal": True, "reveal_at": [1, 1, 2, 2][:len(tags)], "lines": a["lines"]}
         sc.insert(ti + 1, author)
         for sh in ep.get("shorts", []):
@@ -413,7 +425,15 @@ def main():
         print(f"Generating AI narration (voice: {ep['ai_voice'].get('voice')})")
         audio = out_dir / "narration_ai.wav"
         chapters = {i for i, sc in enumerate(ep["scenes"]) if sc["type"] == "chapter"}
-        times, total = tts.narrate(lines, [l["scene"] for l in lines], chapters, ep["ai_voice"], audio)
+        key = hashlib.sha1(json.dumps([[l.get("say", l["en"]), l["scene"]] for l in lines] + [ep["ai_voice"], sorted(chapters)]).encode()).hexdigest()
+        cache = out_dir / "narration_ai.json"
+        if audio.exists() and cache.exists() and json.loads(cache.read_text()).get("key") == key:
+            c = json.loads(cache.read_text())
+            times, total = [tuple(t) for t in c["times"]], c["total"]
+            print("  (narration unchanged: reusing it)")
+        else:
+            times, total = tts.narrate(lines, [l["scene"] for l in lines], chapters, ep["ai_voice"], audio)
+            cache.write_text(json.dumps({"key": key, "times": times, "total": total}))
     elif draft:
         print("No narration found in audio/: building a silent DRAFT with estimated timing.")
         times, total = estimate(lines)
