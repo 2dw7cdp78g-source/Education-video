@@ -134,9 +134,9 @@
    "reveal_at": [
     0,
     2,
-    3,
     4,
-    5
+    5,
+    6
    ],
    "items": [
     {
@@ -171,7 +171,13 @@
     },
     {
      "en": "In 1962, General Ne Win seized power, and the military ruled for almost fifty years.",
-     "my": "၁၉၆၂ ခုနှစ်တွင် ဗိုလ်ချုပ်နေဝင်း အာဏာသိမ်းပြီး စစ်တပ်က နှစ်ငါးဆယ်နီးပါး အုပ်ချုပ်ခဲ့သည်။"
+     "my": "၁၉၆၂ ခုနှစ်တွင် ဗိုလ်ချုပ်နေဝင်း အာဏာသိမ်းပြီး စစ်တပ်က နှစ်ငါးဆယ်နီးပါး အုပ်ချုပ်ခဲ့သည်။",
+     "person": "ne_win"
+    },
+    {
+     "en": "Under his \"Burmese Way to Socialism\", the economy collapsed, and by 1987 Burma was listed among the world's least developed countries.",
+     "my": "သူ၏ \"မြန်မာ့ဆိုရှယ်လစ်လမ်းစဉ်\" အောက်တွင် စီးပွားရေး ပြိုလဲခဲ့ပြီး ၁၉၈၇ ခုနှစ်တွင် ဗမာပြည်သည် ကမ္ဘာ့ဖွံ့ဖြိုးမှုအနည်းဆုံးနိုင်ငံများစာရင်းတွင် ပါဝင်ခဲ့သည်။",
+     "person": "ne_win"
     },
     {
      "en": "In 1988, a mass uprising for democracy was violently crushed.",
@@ -183,7 +189,13 @@
     },
     {
      "en": "And in 2015, Aung San Suu Kyi's party, the National League for Democracy, won a landslide election.",
-     "my": "၂၀၁၅ ခုနှစ်တွင် ဒေါ်အောင်ဆန်းစုကြည်၏ အမျိုးသားဒီမိုကရေစီအဖွဲ့ချုပ်က ရွေးကောက်ပွဲတွင် အပြတ်အသတ်အနိုင်ရခဲ့သည်။"
+     "my": "၂၀၁၅ ခုနှစ်တွင် ဒေါ်အောင်ဆန်းစုကြည်၏ အမျိုးသားဒီမိုကရေစီအဖွဲ့ချုပ်က ရွေးကောက်ပွဲတွင် အပြတ်အသတ်အနိုင်ရခဲ့သည်။",
+     "person": "aung_san_suu_kyi"
+    },
+    {
+     "en": "Aung San Suu Kyi, the daughter of independence hero General Aung San, had won the Nobel Peace Prize in 1991 and spent about fifteen years under house arrest.",
+     "my": "လွတ်လပ်ရေးသူရဲကောင်း ဗိုလ်ချုပ်အောင်ဆန်း၏ သမီးဖြစ်သော ဒေါ်အောင်ဆန်းစုကြည်သည် ၁၉၉၁ ခုနှစ်တွင် နိုဘယ်ငြိမ်းချမ်းရေးဆု ရရှိခဲ့ပြီး နှစ်ပေါင်း ၁၅ နှစ်ခန့် နေအိမ်အကျယ်ချုပ် ချခံခဲ့ရသည်။",
+     "person": "aung_san_suu_kyi"
     },
     {
      "en": "But the military kept a quarter of the seats in parliament, and control of the army, police and borders.",
@@ -234,11 +246,23 @@
     },
     {
      "en": "On the first of February 2021, the day the new parliament was due to meet, soldiers detained Aung San Suu Kyi and other leaders.",
-     "my": "၂၀၂၁ ဖေဖော်ဝါရီ ၁ ရက်၊ လွှတ်တော်သစ် စတင်မည့်နေ့တွင် စစ်သားများက ဒေါ်အောင်ဆန်းစုကြည်နှင့် အခြားခေါင်းဆောင်များကို ဖမ်းဆီးခဲ့သည်။"
+     "my": "၂၀၂၁ ဖေဖော်ဝါရီ ၁ ရက်၊ လွှတ်တော်သစ် စတင်မည့်နေ့တွင် စစ်သားများက ဒေါ်အောင်ဆန်းစုကြည်နှင့် အခြားခေါင်းဆောင်များကို ဖမ်းဆီးခဲ့သည်။",
+     "person": "aung_san_suu_kyi"
+    },
+    {
+     "en": "She was later jailed on charges widely seen as politically motivated.",
+     "my": "နောက်ပိုင်းတွင် သူမကို နိုင်ငံရေးအရ ရည်ရွယ်ချက်ရှိသည်ဟု ကျယ်ကျယ်ပြန့်ပြန့် ယူဆကြသော စွဲချက်များဖြင့် ထောင်ချခဲ့သည်။",
+     "person": "aung_san_suu_kyi"
     },
     {
      "en": "Army chief Min Aung Hlaing took control of the country.",
-     "my": "စစ်ဦးစီးချုပ် မင်းအောင်လှိုင်က နိုင်ငံကို ထိန်းချုပ်လိုက်သည်။"
+     "my": "စစ်ဦးစီးချုပ် မင်းအောင်လှိုင်က နိုင်ငံကို ထိန်းချုပ်လိုက်သည်။",
+     "person": "min_aung_hlaing"
+    },
+    {
+     "en": "He had led the armed forces since 2011. In 2024, the International Criminal Court's prosecutor requested an arrest warrant for him over crimes against the Rohingya.",
+     "my": "သူသည် ၂၀၁၁ ခုနှစ်ကတည်းက တပ်မတော်ကို ဦးဆောင်ခဲ့သည်။ ၂၀၂၄ ခုနှစ်တွင် အပြည်ပြည်ဆိုင်ရာ ရာဇဝတ်ခုံရုံး၏ အစိုးရရှေ့နေက ရိုဟင်ဂျာများအပေါ် ကျူးလွန်ခဲ့သော ရာဇဝတ်မှုများအတွက် သူ့ကို ဖမ်းဝရမ်းထုတ်ရန် တောင်းဆိုခဲ့သည်။",
+     "person": "min_aung_hlaing"
     },
     {
      "en": "Within days, the internet was cut at night, Facebook was blocked, and independent media were shut down.",
@@ -832,13 +856,17 @@
  "thumbnail": {
   "kicker": "Myanmar explained",
   "text": "Myanmar's|hidden war",
-  "size": 150,
-  "bg": {
-   "src": "images/02.jpg",
-   "credit": "Alisdare Hickson / CC BY-SA 4.0 (Wikimedia Commons)",
-   "credit_full": "An activist with a message commemorating the anniversary of the 8888 (8 August 1988) uprising against the Burmese military junta.jpg by Alisdare Hickson, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:An_activist_with_a_message_commemorating_the_anniversary_of_the_8888_(8_August_1988)_uprising_against_the_Burmese_military_junta.jpg",
-   "pos": "60% 30%"
-  }
+  "size": 140,
+  "faces": [
+   {
+    "photo": "images/aung_san_suu_kyi.jpg",
+    "pos": "center 18%"
+   },
+   {
+    "photo": "images/min_aung_hlaing.jpg",
+    "pos": "center 12%"
+   }
+  ]
  },
  "sources": [
   "Reporting by Reuters, AP and BBC on the 2021 coup and the conflict since",
@@ -876,6 +904,38 @@
  },
  "ai_voice": {
   "voice": "george",
-  "speed": 0.95
+  "speed": 1.06,
+  "gap_scale": 0.9
+ },
+ "theme": "cinema",
+ "music": {
+  "level_lufs": -28
+ },
+ "subtitle_scale": 1.15,
+ "people": {
+  "ne_win": {
+   "name": "Ne Win",
+   "role": "Military ruler of Burma, 1962–1988",
+   "photo": "images/ne_win.jpg",
+   "pos": "center 20%",
+   "credit": "Moshe Pridan / Public domain",
+   "credit_full": "Ne Win in 1959, Jerusalem.jpg by Moshe Pridan, Public domain, https://commons.wikimedia.org/wiki/File:Ne_Win_in_1959,_Jerusalem.jpg"
+  },
+  "min_aung_hlaing": {
+   "name": "Min Aung Hlaing",
+   "role": "Army chief and coup leader",
+   "photo": "images/min_aung_hlaing.jpg",
+   "pos": "center 15%",
+   "credit": "Vadim Savitsky, mil.ru / CC BY 4.0",
+   "credit_full": "Min Aung Hlaing in April 2019 (cropped).jpg by Vadim Savitsky, mil.ru, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Min_Aung_Hlaing_in_April_2019_(cropped).jpg"
+  },
+  "aung_san_suu_kyi": {
+   "name": "Aung San Suu Kyi",
+   "role": "NLD leader, detained since the 2021 coup",
+   "photo": "images/aung_san_suu_kyi.jpg",
+   "pos": "center 20%",
+   "credit": "Claude TRUONG-NGOC / CC BY-SA 3.0",
+   "credit_full": "Aung San Suu Kyi par Claude Truong-Ngoc octobre 2013.jpg by Claude TRUONG-NGOC, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Aung_San_Suu_Kyi_par_Claude_Truong-Ngoc_octobre_2013.jpg"
+  }
  }
 }

@@ -49,6 +49,7 @@ def narrate(lines, scene_of, chapter_scenes, cfg, out_wav):
             gap = 1.3 if (nxt != scene_of[i] and nxt in chapter_scenes) else 0.9 if nxt != scene_of[i] else 0.45
         else:
             gap = 1.2
+        gap *= cfg.get("gap_scale", 1.0)
         times.append([t, t + d])
         chunks += [audio, np.zeros(int(sr * gap), dtype=np.float32)]
         t += d + gap

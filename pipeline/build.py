@@ -162,15 +162,15 @@ def write_srt(path, items, key):
             f.write(f"{n}\n{ts_srt(a)} --> {ts_srt(b - 0.04)}\n{l[key]}\n\n")
 
 
-def write_ass(path, items, vertical, english, burmese=True):
+def write_ass(path, items, vertical, english, burmese=True, scale=1.0):
     if vertical:
         W, H = 1080, 1920
-        st = [("EN", "Inter", 56, 1, 2, 600), ("MY", "Noto Sans Myanmar", 52, 0, 2, 430)]
+        st = [("EN", "Inter", round(56 * scale), 1, 2, 600), ("MY", "Noto Sans Myanmar", round(52 * scale), 0, 2, 430)]
     else:
         W, H = 1920, 1080
-        st = [("EN", "Inter", 44, 1, 2, 150), ("MY", "Noto Sans Myanmar", 48, 0, 2, 48)]
+        st = [("EN", "Inter", round(44 * scale), 1, 2, 150), ("MY", "Noto Sans Myanmar", round(48 * scale), 0, 2, 52)]
     my_margin = st[1][5]
-    en_margin = st[0][5] if vertical else (my_margin + 110 if burmese else 52)
+    en_margin = st[0][5] if vertical else (my_margin + round(110 * scale) if burmese else 52)
     hdr = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -214,10 +214,11 @@ def plan_segments(ep, times):
         states = reveal_states(sc)
         for j, stt in enumerate(states):
             a, b = times[k]
-            if segs and segs[-1][0] == si and segs[-1][1] == stt:
+            per = sc["lines"][j].get("person")
+            if segs and segs[-1][0] == si and segs[-1][1] == stt and segs[-1][4] == per:
                 segs[-1][3] = b
             else:
-                segs.append([si, stt, a, b])
+                segs.append([si, stt, a, b, per])
             k += 1
     return segs
 
@@ -273,16 +274,17 @@ def render_parallel(jobs, work, name, workers=3):
 def segment_context(segs):
     """For each segment: does its scene start here, is a new item revealed, scene-relative time."""
     span = {}
-    for si, stt, a, b in segs:
+    for si, stt, a, b, *_ in segs:
         lo, hi = span.get(si, (a, b))
         span[si] = (min(lo, a), max(hi, b))
     ctx, prev = [], None
-    for si, stt, a, b in segs:
+    for si, stt, a, b, per in segs:
         first = prev is None or prev[0] != si
         new = (not first) and stt is not None and prev[1] is not None and stt > prev[1]
-        ctx.append({"enter": first, "new": new,
+        ctx.append({"enter": first, "new": new, "person_key": per,
+                    "person_enter": bool(per) and (prev is None or prev[2] != per),
                     "t0": a - span[si][0], "sd": span[si][1] - span[si][0]})
-        prev = (si, stt)
+        prev = (si, stt, per)
     return ctx
 
 
@@ -292,9 +294,10 @@ def build_video(ep, segs, items, audio, total, out_dir, work, vertical, name, fa
     W, H = (1080, 1920) if vertical else (1920, 1080)
     jobs, files = [], []
     ctxs = segment_context(segs)
-    for i, ((si, stt, a, b), ctx) in enumerate(zip(segs, ctxs)):
+    for i, ((si, stt, a, b, per), ctx) in enumerate(zip(segs, ctxs)):
         sc = ep["scenes"][si] if si >= 0 else endcard
         ctx["hook_enter"] = i == 0
+        ctx["person"] = ep.get("people", {}).get(per) if per else None
         frames = round(b * FPS) - round(a * FPS)
         key = f"{name}_{i:03d}"
         htmlp = work / f"{key}.html"
@@ -318,7 +321,7 @@ def build_video(ep, segs, items, audio, total, out_dir, work, vertical, name, fa
     ass = work / f"{name}.ass"
     if english is None:
         english = vertical or ep.get("burn_english_long", False)
-    write_ass(ass, items, vertical, english=english)
+    write_ass(ass, items, vertical, english=english, scale=ep.get("subtitle_scale", 1.0))
     out = out_dir / f"{name}.mp4"
     assemble(files, audio, ass, out, fast, audio_filter)
     return out
@@ -333,7 +336,7 @@ def fmt_clock(t):
 def write_upload(ep, segs, total, out_dir, draft):
     chapters = [(0, ep["scenes"][0].get("chapter_label", "Intro"))]
     seen = set()
-    for si, stt, a, b in segs:
+    for si, stt, a, b, *_ in segs:
         sc = ep["scenes"][si]
         if sc["type"] == "chapter" and si not in seen:
             seen.add(si)
@@ -355,6 +358,9 @@ def write_upload(ep, segs, total, out_dir, draft):
         c = (sc.get("bg") or {}).get("credit_full")
         if c and c not in credits:
             credits.append(c)
+    for p in ep.get("people", {}).values():
+        if p.get("credit_full") and p["credit_full"] not in credits:
+            credits.append(p["credit_full"])
     if credits:
         lines += ["Photo credits (Wikimedia Commons)"] + [f"- {c}" for c in credits] + [""]
     lines += ["About the author", CHANNEL["author"]["bio"], ""]
@@ -416,7 +422,12 @@ def main():
     ep_dir = Path(args.episode).resolve()
     ep = json.loads((ep_dir / "episode.json").read_text(encoding="utf-8"))
     S.BRAND = ep.get("channel_html", S.BRAND)
+    S.set_theme(ep.get("theme", "default"))
     apply_channel_defaults(ep)
+    for p in ep.get("people", {}).values():
+        p["photo"] = str((ep_dir / p["photo"]).resolve())
+    for f in (ep.get("thumbnail") or {}).get("faces", []):
+        f["photo"] = str((ep_dir / f["photo"]).resolve())
     for sc in ep["scenes"] + [ep.get("thumbnail") or {}]:  # image paths are relative to the episode folder
         if sc.get("bg"):
             p = (ep_dir / sc["bg"]["src"]).resolve()
@@ -460,6 +471,14 @@ def main():
         times, total = align(lines, audio)
     times[-1] = (times[-1][0], total)
     items = [(a, b, l) for (a, b), l in zip(times, lines)]
+    if ep.get("music") and not draft:
+        import music
+        bed = out_dir / "music_bed.wav"
+        mixed = out_dir / "narration_music.wav"
+        print("Composing background music and mixing it under the voice")
+        music.make_bed(total + 3.5, bed, level_lufs=ep["music"].get("level_lufs", -28))
+        music.mix_under(audio, bed, mixed)
+        audio = mixed
     write_srt(out_dir / "en.srt", items, "en")
     write_srt(out_dir / "my.srt", items, "my")
     segs = plan_segments(ep, times)
@@ -488,18 +507,18 @@ def main():
             spans[0] = (max(spans[0][0], 0.0), spans[0][1])
             sh_segs, sh_items, off, parts = [], [], 0.0, []
             for (a0, b0), si in zip(spans, sh["scenes"]):
-                for s_si, stt, a, b in segs:
+                for s_si, stt, a, b, per in segs:
                     if s_si == si:
-                        sh_segs.append([si, stt, a - a0 + off, b - a0 + off])
+                        sh_segs.append([si, stt, a - a0 + off, b - a0 + off, per])
                 for a, b, l in items:
                     if l["scene"] == si:
                         sh_items.append((a - a0 + off, b - a0 + off, l))
-                parts.append(f"atrim={a0:.3f}:{b0:.3f},asetpts=PTS-STARTPTS")
+                parts.append(f"atrim={a0:.3f}:{b0:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.08,afade=t=out:st={max(0, b0 - a0 - 0.12):.3f}:d=0.12")
                 off += b0 - a0
             end_len = 3.0
             endcard = {"type": "endcard", "title": ep.get("short_endcard_title", ep["title"]),
                        "cta": ep.get("short_cta", "Full video on YouTube")}
-            sh_segs.append([-1, None, off, off + end_len])
+            sh_segs.append([-1, None, off, off + end_len, None])
             n = len(parts)
             af = ";".join(f"[0:a]{p}[a{i}]" for i, p in enumerate(parts))
             af += ";" + "".join(f"[a{i}]" for i in range(n)) + f"concat=n={n}:v=0:a=1,apad=pad_dur={end_len}[aout]"

@@ -13,3 +13,6 @@ Photos from Wikimedia Commons under the licenses shown. Some are shared with Epi
 - `images/07.jpg`: 2025 Myanmar earthquake damage in Mandalay.png by China News Service, CC BY 4.0, https://commons.wikimedia.org/wiki/File:2025_Myanmar_earthquake_damage_in_Mandalay.png
 - `../01-tnr-in-exile/images/12.jpg`: Moei River.jpg by Manop, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Moei_River.jpg
 - `../01-tnr-in-exile/images/47.jpg`: Protest in Myanmar against Military Coup 14-Feb-2021 17.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_17.jpg
+- `images/ne_win.jpg`: Ne Win in 1959, Jerusalem.jpg by Moshe Pridan, Public domain, https://commons.wikimedia.org/wiki/File:Ne_Win_in_1959,_Jerusalem.jpg
+- `images/min_aung_hlaing.jpg`: Min Aung Hlaing in April 2019 (cropped).jpg by Vadim Savitsky, mil.ru, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Min_Aung_Hlaing_in_April_2019_(cropped).jpg
+- `images/aung_san_suu_kyi.jpg`: Aung San Suu Kyi par Claude Truong-Ngoc octobre 2013.jpg by Claude TRUONG-NGOC, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Aung_San_Suu_Kyi_par_Claude_Truong-Ngoc_octobre_2013.jpg

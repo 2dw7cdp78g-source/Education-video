@@ -19,3 +19,6 @@ Pronunciation rules live in `pipeline/channel.json` under `pronunciations` and a
 | Work | Correct title | Status |
 |---|---|---|
 | Thesis / Episode 1 | Transnational Repression in Exile (TNR) | ✅ |
+| Min Aung Hlaing | "Min Aung Lai" | ✅ |
+| Aung San Suu Kyi | "Aung San Soo Chee" | suggested |
+| Ne Win | "Nay Win" | suggested |

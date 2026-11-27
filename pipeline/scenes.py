@@ -35,7 +35,76 @@ COLORS = {
 
 e = lambda s: html.escape(str(s or ""))
 BRAND = "Myanmar <b>Stories</b>"
-CTX = {}  # set by render_scene: enter, new, t0, sd, hook_enter
+CTX = {}
+SHADE = "14,20,27"
+EXTRA_CSS = ""
+
+_DEFAULT = dict(COLORS)
+
+THEMES = {
+    "default": {},
+    # Cinematic documentary: near-black, red accent, black-and-white photos, letterbox bars, bold uppercase headlines
+    "cinema": {
+        "colors": {"bg": "#0a0a0b", "panel": "#141416", "land": "#2b2b30", "land_line": "#0a0a0b",
+                   "neighbour": "#151517", "neighbour_line": "#26262b", "muted": "#b9b9bf", "gold": "#e63946",
+                   "text": "#f5f5f2"},
+        "shade": "10,10,11",
+        "css": """
+@font-face {{ font-family: InterDisplay; src: url('file://{fonts}/InterDisplay-Black.otf'); font-weight: 900; }}
+@font-face {{ font-family: InterDisplay; src: url('file://{fonts}/InterDisplay-ExtraBold.otf'); font-weight: 800; }}
+h1, h2 {{ font-family: InterDisplay, Inter, MM, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -.005em; }}
+.bgimg {{ filter: grayscale(1) contrast(1.25) brightness(.92) !important; }}
+.amb {{ background: radial-gradient(circle at 22% 30%, rgba(230,57,70,.16), transparent 38%),
+        radial-gradient(ellipse at 70% 60%, #1a1a1d 0%, #0a0a0b 62%) !important; }}
+.kicker {{ letter-spacing: .32em !important; }}
+.hook span {{ background: #e63946 !important; color: #fff !important; }}
+.lbx {{ position: absolute; left: 0; right: 0; height: 44px; background: #000; z-index: 5; }}
+.p {{ background: rgba(255,255,255,.45) !important; }}
+.grain {{ background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px) !important; background-size: 4px 4px !important; }}
+""",
+        "art": {"GOLD": "#e63946", "NAVY": "#0a0a0b", "PANEL": "#141416", "LAND": "#2b2b30", "LINE": "#33333a"},
+    },
+}
+
+
+def set_theme(name):
+    """Switch colours/fonts for an episode. Art colours follow the theme too."""
+    global SHADE, EXTRA_CSS
+    import art as _art
+    t = THEMES.get(name or "default", {})
+    COLORS.clear(); COLORS.update(_DEFAULT); COLORS.update(t.get("colors", {}))
+    SHADE = t.get("shade", "14,20,27")
+    EXTRA_CSS = t.get("css", "").format(fonts=FONTS) if t.get("css") else ""
+    for k, v in {"GOLD": "#e8b04b", "NAVY": "#0e141b", "PANEL": "#16202b", "LAND": "#26384a", "LINE": "#2b3947",
+                 **t.get("art", {})}.items():
+        setattr(_art, k, v)
+    THEME[0] = name or "default"
+
+
+THEME = ["default"]
+
+
+def person_card(v):
+    """Portrait card that slides in when the narration mentions a person."""
+    p = CTX.get("person")
+    if not p:
+        return ""
+    cls = "pcard pin" if CTX.get("person_enter") else "pcard"
+    gray = "filter:grayscale(1) contrast(1.15);" if THEME[0] == "cinema" else ""
+    acc = COLORS["gold"]
+    if v:
+        box = "left:170px;top:300px;width:740px;height:780px"
+    else:
+        box = "right:110px;top:110px;width:560px;height:700px"
+    credit = f"<div style='position:absolute;right:10px;bottom:-30px;font-size:15px;color:rgba(255,255,255,.55)'>Photo: {e(p.get('credit', ''))}</div>" if p.get("credit") else ""
+    shift = "" if v else "<style>.stage{right:720px !important} .col{max-width:900px}</style>"
+    return (shift + f"<div class='pdim' style='position:absolute;inset:0;background:{'rgba(0,0,0,.72)' if v else f'linear-gradient(90deg, rgba({SHADE},0) 25%, rgba({SHADE},.88) 58%)'}'></div>"
+            f"<div class='{cls}' style='position:absolute;{box}'>"
+            f"<div class='pph' style='position:absolute;inset:0;background:url(\"file://{p['photo']}\") {p.get('pos', 'center 25%')}/cover;{gray}"
+            f"border:5px solid {acc};box-shadow:0 30px 100px rgba(0,0,0,.7)'></div>"
+            f"<div class='ptag' style='position:absolute;left:-30px;bottom:-26px;background:{COLORS['bg']};border-left:10px solid {acc};padding:16px 26px 18px'>"
+            f"<div style='font-family:InterDisplay,Inter,sans-serif;font-weight:900;font-size:{50 if v else 46}px;text-transform:uppercase;letter-spacing:.01em'>{e(p['name'])}</div>"
+            f"<div style='font-size:{28 if v else 24}px;color:{COLORS['muted']};margin-top:4px'>{e(p.get('role', ''))}</div></div>{credit}</div>")  # set by render_scene: enter, new, t0, sd, hook_enter
 
 
 def css(orient):
@@ -81,7 +150,7 @@ body.enter .fade {{ animation: fadeout .5s ease-out both; }}
 .brand b {{ color: {COLORS['gold']}; }}
 .source {{ position: absolute; {'bottom: 46px; left: 40px; right: 40px; text-align: center; font-size: 17px !important;' if v else 'top: 44px; right: 64px; text-align: right; max-width: 700px;'}
   font-size: {24 if v else 19}px; color: {COLORS['muted']}; }}
-.hook {{ position: absolute; top: 100px; left: 50px; right: 50px; text-align: center; font-weight: 800;
+.hook {{ position: absolute; z-index: 6; top: 100px; left: 50px; right: 50px; text-align: center; font-weight: 800;
   font-size: 62px; line-height: 1.08; color: {COLORS['text']}; text-shadow: 0 4px 24px rgba(0,0,0,.6); }}
 .hook span {{ color: #111; background: {COLORS['gold']}; padding: 0 12px; border-radius: 8px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }}
 body.hookenter .hook {{ animation: pop .6s cubic-bezier(.2,.9,.3,1.3) both; }}
@@ -138,7 +207,14 @@ body.enter .hl {{ animation: hlin 1.4s .3s ease-out both; }}
 .ghostnum {{ position: absolute; left: 50%; top: 50%; font-size: {700 if v else 760}px; font-weight: 800; color: #fff; opacity: .06; transform: translate(-50%, -50%);
   letter-spacing: -.06em; }}
 body.enter .ghostnum {{ animation: ghost 1.4s cubic-bezier(.2,.8,.2,1) both; }}
-"""
+@keyframes slidein {{ from {{ transform: translateX(120px); opacity: 0; }} }}
+@keyframes tagin {{ from {{ transform: translateX(-60px); opacity: 0; }} }}
+@keyframes pzoom {{ from {{ background-size: 112%; }} to {{ background-size: 100%; }} }}
+@keyframes dimin {{ from {{ opacity: 0; }} }}
+.pcard.pin {{ animation: slidein .8s cubic-bezier(.2,.8,.2,1) both; }}
+.pcard.pin .ptag {{ animation: tagin .7s .35s cubic-bezier(.2,.8,.2,1) both; }}
+body.penter .pdim {{ animation: dimin .6s ease-out both; }}
+""" + EXTRA_CSS
 
 
 def _particles(n, w, h, seed):
@@ -155,7 +231,8 @@ def page(orient, body, source="", hook="", brand=True, bg=None, seed=0, shade=No
     v = orient == "v"
     W, H = (1080, 1920) if v else (1920, 1080)
     t0, sd = CTX.get("t0", 0), max(CTX.get("sd", 6), 0.1)
-    cls = " ".join(c for c, on in (("enter", CTX.get("enter")), ("hookenter", CTX.get("hook_enter"))) if on)
+    cls = " ".join(c for c, on in (("enter", CTX.get("enter")), ("hookenter", CTX.get("hook_enter")),
+                                   ("penter", CTX.get("person_enter"))) if on)
     parts = [f"<!doctype html><html><head><meta charset='utf-8'><style>{css(orient)}</style></head>"
              f"<body class='{cls}' style='--t0:{t0:.3f};--sd:{sd:.3f}'>"]
     if bg:
@@ -163,12 +240,14 @@ def page(orient, body, source="", hook="", brand=True, bg=None, seed=0, shade=No
         kx, ky = rnd.choice([-1, 1]) * rnd.uniform(1.5, 3.5), rnd.choice([-1, 1]) * rnd.uniform(1, 2.5)
         parts.append(f"<div class='bgimg' style=\"background-image:url('file://{bg['src']}');background-position:{bg.get('pos', 'center')};--kx:{kx:.1f}%;--ky:{ky:.1f}%\"></div>")
         dark = bg.get("dim", 0.5)
+        if THEME[0] == "cinema":
+            dark = min(0.9, dark + 0.14)
         if v:
-            grad = (f"linear-gradient(180deg, rgba(14,20,27,{min(1, dark + .25)}) 0%, rgba(14,20,27,{dark - .2}) 22%, "
-                    f"rgba(14,20,27,{dark - .15}) 45%, rgba(14,20,27,{min(1, dark + .3)}) 70%, rgba(14,20,27,.95) 100%)")
+            grad = (f"linear-gradient(180deg, rgba({SHADE},{min(1, dark + .25)}) 0%, rgba({SHADE},{dark - .2}) 22%, "
+                    f"rgba({SHADE},{dark - .15}) 45%, rgba({SHADE},{min(1, dark + .3)}) 70%, rgba({SHADE},.95) 100%)")
         else:
-            grad = (shade or f"linear-gradient(90deg, rgba(14,20,27,{min(1, dark + .3)}) 0%, rgba(14,20,27,{dark}) 50%, rgba(14,20,27,{max(0, dark - .25)}) 100%)")
-            grad += ", linear-gradient(0deg, rgba(14,20,27,.85) 0%, rgba(14,20,27,0) 30%)"
+            grad = (shade or f"linear-gradient(90deg, rgba({SHADE},{min(1, dark + .3)}) 0%, rgba({SHADE},{dark}) 50%, rgba({SHADE},{max(0, dark - .25)}) 100%)")
+            grad += ", linear-gradient(0deg, rgba({SHADE},.85) 0%, rgba({SHADE},0) 30%)"
         parts.append(f"<div class='shade' style='background:{grad}'></div><div class='vignette'></div>")
     else:
         parts.append("<div class='amb'></div><div class='vignette'></div>")
@@ -183,6 +262,9 @@ def page(orient, body, source="", hook="", brand=True, bg=None, seed=0, shade=No
         parts.append(f"<div class='source'>Source: {e(source)}</div>")
     if bg and bg.get("credit"):
         parts.append(f"<div class='credit'>Photo: {e(bg['credit'])}</div>")
+    parts.append(person_card(v))
+    if THEME[0] == "cinema" and not v:
+        parts.append("<div class='lbx' style='top:0'></div><div class='lbx' style='bottom:0'></div>")
     parts.append("<div class='fade'></div></body></html>")
     return "".join(parts)
 
@@ -510,12 +592,21 @@ def scene_flow(s, v, state):
 def thumbnail(t):
     big = e(t["text"]).replace("|", "<br>")
     CTX.clear()
-    if t.get("bg"):
+    if t.get("faces"):
+        n = len(t["faces"])
+        gray = "filter:grayscale(1) contrast(1.2);" if THEME[0] == "cinema" else ""
+        panels = "".join(
+            f"<div style='flex:1;background:url(\"file://{f['photo']}\") {f.get('pos', 'center 15%')}/cover;{gray}"
+            f"{'border-left:10px solid ' + COLORS['gold'] + ';' if i else ''}'></div>" for i, f in enumerate(t["faces"]))
+        art = f"<div style='position:absolute;right:0;top:0;bottom:0;width:{560 * n}px;display:flex'>{panels}</div>"
+    elif t.get("bg"):
         art = ""
     else:
         art = f"<div style='position:absolute;right:-40px;top:-30px;width:720px;height:1140px'>{map_svg({'labels': False, 'countries': False, 'highlight': t.get('highlight', {}), 'dim_others': False}, 720, 1140)}</div>"
+    grad = (f"linear-gradient(90deg,rgba({SHADE},1) 0%,rgba({SHADE},.96) 40%,rgba({SHADE},0) 47%)" if t.get("faces")
+            else f"linear-gradient(90deg,rgba({SHADE},.95) 0%,rgba({SHADE},.75) 45%,rgba({SHADE},0) 80%)")
     body = f"""{art}
-      <div style='position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,20,27,.95) 0%,rgba(14,20,27,.75) 45%,rgba(14,20,27,0) 80%)'></div>
+      <div style='position:absolute;inset:0;background:{grad}'></div>
       <div style='position:absolute;left:70px;top:0;bottom:0;width:1000px;display:flex;flex-direction:column;justify-content:center'>
         <div style='font-size:38px;font-weight:800;color:#111;background:{COLORS['gold']};align-self:flex-start;padding:8px 22px;border-radius:10px;letter-spacing:.06em;text-transform:uppercase'>{e(t.get('kicker', ''))}</div>
         <h1 style='font-size:{t.get('size', 128)}px;margin-top:26px;line-height:.95;text-transform:uppercase;text-shadow:0 8px 40px rgba(0,0,0,.8)'>{big}</h1></div>"""
