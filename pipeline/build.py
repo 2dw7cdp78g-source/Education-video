@@ -236,7 +236,16 @@ def assemble(seg_files, audio, ass, out, fast, audio_filter=None):
     lst.write_text("".join(f"file '{p}'\n" for p in seg_files))
     cmd = ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-i", str(audio)]
     vf = f"ass={ass}:fontsdir={HERE / 'fonts'}"
-    cmd += ["-vf", vf]
+    logo = CHANNEL.get("logo")
+    if logo and (HERE / logo).exists():
+        # channel logo, small, top-right corner, on every frame
+        vertical = "short" in out.name
+        size, margin = (96, 18) if vertical else (104, 22)
+        cmd += ["-i", str(HERE / logo), "-filter_complex",
+                f"[0:v]{vf}[v0];[2:v]scale={size}:{size},format=rgba,colorchannelmixer=aa=0.95[lg];"
+                f"[v0][lg]overlay=W-w-{margin}:{margin}[v]", "-map", "[v]", "-map", "1:a"]
+    else:
+        cmd += ["-vf", vf]
     if audio_filter:
         cmd += ["-af", audio_filter]
     cmd += ["-c:v", "libx264", "-preset", "veryfast" if fast else "medium", "-crf", "19", "-pix_fmt", "yuv420p",

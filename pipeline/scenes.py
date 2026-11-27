@@ -148,7 +148,7 @@ body.enter .fade {{ animation: fadeout .5s ease-out both; }}
 .brand {{ position: absolute; {'top: 60px; left: 0; right: 0; text-align: center;' if v else 'top: 44px; left: 64px;'}
   font-size: {26 if v else 20}px; letter-spacing: .14em; text-transform: uppercase; color: {COLORS['muted']}; font-weight: 600; }}
 .brand b {{ color: {COLORS['gold']}; }}
-.source {{ position: absolute; {'bottom: 46px; left: 40px; right: 40px; text-align: center; font-size: 17px !important;' if v else 'top: 44px; right: 64px; text-align: right; max-width: 700px;'}
+.source {{ position: absolute; {'bottom: 46px; left: 40px; right: 40px; text-align: center; font-size: 17px !important;' if v else 'top: 44px; right: 160px; text-align: right; max-width: 700px;'}
   font-size: {24 if v else 19}px; color: {COLORS['muted']}; }}
 .hook {{ position: absolute; z-index: 6; top: 100px; left: 50px; right: 50px; text-align: center; font-weight: 800;
   font-size: 62px; line-height: 1.08; color: {COLORS['text']}; text-shadow: 0 4px 24px rgba(0,0,0,.6); }}
