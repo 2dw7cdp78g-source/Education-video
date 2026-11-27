@@ -73,6 +73,23 @@ body {{ background: {COLORS['bg']}; color: {COLORS['text']}; font-family: Inter,
 .credit {{ position: absolute; {'bottom: 20px; left: 0; right: 0; text-align: center;' if v else 'bottom: 14px; right: 24px;'} font-size: {18 if v else 15}px; color: rgba(255,255,255,.55); }}
 .fade {{ position: absolute; inset: 0; background: #000; pointer-events: none; opacity: 0; }}
 body.enter .fade {{ animation: fadeout .5s ease-out both; }}
+body.cut .fade {{ background: #fff; }}
+body.cut.enter .fade {{ animation: flashout .3s ease-out both; }}
+body.first .fade {{ display: none; }}
+@keyframes flashout {{ from {{ opacity: .5; }} to {{ opacity: 0; }} }}
+@keyframes kbin {{ from {{ transform: scale(1.04) translate(0, 0); }} to {{ transform: scale(1.22) translate(var(--kx), var(--ky)); }} }}
+.prog {{ position: absolute; left: 0; top: 0; height: 10px; background: {COLORS['gold']}; box-shadow: 0 0 18px rgba(232,176,75,.6);
+  animation: progw calc(var(--segd) * 1s) linear both; }}
+@keyframes progw {{ from {{ width: calc(var(--pa) * 100%); }} to {{ width: calc(var(--pb) * 100%); }} }}
+.big {{ font-weight: 800; letter-spacing: -.02em; line-height: 1.0; text-transform: uppercase; text-shadow: 0 6px 34px rgba(0,0,0,.75); }}
+.big span {{ color: #111; background: {COLORS['gold']}; padding: 0 16px; border-radius: 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone; text-shadow: none; }}
+.tag {{ display: inline-block; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: {COLORS['gold']}; text-shadow: 0 3px 16px rgba(0,0,0,.8); }}
+.label {{ display: inline-block; background: rgba(14,20,27,.82); border-left: 6px solid {COLORS['gold']}; padding: 12px 22px; font-weight: 600; border-radius: 6px; }}
+body.enter .beat .tag {{ animation: pop .45s cubic-bezier(.2,.9,.3,1.3) both; }}
+body.enter .beat .big {{ animation: slam .5s .08s cubic-bezier(.2,.9,.3,1.25) both; }}
+body.enter .beat .label {{ animation: rise .6s .35s cubic-bezier(.2,.8,.2,1) both; }}
+body.first .beat * {{ animation: none !important; }}
+@keyframes slam {{ 0% {{ opacity: 0; transform: scale(1.6); filter: blur(8px); }} 55% {{ opacity: 1; transform: scale(.96); filter: blur(0); }} 100% {{ transform: scale(1); }} }}
 @keyframes fadeout {{ from {{ opacity: 1; }} to {{ opacity: 0; }} }}
 
 /* ---------- text & layout ---------- */
@@ -155,13 +172,17 @@ def page(orient, body, source="", hook="", brand=True, bg=None, seed=0, shade=No
     v = orient == "v"
     W, H = (1080, 1920) if v else (1920, 1080)
     t0, sd = CTX.get("t0", 0), max(CTX.get("sd", 6), 0.1)
-    cls = " ".join(c for c, on in (("enter", CTX.get("enter")), ("hookenter", CTX.get("hook_enter"))) if on)
+    cls = " ".join(c for c, on in (("enter", CTX.get("enter")), ("hookenter", CTX.get("hook_enter")),
+                                   ("cut", CTX.get("cut")), ("first", CTX.get("first"))) if on)
+    prog = CTX.get("progress")  # (fraction at segment start, fraction at end, segment seconds)
+    pv = f";--pa:{prog[0]:.4f};--pb:{prog[1]:.4f};--segd:{max(prog[2], .04):.3f}" if prog else ""
     parts = [f"<!doctype html><html><head><meta charset='utf-8'><style>{css(orient)}</style></head>"
-             f"<body class='{cls}' style='--t0:{t0:.3f};--sd:{sd:.3f}'>"]
+             f"<body class='{cls}' style='--t0:{t0:.3f};--sd:{sd:.3f}{pv}'>"]
     if bg:
         rnd = random.Random(seed)
         kx, ky = rnd.choice([-1, 1]) * rnd.uniform(1.5, 3.5), rnd.choice([-1, 1]) * rnd.uniform(1, 2.5)
-        parts.append(f"<div class='bgimg' style=\"background-image:url('file://{bg['src']}');background-position:{bg.get('pos', 'center')};--kx:{kx:.1f}%;--ky:{ky:.1f}%\"></div>")
+        zoom = ";animation-name:kbin" if bg.get("zoom") == "in" else ""
+        parts.append(f"<div class='bgimg' style=\"background-image:url('file://{bg['src']}');background-position:{bg.get('pos', 'center')};--kx:{kx:.1f}%;--ky:{ky:.1f}%{zoom}\"></div>")
         dark = bg.get("dim", 0.5)
         if v:
             grad = (f"linear-gradient(180deg, rgba(14,20,27,{min(1, dark + .25)}) 0%, rgba(14,20,27,{dark - .2}) 22%, "
@@ -183,6 +204,8 @@ def page(orient, body, source="", hook="", brand=True, bg=None, seed=0, shade=No
         parts.append(f"<div class='source'>Source: {e(source)}</div>")
     if bg and bg.get("credit"):
         parts.append(f"<div class='credit'>Photo: {e(bg['credit'])}</div>")
+    if prog:
+        parts.append("<div class='prog'></div>")
     parts.append("<div class='fade'></div></body></html>")
     return "".join(parts)
 
@@ -318,7 +341,7 @@ def render_scene(scene, orient, state=None, hook="", ctx=None, seed=0):
             body = (f"<div class='artwrap' style='position:absolute;left:50%;top:{'320' if v else '70'}px;width:{sz}px;height:{sz}px;"
                     f"margin-left:-{sz // 2}px;{disc}'>{svg}</div><style>.stage{{top:{'580' if v else '330'}px !important}}</style>{body}")
         else:  # back
-            body = (f"<div class='artwrap' style='position:absolute;left:50%;top:{'640' if v else '540'}px;width:{900 if v else 980}px;height:{900 if v else 980}px;"
+            body = (f"<div class='artwrap' style='position:absolute;left:50%;top:{'640' if v and scene['type'] != 'beat' else '960' if v else '540'}px;width:{900 if v else 980}px;height:{900 if v else 980}px;"
                     f"transform:translate(-50%,-50%);opacity:{art.get('opacity', .5)}'>{svg}</div>{body}")
     return page(orient, body, source=scene.get("source", ""), hook=hook,
                 brand=scene.get("brand", True), bg=scene.get("bg"), seed=seed)
@@ -436,6 +459,31 @@ def scene_text(s, v, state):
 def scene_image(s, v, state):
     return f"""<div class='col' style='position:absolute;left:{70 if v else 110}px;right:{70 if v else 110}px;bottom:{860 if v else 220}px'>
         <h2 style='font-size:{58 if v else 62}px'>{e(s.get('caption', ''))}</h2></div>"""
+
+
+def _mark(text):
+    """'A *word* here' -> escaped HTML with the starred part highlighted."""
+    return re.sub(r"\*(.+?)\*", r"<span>\1</span>", e(text))
+
+
+def scene_beat(s, v, state):
+    """One fast-cut moment of a short: full-screen photo (or map / animation) and a punchy keyword."""
+    out = []
+    if s.get("map"):
+        w, h = (980, 1180) if v else (1100, 900)
+        out.append(f"<div class='mapbox' style='position:absolute;left:50%;top:{560 if v else 120}px;width:{w}px;height:{h}px;margin-left:-{w // 2}px'>{map_svg(s['map'], w, h)}</div>")
+    top = (CTX.get("beat_top") or 300) if v else 140
+    text = ""
+    if s.get("tag"):
+        text += f"<div class='tag' style='font-size:{40 if v else 36}px;margin-bottom:18px'>{e(s['tag'])}</div><br>"
+    if s.get("big"):
+        size = s.get("size") or (104 if len(s["big"]) <= 14 else 88 if len(s["big"]) <= 24 else 72)
+        text += f"<div class='big' style='font-size:{size if v else size + 10}px'>{_mark(s['big'])}</div>"
+    if s.get("label"):
+        text += f"<div class='label' style='font-size:{30 if v else 28}px;margin-top:26px'>{e(s['label'])}</div>"
+    out.append(f"<div class='beat' style='position:absolute;top:{top}px;left:{60 if v else 110}px;right:{60 if v else 110}px;"
+               f"text-align:{'center' if v else 'left'}'>{text}</div>")
+    return "".join(out)
 
 
 def scene_endcard(s, v, state):

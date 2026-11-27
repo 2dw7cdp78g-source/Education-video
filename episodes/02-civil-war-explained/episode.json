@@ -3,7 +3,10 @@
  "title": "Myanmar's Civil War, Explained",
  "channel_html": "Maung Yel Hkawng <b>· Myanmar Community Researcher</b>",
  "short_endcard_title": "Myanmar's Civil War, Explained",
- "ai_voice": {"voice": "george", "speed": 0.95},
+ "ai_voice": {
+  "voice": "george",
+  "speed": 0.95
+ },
  "burn_english_long": false,
  "scenes": [
   {
@@ -627,7 +630,161 @@
     "#History",
     "#Explained",
     "#SoutheastAsia"
-   ]
+   ],
+   "open": [
+    {
+     "en": "One morning in 2021, soldiers seized Myanmar and arrested its elected leaders.",
+     "my": "၂၀၂၁ ခုနှစ် မနက်ခင်းတစ်ခုတွင် စစ်တပ်က မြန်မာနိုင်ငံကို သိမ်းယူပြီး ရွေးကောက်ခံ ခေါင်းဆောင်များကို ဖမ်းဆီးခဲ့သည်။",
+     "beat": {
+      "img": "images/soldiers-yangon.jpg",
+      "big": "Military *coup*",
+      "tag": "Myanmar, 2021",
+      "split": 0.45,
+      "then": {
+       "img": "images/aung-san-suu-kyi.jpg",
+       "big": "Leaders *arrested*",
+       "label": "Aung San Suu Kyi, State Counsellor",
+       "pos": "center 25%"
+      }
+     }
+    },
+    {
+     "en": "Within months, the country was at war. Here's how it happened.",
+     "my": "လအနည်းငယ်အတွင်း နိုင်ငံသည် စစ်ပွဲထဲသို့ ရောက်ရှိသွားခဲ့သည်။ မည်သို့ ဖြစ်ပျက်ခဲ့သည်ကို ကြည့်ကြပါစို့။",
+     "beat": {
+      "img": "images/protest-14feb-17.jpg",
+      "big": "From protest *to war*"
+     }
+    }
+   ],
+   "beats": [
+    {
+     "img": "images/nld-campaign-2020.jpg",
+     "big": "*Landslide* win",
+     "tag": "Nov 2020",
+     "label": "NLD campaign, 2020",
+     "then": {
+      "img": "images/ballot-2020.jpg",
+      "big": "*Landslide* win",
+      "tag": "Nov 2020"
+     }
+    },
+    {
+     "img": "images/military-fraud-press-conference.jpg",
+     "big": "“*Fraud*”",
+     "tag": "The military claimed",
+     "label": "Military press conference, Jan 2021",
+     "then": {
+      "big": "*No evidence*",
+      "tag": "Election observers found",
+      "art": "eye"
+     }
+    },
+    null,
+    {
+     "img": "images/min-aung-hlaing.jpg",
+     "big": "Army chief *takes over*",
+     "label": "Senior General Min Aung Hlaing",
+     "pos": "center 20%"
+    },
+    {
+     "img": "images/crowd-yangon-1.jpg",
+     "big": "The *response*"
+    },
+    {
+     "img": "images/crowd-yangon-3.jpg",
+     "big": "*Millions* protest"
+    },
+    {
+     "img": "images/medics-strike.jpg",
+     "big": "Doctors *walk out*",
+     "tag": "Civil Disobedience Movement",
+     "then": {
+      "img": "images/protest-hpa-an-1.jpg",
+      "big": "Teachers & *civil servants*",
+      "tag": "Civil Disobedience Movement"
+     }
+    },
+    {
+     "img": "images/pots-and-pans-monks.jpg",
+     "big": "*Every night*",
+     "tag": "Pots and pans",
+     "then": {
+      "img": "images/pots-and-pans-night.jpg",
+      "big": "Drive out *evil*",
+      "tag": "Pots and pans"
+     }
+    },
+    {
+     "img": "images/protest-police-line.jpg",
+     "big": "Live *bullets*",
+     "tag": "The crackdown",
+     "label": "Protesters face police, Yangon, Feb 2021"
+    },
+    {
+     "big": "To the *jungle*",
+     "tag": "Escape",
+     "map": {
+      "highlight": {
+       "Kachin": "gold",
+       "Kayin": "gold",
+       "Kayah": "gold",
+       "Chin": "gold",
+       "Shan": "gold",
+       "Rakhine": "gold",
+       "Mon": "gold"
+      },
+      "countries": true
+     }
+    },
+    {
+     "img": "images/nug-duwa-lashi-la.jpg",
+     "big": "A *parallel* government",
+     "tag": "National Unity Government",
+     "label": "Duwa Lashi La, NUG acting president",
+     "pos": "center 30%"
+    },
+    {
+     "big": "*War* declared",
+     "tag": "September 2021",
+     "img": "images/three-finger-salute.jpg",
+     "label": "The three-finger salute of the resistance"
+    },
+    {
+     "img": "images/pdf-fighters.jpg",
+     "big": "People's *Defence Forces*",
+     "tag": "Across the country",
+     "label": "PDF fighters near the Sittaung River"
+    },
+    {
+     "img": "images/knla-fighters.jpg",
+     "big": "Trained by *ethnic armies*",
+     "tag": "Decades of experience",
+     "label": "Karen National Liberation Army fighters",
+     "then": {
+      "big": "Trained by *ethnic armies*",
+      "tag": "Decades of experience",
+      "map": {
+       "highlight": {
+        "Kachin": "gold",
+        "Kayin": "gold",
+        "Kayah": "gold",
+        "Chin": "gold",
+        "Shan": "gold",
+        "Rakhine": "gold",
+        "Mon": "gold"
+       }
+      }
+     }
+    }
+   ],
+   "close": [
+    {
+     "en": "Follow for part two: the offensive that shook the military.",
+     "my": "အပိုင်း ၂ အတွက် Follow လုပ်ထားပါ။ စစ်တပ်ကို လှုပ်ခါစေခဲ့သော ထိုးစစ်အကြောင်း ဖြစ်ပါသည်။"
+    }
+   ],
+   "speed": 1.1
   },
   {
    "id": "short-02-operation-1027",

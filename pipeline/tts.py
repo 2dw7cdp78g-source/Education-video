@@ -26,29 +26,30 @@ def _model():
     return Kokoro(str(MODELS / FILES[0]), str(MODELS / FILES[1]))
 
 
-def narrate(lines, scene_of, chapter_scenes, cfg, out_wav):
+def narrate(lines, scene_of, chapter_scenes, cfg, out_wav, lead=0.6, gaps=(0.45, 0.9, 1.3, 1.2)):
     """Speak every line; return [(start, end)] per line and total length.
 
-    Pauses: 0.45 s between sentences, 0.9 s between scenes, 1.3 s before a new part.
+    Pauses (gaps): between sentences, between scenes, before a new part, after the last line.
+    `lead` is the silence before the first word (0 for shorts: the voice starts on frame one).
     """
     voice, lang = VOICES.get(cfg.get("voice", "george"), (cfg.get("voice"), cfg.get("lang", "en-us")))
     speed = cfg.get("speed", 0.95)
     k = _model()
-    sr, chunks, times, t = 24000, [], [], 0.6
-    chunks.append(np.zeros(int(sr * 0.6), dtype=np.float32))
+    sr, chunks, times, t = 24000, [], [], lead
+    chunks.append(np.zeros(int(sr * lead), dtype=np.float32))
     for i, l in enumerate(lines):
         audio, sr = k.create(l.get("say", l["en"]), voice=voice, speed=speed, lang=lang)
         audio = np.asarray(audio, dtype=np.float32)
         # trim leading/trailing near-silence so pauses are consistent
         idx = np.where(np.abs(audio) > 0.01)[0]
         if len(idx):
-            audio = audio[max(0, idx[0] - int(0.03 * sr)): idx[-1] + int(0.08 * sr)]
+            audio = audio[max(0, idx[0] - int((0.0 if t == 0 else 0.03) * sr)): idx[-1] + int(0.08 * sr)]
         d = len(audio) / sr
         if i + 1 < len(lines):
             nxt = scene_of[i + 1]
-            gap = 1.3 if (nxt != scene_of[i] and nxt in chapter_scenes) else 0.9 if nxt != scene_of[i] else 0.45
+            gap = gaps[2] if (nxt != scene_of[i] and nxt in chapter_scenes) else gaps[1] if nxt != scene_of[i] else gaps[0]
         else:
-            gap = 1.2
+            gap = gaps[3]
         times.append([t, t + d])
         chunks += [audio, np.zeros(int(sr * gap), dtype=np.float32)]
         t += d + gap

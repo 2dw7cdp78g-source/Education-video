@@ -162,8 +162,34 @@ def write_srt(path, items, key):
             f.write(f"{n}\n{ts_srt(a)} --> {ts_srt(b - 0.04)}\n{l[key]}\n\n")
 
 
-def write_ass(path, items, vertical, english, burmese=True):
-    if vertical:
+def caption_chunks(a, b, text, max_words=3):
+    """Split a line into short bursts (2-3 words), timed by length: the fast caption style of shorts."""
+    words = text.split()
+    groups, cur = [], []
+    for w in words:
+        cur.append(w)
+        if len(cur) >= max_words or w[-1] in ",.?!:;":
+            groups.append(cur)
+            cur = []
+    if cur:
+        if groups and len(cur) == 1 and len(groups[-1]) < max_words + 1:
+            groups[-1] += cur
+        else:
+            groups.append(cur)
+    weights = [sum(len(w) for w in g) + 2 * len(g) for g in groups]
+    tot, t, out = sum(weights), a, []
+    for g, wt in zip(groups, weights):
+        d = (b - a) * wt / tot
+        out.append((t, t + d, " ".join(g)))
+        t += d
+    return out
+
+
+def write_ass(path, items, vertical, english, burmese=True, chunked=False):
+    if vertical and chunked:
+        W, H = 1080, 1920
+        st = [("EN", "Inter", 76, 1, 2, 640), ("MY", "Noto Sans Myanmar", 50, 0, 2, 470)]
+    elif vertical:
         W, H = 1080, 1920
         st = [("EN", "Inter", 56, 1, 2, 600), ("MY", "Noto Sans Myanmar", 52, 0, 2, 430)]
     else:
@@ -180,7 +206,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: EN,{st[0][1]},{st[0][2]},&H00FFFFFF,&H00FFFFFF,&H00141B0E,&H96141B0E,{-1 if vertical else 0},0,0,0,100,100,0,0,{3 if not vertical else 1},{10 if not vertical else 5},0,2,{90 if vertical else 200},{90 if vertical else 200},{en_margin},1
+Style: EN,{st[0][1]},{st[0][2]},&H00FFFFFF,&H00FFFFFF,&H00141B0E,&H96141B0E,{-1 if vertical else 0},0,0,0,100,100,0,0,{3 if not vertical else 1},{10 if not vertical else 7 if chunked else 5},{3 if chunked else 0},2,{90 if vertical else 200},{90 if vertical else 200},{en_margin},1
 Style: MY,{st[1][1]},{st[1][2]},&H0066E0FF,&H0066E0FF,&H00141B0E,&H96141B0E,0,0,0,0,100,100,0,0,3,10,0,2,{70 if vertical else 200},{70 if vertical else 200},{my_margin},1
 
 [Events]
@@ -190,7 +216,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     with open(path, "w", encoding="utf-8") as f:
         f.write(hdr)
         for a, b, l in items:
-            if english:
+            if english and chunked:
+                for ca, cb, ct in caption_chunks(a, l.get("spoken_end", b), l["en"]):
+                    f.write(f"Dialogue: 0,{ts_ass(ca)},{ts_ass(cb - 0.02)},EN,,0,0,0,,{{\\fscx86\\fscy86\\t(0,90,\\fscx100\\fscy100)}}{esc(ct)}\n")
+            elif english:
                 f.write(f"Dialogue: 0,{ts_ass(a)},{ts_ass(b - 0.04)},EN,,0,0,0,,{esc(l['en'])}\n")
             if burmese and l.get("my"):
                 f.write(f"Dialogue: 0,{ts_ass(a)},{ts_ass(b - 0.04)},MY,,0,0,0,,{esc(l['my'])}\n")
@@ -287,14 +316,16 @@ def segment_context(segs):
 
 
 def build_video(ep, segs, items, audio, total, out_dir, work, vertical, name, fast, hook="", endcard=None,
-                audio_filter=None, english=None):
+                audio_filter=None, english=None, scenes=None, beats=False):
     tag = "v" if vertical else "h"
     W, H = (1080, 1920) if vertical else (1920, 1080)
     jobs, files = [], []
     ctxs = segment_context(segs)
     for i, ((si, stt, a, b), ctx) in enumerate(zip(segs, ctxs)):
-        sc = ep["scenes"][si] if si >= 0 else endcard
-        ctx["hook_enter"] = i == 0
+        sc = (scenes or ep["scenes"])[si] if si >= 0 else endcard
+        ctx["hook_enter"] = i == 0 and not beats  # beat shorts: the headline is on screen from frame one
+        if beats:
+            ctx.update(cut=i > 0, first=i == 0, progress=(a / total, b / total, b - a))
         frames = round(b * FPS) - round(a * FPS)
         key = f"{name}_{i:03d}"
         htmlp = work / f"{key}.html"
@@ -318,7 +349,7 @@ def build_video(ep, segs, items, audio, total, out_dir, work, vertical, name, fa
     ass = work / f"{name}.ass"
     if english is None:
         english = vertical or ep.get("burn_english_long", False)
-    write_ass(ass, items, vertical, english=english)
+    write_ass(ass, items, vertical, english=english, chunked=beats)
     out = out_dir / f"{name}.mp4"
     assemble(files, audio, ass, out, fast, audio_filter)
     return out
@@ -365,6 +396,9 @@ def write_upload(ep, segs, total, out_dir, draft):
     for sh in ep.get("shorts", []):
         lines += [f"## Short: `{sh['id']}.mp4`", "", f"**Caption:** {sh.get('caption', sh.get('hook', ''))}", "",
                   f"**Hashtags:** {' '.join(sh.get('hashtags', up.get('hashtags', [])))}", ""]
+        if sh.get("_credits"):
+            lines += ["**Photo credits** (paste into the description or first comment):", ""]
+            lines += [f"- {c}" for c in sh["_credits"]] + [""]
     (out_dir / "upload.md").write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -395,13 +429,122 @@ def apply_channel_defaults(ep):
     ep.setdefault("short_cta", CHANNEL.get("short_cta", "Full video on YouTube"))
     # Pronunciation rules: change only what the AI voice says, never the on-screen spelling.
     pron = CHANNEL.get("pronunciations", {})
-    for s in sc:
-        for l in s.get("lines", []):
-            say = l.get("say", l["en"])
-            for word, spoken in pron.items():
-                say = say.replace(word, spoken)
-            if say != l["en"]:
-                l["say"] = say
+    short_lines = [l for sh in ep.get("shorts", []) for l in sh.get("open", []) + sh.get("close", [])]
+    for l in [l for s in sc for l in s.get("lines", [])] + short_lines:
+        say = l.get("say", l["en"])
+        for word, spoken in pron.items():
+            say = say.replace(word, spoken)
+        if say != l["en"]:
+            l["say"] = say
+
+
+# ---------------------------------------------------------------- fast-cut shorts
+def _beat_scene(b, ep_dir, credits, k):
+    """A beat ({img, big, tag, label, art, map}) -> a 'beat' scene for the renderer."""
+    sc = {"type": "beat", "big": b.get("big"), "tag": b.get("tag"), "label": b.get("label"), "size": b.get("size"),
+          "lines": [], "brand": False}
+    if b.get("img"):
+        src = (ep_dir / b["img"]).resolve()
+        if not src.exists():
+            sys.exit(f"Beat photo missing: {b['img']}")
+        c = credits.get(src.stem, {})
+        sc["bg"] = {"src": str(src), "pos": b.get("pos", "center"), "dim": b.get("dim", 0.35),
+                    "zoom": "in" if k % 2 == 0 else "out"}
+        if c:
+            sc["bg"]["credit"] = c["short"] + " (Wikimedia Commons)"
+            sc["bg"]["credit_full"] = c["full"]
+    if b.get("art"):
+        sc["art"] = {"name": b["art"], "mode": "back", "opacity": b.get("opacity", 0.9)}
+    if b.get("map"):
+        sc["map"] = dict(b["map"], labels=b["map"].get("labels", False))
+    return sc
+
+
+def build_beat_short(ep, sh, ep_dir, out_dir, work, fast, long_lines, long_times, long_audio):
+    """A short where every sentence gets its own full-screen photo/animation and keyword.
+
+    Optional `open` lines (a 1-2 sentence hook, voiced only in the short) start on frame one,
+    and `close` lines (e.g. "Follow for part two") play over the end card.
+    """
+    body = [l for si in sh["scenes"] for l in ep["scenes"][si]["lines"]]
+    beats = sh["beats"]
+    if len(beats) != len(body):
+        sys.exit(f"{sh['id']}: {len(beats)} beats for {len(body)} lines. Give one beat per line (null skips a line).")
+    seq = ([dict(l, _beat=l.get("beat", {})) for l in sh.get("open", [])] +
+           [dict(l, _beat=b) for l, b in zip(body, beats) if b is not None] +
+           [dict(l, _beat=None) for l in sh.get("close", [])])
+    hold = 0.8  # end card stays up after the last word
+    if ep.get("ai_voice"):
+        import tts
+        cfg = dict(ep["ai_voice"], speed=sh.get("speed", ep.get("short_speed", 1.05)))
+        wav = out_dir / f"{sh['id']}_voice.wav"
+        cache = out_dir / f"{sh['id']}_voice.json"
+        key = hashlib.sha1(json.dumps([[l.get("say", l["en"]) for l in seq], cfg]).encode()).hexdigest()
+        if wav.exists() and cache.exists() and json.loads(cache.read_text()).get("key") == key:
+            c = json.loads(cache.read_text())
+            ltimes, spoken = [tuple(t) for t in c["times"]], c["total"]
+        else:
+            print(f"  [{sh['id']}] voicing {len(seq)} lines at speed {cfg['speed']}")
+            ltimes, spoken = tts.narrate(seq, [0] * len(seq), set(), cfg, wav, lead=0.0, gaps=(0.2, 0.2, 0.2, 0.3))
+            cache.write_text(json.dumps({"key": key, "times": ltimes, "total": spoken}))
+        total = spoken + hold
+        audio = work / f"{sh['id']}.wav"
+        run(["ffmpeg", "-y", "-i", str(wav), "-af", f"apad=pad_dur={hold}", "-t", f"{total:.3f}", str(audio)])
+    else:  # recorded voice: cut the short's lines out of the long narration (open/close need the AI voice)
+        if sh.get("open") or sh.get("close"):
+            print(f"  WARNING: {sh['id']}: 'open'/'close' lines need ai_voice; skipped them.")
+        seq = seq[len(sh.get("open", [])):len(seq) - len(sh.get("close", []))]
+        idx = [k for k, l in enumerate(long_lines) if l["scene"] in sh["scenes"]]
+        idx = [k for k, b in zip(idx, beats) if b is not None]
+        parts, ltimes, off = [], [], 0.0
+        for k in idx:
+            a, b = long_times[k]
+            parts.append(f"atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS")
+            ltimes.append((off, off + b - a))
+            off += b - a
+        total = off + hold
+        n = len(parts)
+        af = ";".join(f"[0:a]{p}[a{i}]" for i, p in enumerate(parts))
+        af += ";" + "".join(f"[a{i}]" for i in range(n)) + f"concat=n={n}:v=0:a=1,apad=pad_dur={hold}[aout]"
+        audio = work / f"{sh['id']}.wav"
+        run(["ffmpeg", "-y", "-i", str(long_audio), "-filter_complex", af, "-map", "[aout]", "-t", f"{total:.3f}", str(audio)])
+
+    cf = ep_dir / "images" / "credits.json"
+    credits = json.loads(cf.read_text(encoding="utf-8")) if cf.exists() else {}
+    endcard = {"type": "endcard", "title": ep.get("short_endcard_title", ep["title"]),
+               "cta": ep.get("short_cta", "Full video on YouTube")}
+    scenes, segs, items = [], [], []
+    for k, ((a, b), l) in enumerate(zip(ltimes, seq)):
+        if k == len(seq) - 1:
+            b = total
+        items.append((a, b, l))
+        bt = l["_beat"]
+        if bt is None:  # closing line: the end card
+            if segs and segs[-1][0] == -1:
+                segs[-1][3] = b
+            else:
+                segs.append([-1, None, a, b])
+            continue
+        # a beat may cut to a second shot ("then") partway through a long sentence
+        shots = [{x: y for x, y in bt.items() if x != "then"}] + ([bt["then"]] if bt.get("then") else [])
+        for j, shot in enumerate(shots):
+            scenes.append(_beat_scene(shot, ep_dir, credits, len(scenes)))
+            cut = a + (b - a) * bt.get("split", 0.5)
+            sa, sb = (a, cut) if (len(shots) > 1 and j == 0) else (cut, b) if j else (a, b)
+            segs.append([len(scenes) - 1, None, sa, sb])
+    if not any(x[0] == -1 for x in segs):  # no closing line: a short silent end card
+        segs.append([-1, None, total, total + 2.0])
+        total += 2.0
+        run(["ffmpeg", "-y", "-i", str(audio), "-af", "apad=pad_dur=2", "-t", f"{total:.3f}", str(audio.with_suffix(".pad.wav"))])
+        audio.with_suffix(".pad.wav").replace(audio)
+    sh["_credits"] = list(dict.fromkeys(s["bg"]["credit_full"] for s in scenes if (s.get("bg") or {}).get("credit_full")))
+    hook = S.e(sh.get("hook", "")).replace("*", "<span>", 1).replace("*", "</span>", 1)
+    p = build_video(ep, segs, items, audio, total, out_dir, work, True, sh["id"], fast, hook=hook,
+                    endcard=endcard, scenes=scenes, beats=True)
+    print(f"Short: {p} ({total:.0f}s, {len(segs)} shots, avg {total / len(segs):.1f}s per shot)")
+    if total > 180:
+        print(f"  WARNING: {sh['id']} is {total:.0f}s. YouTube Shorts max is 180s.")
+    return p
 
 
 # ---------------------------------------------------------------- main
@@ -480,6 +623,9 @@ def main():
 
     if args.only in (None, "shorts"):
         for sh in ep.get("shorts", []):
+            if sh.get("beats"):
+                build_beat_short(ep, sh, ep_dir, out_dir, work, args.fast, lines, times, audio)
+                continue
             want = set(sh["scenes"])
             spans = []  # (orig_start, orig_end) for each kept scene
             for si in sh["scenes"]:

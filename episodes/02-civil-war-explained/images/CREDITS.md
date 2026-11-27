@@ -1,0 +1,32 @@
+# Photo credits
+
+All photos from Wikimedia Commons under the licenses shown. Credit is shown on screen and in the video description.
+
+- `images/soldiers-yangon.jpg`: Sule Pagoda - Yangon downtown - Soldiers.jpg by Maung Sun, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Sule_Pagoda_-_Yangon_downtown_-_Soldiers.jpg
+- `images/yangon-night-feb2021.jpg`: Sule Pagoda - Yangon downtown at night at Feb after the coup 2.jpg by Maung Sun, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Sule_Pagoda_-_Yangon_downtown_at_night_at_Feb_after_the_coup_2.jpg
+- `images/min-aung-hlaing.jpg`: Min Aung Hlaing in April 2019 (cropped).jpg by Vadim Savitsky, mil.ru, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Min_Aung_Hlaing_in_April_2019_%28cropped%29.jpg
+- `images/aung-san-suu-kyi.jpg`: Aung San Suu Kyi par Claude Truong-Ngoc octobre 2013.jpg by Claude TRUONG-NGOC, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Aung_San_Suu_Kyi_par_Claude_Truong-Ngoc_octobre_2013.jpg
+- `images/voting-2020.jpg`: Myanmar Election 2020 voting with social distancing.jpg by Paingpeace, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Myanmar_Election_2020_voting_with_social_distancing.jpg
+- `images/nld-campaign-2020.jpg`: NLD During 2020 Election Campaign.jpg by Kantabon, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:NLD_During_2020_Election_Campaign.jpg
+- `images/protest-hledan.jpg`: 2021 Myanmar Protest in Hleden.jpg by VOA Burmese, Public domain, https://commons.wikimedia.org/wiki/File:2021_Myanmar_Protest_in_Hleden.jpg
+- `images/protest-hpa-an-1.jpg`: Protest against military coup (9 Feb 2021, Hpa-An, Kayin State, Myanmar) (1).jpg by Ninjastrikers, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_against_military_coup_(9_Feb_2021,_Hpa-An,_Kayin_State,_Myanmar)_(1).jpg
+- `images/protest-hpa-an-10.jpg`: Protest against military coup (9 Feb 2021, Hpa-An, Kayin State, Myanmar) (10).jpg by Ninjastrikers, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_against_military_coup_(9_Feb_2021,_Hpa-An,_Kayin_State,_Myanmar)_(10).jpg
+- `images/protest-hpa-an-25.jpg`: Protest against military coup (9 Feb 2021, Hpa-An, Kayin State, Myanmar) (2).jpg by Ninjastrikers, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_against_military_coup_(9_Feb_2021,_Hpa-An,_Kayin_State,_Myanmar)_(2).jpg
+- `images/protest-hpa-an-4.jpg`: Protest against military coup (9 Feb 2021, Hpa-An, Kayin State, Myanmar) (4).jpg by Ninjastrikers, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_against_military_coup_(9_Feb_2021,_Hpa-An,_Kayin_State,_Myanmar)_(4).jpg
+- `images/protest-14feb-02.jpg`: Protest in Myanmar against Military Coup 14-Feb-2021 02.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_02.jpg
+- `images/protest-14feb-03.jpg`: Protest in Myanmar against Military Coup 14-Feb-2021 03.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_03.jpg
+- `images/protest-14feb-05.jpg`: Protest in Myanmar against Military Coup 14-Feb-2021 05.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_05.jpg
+- `images/protest-14feb-14.jpg`: Protest in Myanmar against Military Coup 14-Feb-2021 14.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_14.jpg
+- `images/protest-14feb-17.jpg`: Protest in Myanmar against Military Coup 14-Feb-2021 17.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_17.jpg
+- `images/pots-and-pans-night.jpg`: Banging Pans and pots protesting coup.png by Maung Sun, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Banging_Pans_and_pots_protesting_coup.png
+- `images/pots-and-pans-monks.jpg`: People and monks banging pots and pans protesting coup 1.png by Maung Sun, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:People_and_monks_banging_pots_and_pans_protesting_coup_1.png
+- `images/protest-police-line.jpg`: People Protesting - Police - Three Finger Salute - San Chaung Street Myaynigone Yangon.jpg by Maung Sun, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:People_Protesting_-_Police_-_Three_Finger_Salute_-_San_Chaung_Street_Myaynigone_Yangon.jpg
+- `images/medics-strike.jpg`: Medical Staffs protesting with three finger salute at a private in Hospital Yangon.jpg by Maung Sun, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Medical_Staffs_protesting_with_three_finger_salute_at_a_private_in_Hospital_Yangon.jpg
+- `images/pdf-fighters.jpg`: Four PDF (People's Defense Force) fighters on motorcycles near the Sittaung River.png by Myanmar Now, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Four_PDF_%28People%27s_Defense_Force%29_fighters_on_motorcycles_near_the_Sittaung_River.png
+- `images/knla-fighters.jpg`: Cobra Column KNLA Fighters.png by Breaking Brainwashed, CC BY 3.0, https://commons.wikimedia.org/wiki/File:Cobra_Column_KNLA_Fighters.png
+- `images/nug-duwa-lashi-la.jpg`: Duwa Lashi La (December 2023) (cropped).png by Ingyin Naing, Public domain, https://commons.wikimedia.org/wiki/File:Duwa_Lashi_La_%28December_2023%29_%28cropped%29.png
+- `images/military-fraud-press-conference.jpg`: Major General Zaw Min Tun at a Tatmadaw True News Information Team special press conference to address the media on January 26, 2021.jpg by Si Thu, Thar Nyunt Oo, Public domain, https://commons.wikimedia.org/wiki/File:Major_General_Zaw_Min_Tun_at_a_Tatmadaw_True_News_Information_Team_special_press_conference_to_address_the_media_on_January_26%2C_2021.jpg
+- `images/ballot-2020.jpg`: Myanmar election 2020 Ballot Paper.jpg by Kantabon, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Myanmar_election_2020_Ballot_Paper.jpg
+- `images/crowd-yangon-1.jpg`: Protestor crowd - Yangon downtown 1.jpg by Maung Sun, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protestor_crowd_-_Yangon_downtown_1.jpg
+- `images/crowd-yangon-3.jpg`: Protestor crowd - Yangon downtown 3.jpg by Maung Sun, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protestor_crowd_-_Yangon_downtown_3.jpg
+- `images/three-finger-salute.jpg`: Three-finger salute at a protest in Yangon, Myanmar (8 February 2021).jpg by သူထွန်း, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Three-finger_salute_at_a_protest_in_Yangon%2C_Myanmar_%288_February_2021%29.jpg

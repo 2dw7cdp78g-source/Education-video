@@ -17,3 +17,12 @@ See [PLAN.md](PLAN.md) for the channel strategy and safety checklist.
 
 ## Channel defaults
 `pipeline/channel.json` holds the author bio (shown as an intro after the title) and the standard ending (subscribe, share your experience, contact for research animation). Every episode gets both automatically. Set `"author_intro": false` or `"standard_outro": false` in an episode to turn one off. Burmese terminology lives in `GLOSSARY.md`.
+
+## Fast-cut shorts (`beats`)
+A short with `beats` gets a new full-screen photo, map or animation on every sentence, big keyword text, 2–3-word captions and a progress bar. That beats the 3-second swipe-away rule. Each short has:
+- `open`: 1–2 hook sentences, voiced only in the short. They start on the very first frame, so make them the most dramatic fact.
+- `beats`: one entry per line of the short's scenes. Each entry takes `img`, `big` (wrap the highlighted word in `*stars*`), and optionally `tag`, `label`, `pos`, `art`, `map`, and `then`, which cuts to a second shot partway through a long line. Use `null` to skip a line in the short.
+- `close`: a voiced call to action, shown over the end card.
+- `speed`: voice speed for the short (1.1 is a brisk shorts pace).
+
+Photos go in `episodes/<id>/images/` with their license in `credits.json`. On-screen credits and the upload kit's credit list come from there.
