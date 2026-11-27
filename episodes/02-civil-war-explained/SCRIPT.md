@@ -1,6 +1,6 @@
 # Myanmar's Civil War, Explained: narration script
 
-About 819 words, roughly 5 minutes at a calm pace.
+About 980 words, roughly 7 minutes at a calm pace.
 
 Pause about 1 second between sentences and 2 seconds between parts. If you stumble, re-record that whole part file.
 
@@ -12,13 +12,15 @@ What followed became one of the biggest wars in the world today.
 
 Yet most people outside Myanmar have never heard the full story.
 
-In the next ten minutes, I'll explain how it started, who is fighting, and what could happen next.
+In the next few minutes, I'll explain how it started, who is fighting, and what could happen next.
 
 Myanmar sits between India, China and Thailand, and is home to around 55 million people.
 
 The central lowlands are home mostly to the Bamar, the largest ethnic group.
 
 In the hills and borderlands live many ethnic peoples, like the Kachin, Karen, Shan, Chin and Rakhine.
+
+The government officially recognises 135 different ethnic groups.
 
 Many of these groups have had their own armed forces for decades.
 
@@ -40,6 +42,8 @@ And in 2015, Aung San Suu Kyi's party, the National League for Democracy, won a 
 
 But the military kept a quarter of the seats in parliament, and control of the army, police and borders.
 
+And in 2017, a brutal military campaign against the Rohingya, a Muslim minority in Rakhine State, forced more than 700,000 people to flee to Bangladesh.
+
 ## File: narration-03 (Part 2: The coup)
 
 So how did the coup happen?
@@ -52,6 +56,8 @@ On the first of February 2021, the day the new parliament was due to meet, soldi
 
 Army chief Min Aung Hlaing took control of the country.
 
+Within days, the internet was cut at night, Facebook was blocked, and independent media were shut down.
+
 The response was immediate.
 
 Millions of people joined peaceful protests across the country.
@@ -59,6 +65,8 @@ Millions of people joined peaceful protests across the country.
 Doctors, teachers and civil servants walked off the job, in what became known as the Civil Disobedience Movement.
 
 Every night, people banged pots and pans, a traditional way to drive out evil.
+
+Young people, especially Generation Z, led many of the protests, with humour, art and social media.
 
 Security forces answered with live bullets, and hundreds of protesters were killed in the first months.
 
@@ -76,6 +84,8 @@ Local resistance groups called People's Defence Forces formed across the country
 
 Many were trained and sheltered by ethnic armed groups that had fought the military for decades.
 
+At first they fought with homemade weapons. Over time, they captured more and more from the military.
+
 Today, the military faces armed opposition on almost every front.
 
 In the far north, the Kachin Independence Army.
@@ -83,6 +93,8 @@ In the far north, the Kachin Independence Army.
 In the west, the Arakan Army and Chin resistance groups.
 
 In the east, Karen and Karenni forces.
+
+The Karen National Union has fought the military since 1949, one of the longest civil wars in the world.
 
 And in the central dry zone, the Bamar heartland, People's Defence Forces fight in places like Sagaing and Magway.
 
@@ -97,6 +109,8 @@ On the 27th of October 2023, three ethnic armies, known as the Three Brotherhood
 They named it Operation 1027, after the date it began.
 
 Within weeks, they had captured dozens of military posts and several towns along the Chinese border.
+
+It was the biggest defeat the military had suffered in decades.
 
 In August 2024, they took Lashio, the first regional military command headquarters ever to fall.
 
@@ -114,13 +128,19 @@ The military relies more and more on airstrikes, which often hit villages, schoo
 
 Many hospitals and clinics have closed, and food prices have soared.
 
+Schools and universities have emptied, and many children have lost years of education.
+
 Short of soldiers, the military began enforcing a conscription law in February 2024.
 
 Tens of thousands of young people fled, many of them across the border to Thailand.
 
+For many families, the choice was to hide, to flee, or to be drafted.
+
 Then, in March 2025, a magnitude 7.7 earthquake struck near Mandalay.
 
 Thousands died. And even then, the fighting did not stop.
+
+Rights groups said aid was restricted in areas held by the resistance.
 
 ## File: narration-07 (Part 6: What happens next?)
 
@@ -134,8 +154,10 @@ Neighbouring countries, especially China, have a big say in what happens next.
 
 And through it all, millions of ordinary people still need help.
 
+In resistance-held areas, local groups now run their own schools, clinics and administrations.
+
 Myanmar's war rarely makes the headlines, but it affects millions of lives, and the whole region.
 
-In the next videos, I'll look at the scam compounds on the border, the refugee crisis in Thailand, and how you can help.
+Understanding this war is the first step to helping the people caught in it.
 
-If you want to understand Myanmar, subscribe, and share this video with someone who should hear this story.
+In the next videos, I'll look at the scam compounds on the border, the refugee crisis in Thailand, and how you can help.

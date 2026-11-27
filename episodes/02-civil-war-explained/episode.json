@@ -26,10 +26,16 @@
      "my": "သို့သော် မြန်မာပြည်ပရှိ လူအများစုသည် ဇာတ်လမ်းအပြည့်အစုံကို မကြားဖူးကြပါ။"
     },
     {
-     "en": "In the next ten minutes, I'll explain how it started, who is fighting, and what could happen next.",
-     "my": "နောက် ဆယ်မိနစ်အတွင်း ဘယ်လိုစတင်ခဲ့သလဲ၊ ဘယ်သူတွေ တိုက်နေကြသလဲ၊ နောက်ဘာဖြစ်လာနိုင်သလဲ ဆိုတာ ရှင်းပြပါမယ်။"
+     "en": "In the next few minutes, I'll explain how it started, who is fighting, and what could happen next.",
+     "my": "နောက်မိနစ်အနည်းငယ်အတွင်း ဘယ်လိုစတင်ခဲ့သလဲ၊ ဘယ်သူတွေ တိုက်နေကြသလဲ၊ နောက်ဘာဖြစ်လာနိုင်သလဲ ဆိုတာ ရှင်းပြပါမယ်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/02.jpg",
+    "credit": "Alisdare Hickson / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "An activist with a message commemorating the anniversary of the 8888 (8 August 1988) uprising against the Burmese military junta.jpg by Alisdare Hickson, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:An_activist_with_a_message_commemorating_the_anniversary_of_the_8888_(8_August_1988)_uprising_against_the_Burmese_military_junta.jpg",
+    "dim": 0.55
+   }
   },
   {
    "type": "map",
@@ -90,6 +96,10 @@
      "my": "တောင်တန်းနှင့် နယ်စပ်ဒေသများတွင် ကချင်၊ ကရင်၊ ရှမ်း၊ ချင်း၊ ရခိုင် စသည့် တိုင်းရင်းသားများစွာ နေထိုင်ကြသည်။"
     },
     {
+     "en": "The government officially recognises 135 different ethnic groups.",
+     "my": "အစိုးရက တိုင်းရင်းသားလူမျိုး ၁၃၅ မျိုးကို တရားဝင် အသိအမှတ်ပြုထားသည်။"
+    },
+    {
      "en": "Many of these groups have had their own armed forces for decades.",
      "my": "ဤအုပ်စုအများအပြားတွင် ဆယ်စုနှစ်ပေါင်းများစွာကတည်းက ကိုယ်ပိုင်လက်နက်ကိုင်တပ်များ ရှိခဲ့ကြသည်။"
     }
@@ -104,7 +114,17 @@
      "en": "To understand this war, we need to go back to the beginning.",
      "my": "ဤစစ်ပွဲကို နားလည်ရန် အစကနေ ပြန်ကြည့်ရပါမည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/03.jpg",
+    "credit": "Vyacheslav Argenberg / CC BY 4.0 (Wikimedia Commons)",
+    "credit_full": "Bagan, Myanmar, Htilominlo Temple and other Buddhist stupas in Bagan plain.jpg by Vyacheslav Argenberg, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Bagan,_Myanmar,_Htilominlo_Temple_and_other_Buddhist_stupas_in_Bagan_plain.jpg",
+    "dim": 0.5
+   },
+   "art": {
+    "name": "calendar",
+    "mode": "top"
+   }
   },
   {
    "type": "timeline",
@@ -168,6 +188,10 @@
     {
      "en": "But the military kept a quarter of the seats in parliament, and control of the army, police and borders.",
      "my": "သို့သော် စစ်တပ်က လွှတ်တော်နေရာ လေးပုံတစ်ပုံနှင့် တပ်မတော်၊ ရဲနှင့် နယ်စပ်ရေးရာကို ဆက်လက်ထိန်းချုပ်ထားခဲ့သည်။"
+    },
+    {
+     "en": "And in 2017, a brutal military campaign against the Rohingya, a Muslim minority in Rakhine State, forced more than 700,000 people to flee to Bangladesh.",
+     "my": "၂၀၁၇ ခုနှစ်တွင် ရခိုင်ပြည်နယ်ရှိ မွတ်စလင်လူနည်းစုဖြစ်သော ရိုဟင်ဂျာများအပေါ် စစ်တပ်၏ ရက်စက်သော စစ်ဆင်ရေးကြောင့် လူ ၇၀၀,၀၀၀ ကျော် ဘင်္ဂလားဒေ့ရှ်သို့ ထွက်ပြေးခဲ့ရသည်။"
     }
    ]
   },
@@ -180,7 +204,17 @@
      "en": "So how did the coup happen?",
      "my": "ဒါဆို အာဏာသိမ်းမှု ဘယ်လိုဖြစ်ခဲ့သလဲ။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/14.jpg",
+    "credit": "Peerapat Wimolrungkarat, Thai Government photographer / CC BY 2.0 (Wikimedia Commons)",
+    "credit_full": "Hluttaw Complex, Naypyidaw.jpg by Peerapat Wimolrungkarat, Thai Government photographer, CC BY 2.0, https://commons.wikimedia.org/wiki/File:Hluttaw_Complex,_Naypyidaw.jpg",
+    "dim": 0.5
+   },
+   "art": {
+    "name": "ballot",
+    "mode": "top"
+   }
   },
   {
    "type": "stat",
@@ -205,6 +239,10 @@
     {
      "en": "Army chief Min Aung Hlaing took control of the country.",
      "my": "စစ်ဦးစီးချုပ် မင်းအောင်လှိုင်က နိုင်ငံကို ထိန်းချုပ်လိုက်သည်။"
+    },
+    {
+     "en": "Within days, the internet was cut at night, Facebook was blocked, and independent media were shut down.",
+     "my": "ရက်ပိုင်းအတွင်း ညဘက်တွင် အင်တာနက်ဖြတ်တောက်ခံရပြီး Facebook ပိတ်ဆို့ခံရကာ လွတ်လပ်သောမီဒီယာများ ပိတ်သိမ်းခံခဲ့ရသည်။"
     }
    ]
   },
@@ -217,7 +255,7 @@
     1,
     2,
     3,
-    4
+    5
    ],
    "items": [
     "Peaceful protests across the country",
@@ -243,10 +281,24 @@
      "my": "ညစဉ် လူများက မကောင်းဆိုးဝါးနှင်ထုတ်သည့် ရိုးရာနည်းဖြစ်သော အိုးခွက်ပန်းကန်များကို တီးခဲ့ကြသည်။"
     },
     {
+     "en": "Young people, especially Generation Z, led many of the protests, with humour, art and social media.",
+     "my": "လူငယ်များ အထူးသဖြင့် Gen Z များက ဟာသ၊ အနုပညာနှင့် ဆိုရှယ်မီဒီယာတို့ဖြင့် ဆန္ဒပြပွဲများစွာကို ဦးဆောင်ခဲ့ကြသည်။"
+    },
+    {
      "en": "Security forces answered with live bullets, and hundreds of protesters were killed in the first months.",
      "my": "လုံခြုံရေးတပ်ဖွဲ့များက ကျည်အစစ်များဖြင့် တုံ့ပြန်ခဲ့ပြီး ပထမလများအတွင်း ဆန္ဒပြသူ ရာနှင့်ချီ သေဆုံးခဲ့သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "../01-tnr-in-exile/images/30.jpg",
+    "credit": "MgHla / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest in Myanmar against Military Coup 14-Feb-2021 02.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_02.jpg",
+    "dim": 0.72
+   },
+   "art": {
+    "name": "pots",
+    "mode": "side"
+   }
   },
   {
    "type": "chapter",
@@ -257,7 +309,17 @@
      "en": "And that is when the protests turned into an armed revolution.",
      "my": "ထိုအချိန်မှစ၍ ဆန္ဒပြမှုများသည် လက်နက်ကိုင်တော်လှန်ရေးအဖြစ် ပြောင်းလဲသွားခဲ့သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "../01-tnr-in-exile/images/26.jpg",
+    "credit": "Ninjastrikers / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest against military coup (9 Feb 2021, Hpa-An, Kayin State, Myanmar) (4).jpg by Ninjastrikers, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_against_military_coup_(9_Feb_2021,_Hpa-An,_Kayin_State,_Myanmar)_(4).jpg",
+    "dim": 0.5
+   },
+   "art": {
+    "name": "salute",
+    "mode": "top"
+   }
   },
   {
    "type": "points",
@@ -294,8 +356,16 @@
     {
      "en": "Many were trained and sheltered by ethnic armed groups that had fought the military for decades.",
      "my": "၎င်းတို့အများစုကို ဆယ်စုနှစ်များစွာ စစ်တပ်ကို တိုက်ခိုက်ခဲ့သော တိုင်းရင်းသားလက်နက်ကိုင်အဖွဲ့များက လေ့ကျင့်ပေးပြီး ခိုလှုံခွင့်ပေးခဲ့သည်။"
+    },
+    {
+     "en": "At first they fought with homemade weapons. Over time, they captured more and more from the military.",
+     "my": "အစပိုင်းတွင် လက်လုပ်လက်နက်များဖြင့် တိုက်ခိုက်ခဲ့ကြသည်။ အချိန်ကြာလာသည်နှင့်အမျှ စစ်တပ်ထံမှ လက်နက်များ ပိုမိုသိမ်းယူလာနိုင်ကြသည်။"
     }
-   ]
+   ],
+   "art": {
+    "name": "network",
+    "mode": "side"
+   }
   },
   {
    "type": "map",
@@ -378,6 +448,10 @@
      "my": "အရှေ့ဘက်တွင် ကရင်နှင့် ကရင်နီတပ်ဖွဲ့များ။"
     },
     {
+     "en": "The Karen National Union has fought the military since 1949, one of the longest civil wars in the world.",
+     "my": "ကရင်အမျိုးသားအစည်းအရုံး (KNU) သည် ၁၉၄၉ ခုနှစ်ကတည်းက စစ်တပ်ကို တိုက်ခိုက်ခဲ့ပြီး ကမ္ဘာ့အရှည်ကြာဆုံး ပြည်တွင်းစစ်များထဲမှ တစ်ခုဖြစ်သည်။"
+    },
+    {
      "en": "And in the central dry zone, the Bamar heartland, People's Defence Forces fight in places like Sagaing and Magway.",
      "my": "ဗမာလူမျိုးများ၏ ဗဟိုချက်ဖြစ်သော အလယ်ပိုင်းအပူပိုင်းဒေသတွင် စစ်ကိုင်းနှင့် မကွေးကဲ့သို့ နေရာများ၌ PDF များ တိုက်ခိုက်နေကြသည်။"
     },
@@ -396,7 +470,17 @@
      "en": "Then, in late 2023, everything changed.",
      "my": "ထို့နောက် ၂၀၂၃ နှောင်းပိုင်းတွင် အရာအားလုံး ပြောင်းလဲသွားခဲ့သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "../01-tnr-in-exile/images/38.jpg",
+    "credit": "Go-Myanmar / CC BY-SA 3.0 (Wikimedia Commons)",
+    "credit_full": "Hpa An, Kayin (Karen) State 001.JPG by Go-Myanmar, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Hpa_An,_Kayin_(Karen)_State_001.JPG",
+    "dim": 0.5
+   },
+   "art": {
+    "name": "alert",
+    "mode": "top"
+   }
   },
   {
    "type": "map",
@@ -472,6 +556,10 @@
      "my": "ရက်သတ္တပတ်အနည်းငယ်အတွင်း တရုတ်နယ်စပ်တစ်လျှောက်ရှိ စစ်စခန်းဒါဇင်နှင့်ချီ၍ မြို့အများအပြားကို သိမ်းပိုက်နိုင်ခဲ့သည်။"
     },
     {
+     "en": "It was the biggest defeat the military had suffered in decades.",
+     "my": "၎င်းသည် ဆယ်စုနှစ်များအတွင်း စစ်တပ်ကြုံတွေ့ခဲ့ရသော အကြီးမားဆုံး ရှုံးနိမ့်မှု ဖြစ်သည်။"
+    },
+    {
      "en": "In August 2024, they took Lashio, the first regional military command headquarters ever to fall.",
      "my": "၂၀၂၄ ဩဂုတ်လတွင် ပထမဆုံးကျဆုံးသော တိုင်းစစ်ဌာနချုပ်ဖြစ်သည့် လားရှိုးကို သိမ်းယူခဲ့ကြသည်။"
     },
@@ -483,6 +571,12 @@
      "en": "But China, worried about its border and investments, pushed for ceasefires, and Lashio was handed back in 2025.",
      "my": "သို့သော် ၎င်း၏နယ်စပ်နှင့် ရင်းနှီးမြှုပ်နှံမှုများကို စိုးရိမ်သော တရုတ်က အပစ်ရပ်ရန် ဖိအားပေးခဲ့ပြီး ၂၀၂၅ တွင် လားရှိုးကို ပြန်လည်လွှဲပေးခဲ့သည်။"
     }
+   ],
+   "reveal_at": [
+    0,
+    2,
+    3,
+    4
    ]
   },
   {
@@ -494,7 +588,17 @@
      "en": "But behind the battle lines are ordinary people.",
      "my": "သို့သော် စစ်မျက်နှာများနောက်ကွယ်တွင် သာမန်ပြည်သူများ ရှိနေသည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/11.jpg",
+    "credit": "Kofoehtet / CC BY 4.0 (Wikimedia Commons)",
+    "credit_full": "Distributing provisions to earthquake-affected people.jpg by Kofoehtet, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Distributing_provisions_to_earthquake-affected_people.jpg",
+    "dim": 0.5
+   },
+   "art": {
+    "name": "family",
+    "mode": "top"
+   }
   },
   {
    "type": "stat",
@@ -502,7 +606,7 @@
    "value": "3 million+",
    "label": "people forced from their homes",
    "detail": "Airstrikes often hit villages, schools and monasteries",
-   "source": "UN OCHA [VERIFY latest figure]",
+   "source": "UN OCHA",
    "lines": [
     {
      "en": "According to the United Nations, more than three million people have been forced from their homes.",
@@ -515,8 +619,18 @@
     {
      "en": "Many hospitals and clinics have closed, and food prices have soared.",
      "my": "ဆေးရုံနှင့် ဆေးခန်းများစွာ ပိတ်သွားပြီး စားနပ်ရိက္ခာဈေးနှုန်းများ အဆမတန်မြင့်တက်လာသည်။"
+    },
+    {
+     "en": "Schools and universities have emptied, and many children have lost years of education.",
+     "my": "စာသင်ကျောင်းနှင့် တက္ကသိုလ်များ လူသူကင်းမဲ့သွားပြီး ကလေးများစွာ ပညာရေးနှစ်ပေါင်းများစွာ ဆုံးရှုံးခဲ့ရသည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "../01-tnr-in-exile/images/34.jpg",
+    "credit": "Tayzar44 / CC BY 4.0 (Wikimedia Commons)",
+    "credit_full": "Mae La refugee camp from Thailand.jpg by Tayzar44, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Mae_La_refugee_camp_from_Thailand.jpg",
+    "dim": 0.62
+   }
   },
   {
    "type": "stat",
@@ -532,8 +646,17 @@
     {
      "en": "Tens of thousands of young people fled, many of them across the border to Thailand.",
      "my": "လူငယ် ထောင်နှင့်သောင်းချီ ထွက်ပြေးခဲ့ကြပြီး အများစုမှာ နယ်စပ်ကိုဖြတ်၍ ထိုင်းနိုင်ငံသို့ ရောက်ရှိခဲ့ကြသည်။"
+    },
+    {
+     "en": "For many families, the choice was to hide, to flee, or to be drafted.",
+     "my": "မိသားစုများစွာအတွက် ရွေးချယ်စရာမှာ ပုန်းရန်၊ ထွက်ပြေးရန် သို့မဟုတ် စစ်မှုထမ်းရန်သာ ဖြစ်သည်။"
     }
-   ]
+   ],
+   "art": {
+    "name": "truck",
+    "mode": "back",
+    "opacity": 0.25
+   }
   },
   {
    "type": "stat",
@@ -549,8 +672,22 @@
     {
      "en": "Thousands died. And even then, the fighting did not stop.",
      "my": "ထောင်နှင့်ချီ သေဆုံးခဲ့သည်။ ထိုအချိန်၌ပင် တိုက်ပွဲများ မရပ်တန့်ခဲ့ပါ။"
+    },
+    {
+     "en": "Rights groups said aid was restricted in areas held by the resistance.",
+     "my": "တော်လှန်ရေးအဖွဲ့များ ထိန်းချုပ်ထားသော နယ်မြေများတွင် အကူအညီများ ကန့်သတ်ခံခဲ့ရကြောင်း လူ့အခွင့်အရေးအဖွဲ့များက ပြောကြားခဲ့သည်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "images/07.jpg",
+    "credit": "China News Service / CC BY 4.0 (Wikimedia Commons)",
+    "credit_full": "2025 Myanmar earthquake damage in Mandalay.png by China News Service, CC BY 4.0, https://commons.wikimedia.org/wiki/File:2025_Myanmar_earthquake_damage_in_Mandalay.png",
+    "dim": 0.6
+   },
+   "art": {
+    "name": "quake",
+    "mode": "top"
+   }
   },
   {
    "type": "chapter",
@@ -561,7 +698,17 @@
      "en": "So, where does Myanmar go from here?",
      "my": "ဒါဆို မြန်မာနိုင်ငံ ဒီကနေ ဘယ်ကိုဦးတည်မလဲ။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "../01-tnr-in-exile/images/12.jpg",
+    "credit": "Manop / CC BY-SA 3.0 (Wikimedia Commons)",
+    "credit_full": "Moei River.jpg by Manop, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Moei_River.jpg",
+    "dim": 0.5
+   },
+   "art": {
+    "name": "globe",
+    "mode": "top"
+   }
   },
   {
    "type": "points",
@@ -590,13 +737,21 @@
     {
      "en": "And through it all, millions of ordinary people still need help.",
      "my": "ဤအရာအားလုံးကြားတွင် သာမန်ပြည်သူ သန်းပေါင်းများစွာ အကူအညီ လိုအပ်နေဆဲဖြစ်သည်။"
+    },
+    {
+     "en": "In resistance-held areas, local groups now run their own schools, clinics and administrations.",
+     "my": "တော်လှန်ရေးနယ်မြေများတွင် ဒေသခံအဖွဲ့များက ကိုယ်ပိုင်ကျောင်းများ၊ ဆေးခန်းများနှင့် အုပ်ချုပ်ရေးများကို ယခုလုပ်ဆောင်နေကြသည်။"
     }
-   ]
+   ],
+   "art": {
+    "name": "ballot",
+    "mode": "side"
+   }
   },
   {
    "type": "text",
-   "kicker": "Next episode",
-   "heading": "Inside Myanmar's scam compounds",
+   "kicker": "Coming next",
+   "heading": "Next: Inside Myanmar's scam compounds",
    "body": "Coming next on the channel.",
    "lines": [
     {
@@ -604,10 +759,24 @@
      "my": "မြန်မာ့စစ်ပွဲသည် သတင်းခေါင်းစီးများတွင် ရှားပါးသော်လည်း လူသန်းပေါင်းများစွာနှင့် ဒေသတစ်ခုလုံးကို ထိခိုက်နေသည်။"
     },
     {
+     "en": "Understanding this war is the first step to helping the people caught in it.",
+     "my": "ဤစစ်ပွဲကို နားလည်ခြင်းသည် ၎င်းကြားတွင် ပိတ်မိနေသော ပြည်သူများကို ကူညီရန် ပထမခြေလှမ်း ဖြစ်သည်။"
+    },
+    {
      "en": "In the next videos, I'll look at the scam compounds on the border, the refugee crisis in Thailand, and how you can help.",
      "my": "နောက်ဗီဒီယိုများတွင် နယ်စပ်ရှိ လိမ်လည်မှုစခန်းများ၊ ထိုင်းနိုင်ငံရှိ ဒုက္ခသည်အကျပ်အတည်းနှင့် သင်ဘယ်လိုကူညီနိုင်သလဲ ဆိုတာကို ကြည့်ပါမယ်။"
     }
-   ]
+   ],
+   "bg": {
+    "src": "../01-tnr-in-exile/images/47.jpg",
+    "credit": "MgHla / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Protest in Myanmar against Military Coup 14-Feb-2021 17.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_17.jpg",
+    "dim": 0.7
+   },
+   "art": {
+    "name": "eye",
+    "mode": "side"
+   }
   }
  ],
  "shorts": [
@@ -661,32 +830,31 @@
   }
  ],
  "thumbnail": {
-  "kicker": "Explained in 10 minutes",
+  "kicker": "Myanmar explained",
   "text": "Myanmar's|hidden war",
   "size": 150,
-  "highlight": {
-   "Kachin": "red",
-   "Rakhine": "red",
-   "Chin": "red",
-   "Kayin": "red",
-   "Kayah": "red",
-   "Sagaing": "red",
-   "Magway": "red",
-   "Shan": "red"
+  "bg": {
+   "src": "images/02.jpg",
+   "credit": "Alisdare Hickson / CC BY-SA 4.0 (Wikimedia Commons)",
+   "credit_full": "An activist with a message commemorating the anniversary of the 8888 (8 August 1988) uprising against the Burmese military junta.jpg by Alisdare Hickson, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:An_activist_with_a_message_commemorating_the_anniversary_of_the_8888_(8_August_1988)_uprising_against_the_Burmese_military_junta.jpg",
+   "pos": "60% 30%"
   }
  },
  "sources": [
-  "ADD the links from your research here (Reuters, AP, BBC, UN OCHA, AAPP, ICG, Frontier Myanmar, The Irrawaddy...)",
+  "Reporting by Reuters, AP and BBC on the 2021 coup and the conflict since",
+  "UN OCHA humanitarian updates on displacement in Myanmar",
+  "International Crisis Group reports on Myanmar",
+  "Assistance Association for Political Prisoners (AAPP)",
   "Map data: Natural Earth (public domain)"
  ],
  "upload": {
   "titles": [
    "Myanmar's Civil War, Explained",
    "Myanmar's Hidden War: How a Coup Became a Revolution",
-   "Why Myanmar Is at War (Explained in 10 Minutes)"
+   "Why Myanmar Is at War, Explained"
   ],
   "description": "In 2021, Myanmar's military seized power. What followed became one of the biggest wars in the world, and one of the least reported. Here is how it started, who is fighting, and what could happen next.\n\nEnglish narration · မြန်မာစာတန်းထိုး (Burmese subtitles)",
-  "footer": "Narrated by Maung Yel Hkawng, Myanmar Community Researcher.\nVisuals are original maps and graphics. No AI-generated images of real events.\nSpotted a mistake? Tell me in the comments and I'll correct it here.",
+  "footer": "Research and script: Maung Yel Hkawng, Myanmar Community Researcher.\nNarration: AI voice. Visuals: original maps, animations and openly licensed photos.\nSpotted a mistake? Tell me in the comments and I'll correct it here.",
   "tags": [
    "Myanmar",
    "Burma",
@@ -705,5 +873,9 @@
    "#Burma",
    "#Explained"
   ]
+ },
+ "ai_voice": {
+  "voice": "george",
+  "speed": 0.95
  }
 }

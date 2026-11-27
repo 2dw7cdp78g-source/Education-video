@@ -417,3 +417,96 @@ import math  # noqa: E402  (used by the illustrations above)
 
 ART.update({"reach": reach, "globe": globe, "waveform": waveform, "alert": alert, "salute": salute,
             "tools": tools, "shield": shield, "bell": bell})
+
+
+# ---------------------------------------------------------------- ballot box with "FRAUD?" claim
+def ballot():
+    style = f"""
+    @keyframes drop {{ 0%,10% {{ transform: translateY(-200px); opacity: 0; }} 25% {{ opacity: 1; }} 45%,100% {{ transform: translateY(0); opacity: 1; }} }}
+    @keyframes stamp {{ 0%,50% {{ transform: rotate(-12deg) scale(2.2); opacity: 0; }} 60% {{ transform: rotate(-12deg) scale(.95); opacity: 1; }} 65%,95% {{ transform: rotate(-12deg) scale(1); opacity: 1; }} 100% {{ opacity: 0; }} }}
+    .v {{ {A('drop', 4.5, timing='ease-in')} }}
+    .st {{ {A('stamp', 4.5, timing='ease-out', extra='transform-origin:300px 380px;')} }}
+    """
+    paper = (f"<g class='v'><rect x='250' y='150' width='100' height='130' rx='8' fill='#e9e3d4'/>"
+             f"<rect x='266' y='172' width='24' height='24' rx='4' fill='none' stroke='{LAND}' stroke-width='4'/><path d='M270,184 l6,8 l12,-16' stroke='{GREEN}' stroke-width='5' fill='none'/>"
+             f"<rect x='298' y='178' width='40' height='10' rx='5' fill='#bdb4a0'/><rect x='266' y='214' width='24' height='24' rx='4' fill='none' stroke='{LAND}' stroke-width='4'/>"
+             f"<rect x='298' y='220' width='34' height='10' rx='5' fill='#bdb4a0'/></g>")
+    box = (f"<rect x='150' y='290' width='300' height='240' rx='16' fill='{LAND}' stroke='{LINE}' stroke-width='4'/>"
+           f"<rect x='130' y='270' width='340' height='40' rx='10' fill='#3a4f63'/><rect x='240' y='282' width='120' height='14' rx='7' fill='{NAVY}'/>"
+           f"<text x='300' y='440' font-size='44' font-weight='900' fill='{TEXT}' text-anchor='middle' letter-spacing='6'>VOTE</text>")
+    stamp = (f"<g class='st'><rect x='170' y='340' width='260' height='84' rx='10' fill='rgba(14,20,27,.6)' stroke='{RED}' stroke-width='8'/>"
+             f"<text x='300' y='398' font-size='50' font-weight='900' fill='{RED}' text-anchor='middle' letter-spacing='4'>FRAUD?</text></g>")
+    return _svg(paper + box + stamp, style)
+
+
+# ---------------------------------------------------------------- banging pots and pans
+def pots():
+    style = f"""
+    @keyframes hitL {{ 0%,100% {{ transform: rotate(0deg); }} 50% {{ transform: rotate(-38deg); }} }}
+    @keyframes hitR {{ 0%,100% {{ transform: rotate(0deg); }} 50% {{ transform: rotate(38deg); }} }}
+    @keyframes clang {{ 0%,40%,100% {{ opacity: 0; transform: scale(.6); }} 50% {{ opacity: 1; transform: scale(1.1); }} }}
+    @keyframes note {{ from {{ transform: translate(0,0); opacity: 1; }} to {{ transform: translate(var(--x), -180px); opacity: 0; }} }}
+    .sL {{ {A('hitL', .5, extra='transform-origin:190px 330px;')} }} .sR {{ {A('hitR', .5, .25, extra='transform-origin:410px 330px;')} }}
+    .cl {{ {A('clang', .5, extra='transform-box:fill-box;transform-origin:center;')} }} .cl2 {{ {A('clang', .5, .25, extra='transform-box:fill-box;transform-origin:center;')} }}
+    .n1 {{ {A('note', 2, 0, timing='linear')} --x:-80px; }} .n2 {{ {A('note', 2, .7, timing='linear')} --x:60px; }} .n3 {{ {A('note', 2, 1.4, timing='linear')} --x:-20px; }}
+    """
+    pot = lambda x: (f"<path d='M{x-90},360 h180 v60 q0,60 -60,60 h-60 q-60,0 -60,-60 Z' fill='#9aa5b1'/>"
+                     f"<rect x='{x-100}' y='350' width='200' height='18' rx='9' fill='#c6d0da'/><rect x='{x+95}' y='372' width='60' height='14' rx='7' fill='#6d7884'/>")
+    spoon = lambda cls, x: f"<g class='{cls}'><rect x='{x-6}' y='190' width='12' height='150' rx='6' fill='{GOLD}'/><ellipse cx='{x}' cy='190' rx='22' ry='30' fill='{GOLD}'/></g>"
+    burst = lambda cls, x: f"<g class='{cls}'>" + "".join(f"<line x1='{x}' y1='330' x2='{x + dx}' y2='{330 + dy}' stroke='{GOLD}' stroke-width='6' stroke-linecap='round'/>" for dx, dy in ((-40, -30), (0, -50), (40, -30))) + "</g>"
+    notes = "".join(f"<text class='{c}' x='{x}' y='300' font-size='54' fill='{TEXT}'>♪</text>" for x, c in ((150, 'n1'), (300, 'n2'), (430, 'n3')))
+    return _svg(pot(190) + pot(410) + burst('cl', 190) + burst('cl2', 410) + spoon('sL', 190) + spoon('sR', 410) + notes, style)
+
+
+# ---------------------------------------------------------------- earthquake: seismograph + shaking buildings
+def quake():
+    style = f"""
+    @keyframes scroll {{ to {{ transform: translateX(-300px); }} }}
+    @keyframes shake {{ 0%,100% {{ transform: translate(0,0) rotate(0); }} 20% {{ transform: translate(-6px,2px) rotate(-1.5deg); }} 40% {{ transform: translate(6px,-2px) rotate(1.5deg); }}
+        60% {{ transform: translate(-4px,1px) rotate(-1deg); }} 80% {{ transform: translate(4px,0) rotate(1deg); }} }}
+    @keyframes fall {{ 0%,60% {{ transform: translateY(0); opacity: 1; }} 100% {{ transform: translateY(120px); opacity: 0; }} }}
+    .wave {{ {A('scroll', 1.6, timing='linear')} }}
+    .b1 {{ {A('shake', .35, extra='transform-origin:180px 520px;')} }} .b2 {{ {A('shake', .3, .1, extra='transform-origin:330px 520px;')} }} .b3 {{ {A('shake', .4, .2, extra='transform-origin:460px 520px;')} }}
+    .d1 {{ {A('fall', 1.4, 0, timing='ease-in')} }} .d2 {{ {A('fall', 1.4, .5, timing='ease-in')} }}
+    """
+    import random as _r
+    rnd = _r.Random(3)
+    pts, x = [], 0
+    while x <= 900:
+        amp = 70 if 300 < x % 600 < 420 else 12
+        pts.append(f"{x},{150 + rnd.uniform(-amp, amp):.0f}")
+        x += 12
+    seis = (f"<rect x='40' y='60' width='520' height='180' rx='16' fill='{PANEL}' stroke='{LINE}' stroke-width='3'/>"
+            f"<defs><clipPath id='sc'><rect x='50' y='70' width='500' height='160'/></clipPath></defs>"
+            f"<g clip-path='url(#sc)'><g class='wave'><polyline points='{' '.join(pts)}' fill='none' stroke='{RED}' stroke-width='4' transform='translate(50,0)'/></g></g>"
+            f"<text x='520' y='100' font-size='30' font-weight='900' fill='{GOLD}' text-anchor='end'>7.7</text>")
+    bld = lambda cls, x, w, h: (f"<g class='{cls}'><rect x='{x}' y='{520-h}' width='{w}' height='{h}' fill='{LAND}' stroke='{LINE}' stroke-width='3'/>"
+                                + "".join(f"<rect x='{x+14+c*28}' y='{520-h+16+r*36}' width='16' height='20' fill='{GOLD}' opacity='.6'/>" for r in range(int(h // 36) - 1) for c in range(int((w - 14) // 28))) + "</g>")
+    ground = f"<rect x='0' y='520' width='600' height='14' fill='{LINE}'/><path d='M260,520 l20,14 l-12,14 l18,14' stroke='{RED}' stroke-width='5' fill='none'/>"
+    debris = f"<rect class='d1' x='300' y='300' width='18' height='14' fill='{MUTED}'/><rect class='d2' x='200' y='330' width='14' height='12' fill='{MUTED}'/>"
+    return _svg(seis + bld('b1', 110, 140, 230) + bld('b2', 270, 120, 190) + bld('b3', 400, 120, 260) + ground + debris, style)
+
+
+# ---------------------------------------------------------------- calendar flipping through the years
+def calendar():
+    years = ["1948", "1962", "1988", "2011", "2015", "2021"]
+    n, cyc = len(years), 7.2
+    style = f"""
+    @keyframes yr {{ 0% {{ opacity: 0; transform: translateY(40px); }} 4%,{100/n - 3:.1f}% {{ opacity: 1; transform: translateY(0); }} {100/n:.1f}%,100% {{ opacity: 0; transform: translateY(-40px); }} }}
+    @keyframes flip {{ 0%,80% {{ transform: rotateX(0deg); }} 100% {{ transform: rotateX(-90deg); }} }}
+    @keyframes bar {{ from {{ transform: scaleX(0); }} to {{ transform: scaleX(1); }} }}
+    .pg {{ {A('flip', cyc / n, timing='ease-in', extra='transform-origin:300px 200px;')} }}
+    .prog {{ {A('bar', cyc, timing='linear', extra='transform-origin:150px 500px;')} }}
+    """
+    labels = "".join(f"<text x='300' y='365' font-size='120' font-weight='900' fill='{RED if y == '2021' else TEXT}' text-anchor='middle' "
+                     f"style='animation:yr {cyc}s linear infinite both;animation-delay:calc(var(--t0)*-1s + {i * cyc / n:.2f}s)'>{y}</text>" for i, y in enumerate(years))
+    cal = (f"<rect x='130' y='150' width='340' height='300' rx='24' fill='{PANEL}' stroke='{LINE}' stroke-width='4'/>"
+           f"<rect x='130' y='150' width='340' height='70' rx='24' fill='{RED}'/><rect x='130' y='190' width='340' height='30' fill='{RED}'/>"
+           f"<rect x='200' y='120' width='18' height='60' rx='9' fill='{TEXT}'/><rect x='382' y='120' width='18' height='60' rx='9' fill='{TEXT}'/>"
+           f"<g class='pg'><rect x='150' y='230' width='300' height='14' rx='7' fill='{LINE}' opacity='.5'/></g>")
+    prog = (f"<rect x='150' y='494' width='300' height='12' rx='6' fill='{LINE}'/>"
+            f"<rect class='prog' x='150' y='494' width='300' height='12' rx='6' fill='{GOLD}'/>")
+    return _svg(cal + labels + prog, style)
+
+
+ART.update({"ballot": ballot, "pots": pots, "quake": quake, "calendar": calendar})
