@@ -93,7 +93,7 @@ def person_card(v):
     gray = "filter:grayscale(1) contrast(1.15);" if THEME[0] == "cinema" else ""
     acc = COLORS["gold"]
     if v:
-        box = "left:170px;top:300px;width:740px;height:780px"
+        box = "left:200px;top:290px;width:680px;height:690px"
     else:
         box = "right:110px;top:110px;width:560px;height:700px"
     credit = f"<div style='position:absolute;right:10px;bottom:-30px;font-size:15px;color:rgba(255,255,255,.55)'>Photo: {e(p.get('credit', ''))}</div>" if p.get("credit") else ""
@@ -402,8 +402,25 @@ def render_scene(scene, orient, state=None, hook="", ctx=None, seed=0):
         else:  # back
             body = (f"<div class='artwrap' style='position:absolute;left:50%;top:{'640' if v else '540'}px;width:{900 if v else 980}px;height:{900 if v else 980}px;"
                     f"transform:translate(-50%,-50%);opacity:{art.get('opacity', .5)}'>{svg}</div>{body}")
+    if scene.get("bg") and scene["type"] in READABLE:
+        # text over a busy photo: put it on a dark, slightly blurred panel so it is always readable
+        # (appended after the body so it wins over layout styles from art placement)
+        pos = "top:690px !important;" if v else "top:52% !important;"
+        if not v and (scene.get("art") or {}).get("mode", "side") == "side" and scene.get("art"):
+            pos += "right:740px !important;"
+        body += (f"<style>.stage{{bottom:auto !important;{pos}transform:translateY(-50%);height:auto;"
+                 f"background:rgba({SHADE},.84);border-radius:22px;padding:{'36px 40px' if v else '44px 56px'} !important;"
+                 f"box-shadow:0 30px 90px rgba(0,0,0,.55);border-left:6px solid {COLORS['gold']}}}"
+                 f".bgimg{{filter:grayscale({1 if THEME[0] == 'cinema' else 0}) brightness(.7) blur(3px) !important}}</style>")
+        if scene["type"] == "image":
+            body += (f"<style>.stage.imgcap{{top:auto !important;bottom:{'900' if v else '230'}px !important;transform:none !important;"
+                     f"right:{'70' if v else '700'}px !important}} .bgimg{{filter:grayscale({1 if THEME[0] == 'cinema' else 0}) brightness(.85) !important}}</style>")
     return page(orient, body, source=scene.get("source", ""), hook=hook,
                 brand=scene.get("brand", True), bg=scene.get("bg"), seed=seed)
+
+
+READABLE = {"points", "timeline", "flow", "quote", "text", "image"}
+# image captions sit low on the frame (placed after the readable panel style)
 
 
 def _new(cur):
@@ -516,8 +533,9 @@ def scene_text(s, v, state):
 
 
 def scene_image(s, v, state):
-    return f"""<div class='col' style='position:absolute;left:{70 if v else 110}px;right:{70 if v else 110}px;bottom:{860 if v else 220}px'>
-        <h2 style='font-size:{58 if v else 62}px'>{e(s.get('caption', ''))}</h2></div>"""
+    return f"""<div class='stage imgcap' style='top:auto !important'><div class='kicker'>{e(s.get('kicker', ''))}</div>
+        <h2 style='font-size:{52 if v else 58}px;margin-top:12px'>{e(s.get('caption', ''))}</h2>
+        <div style='font-size:{28 if v else 28}px;margin-top:14px;color:{COLORS['muted']}'>{e(s.get('detail', ''))}</div></div>"""
 
 
 def scene_endcard(s, v, state):

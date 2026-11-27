@@ -162,15 +162,16 @@ def write_srt(path, items, key):
             f.write(f"{n}\n{ts_srt(a)} --> {ts_srt(b - 0.04)}\n{l[key]}\n\n")
 
 
-def write_ass(path, items, vertical, english, burmese=True, scale=1.0):
+def write_ass(path, items, vertical, english, burmese=True, scale=1.0, my_scale=None):
+    my_scale = my_scale or scale
     if vertical:
         W, H = 1080, 1920
-        st = [("EN", "Inter", round(56 * scale), 1, 2, 600), ("MY", "Noto Sans Myanmar", round(52 * scale), 0, 2, 430)]
+        st = [("EN", "Inter", round(56 * scale), 1, 2, 640), ("MY", "Noto Sans Myanmar", round(52 * my_scale), 0, 2, 400)]
     else:
         W, H = 1920, 1080
-        st = [("EN", "Inter", round(44 * scale), 1, 2, 150), ("MY", "Noto Sans Myanmar", round(48 * scale), 0, 2, 52)]
+        st = [("EN", "Inter", round(44 * scale), 1, 2, 150), ("MY", "Noto Sans Myanmar", round(48 * my_scale), 0, 2, 56)]
     my_margin = st[1][5]
-    en_margin = st[0][5] if vertical else (my_margin + round(110 * scale) if burmese else 52)
+    en_margin = st[0][5] if vertical else (my_margin + round(110 * my_scale) if burmese else 52)
     hdr = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -181,7 +182,7 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: EN,{st[0][1]},{st[0][2]},&H00FFFFFF,&H00FFFFFF,&H00141B0E,&H96141B0E,{-1 if vertical else 0},0,0,0,100,100,0,0,{3 if not vertical else 1},{10 if not vertical else 5},0,2,{90 if vertical else 200},{90 if vertical else 200},{en_margin},1
-Style: MY,{st[1][1]},{st[1][2]},&H0066E0FF,&H0066E0FF,&H00141B0E,&H96141B0E,0,0,0,0,100,100,0,0,3,10,0,2,{70 if vertical else 200},{70 if vertical else 200},{my_margin},1
+Style: MY,{st[1][1]},{st[1][2]},&H0066E0FF,&H0066E0FF,&H00141B0E,&H50141B0E,0,0,0,0,100,100,0,0,3,12,0,2,{50 if vertical else 120},{50 if vertical else 120},{my_margin},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -330,7 +331,8 @@ def build_video(ep, segs, items, audio, total, out_dir, work, vertical, name, fa
     ass = work / f"{name}.ass"
     if english is None:
         english = vertical or ep.get("burn_english_long", False)
-    write_ass(ass, items, vertical, english=english, scale=ep.get("subtitle_scale", 1.0))
+    write_ass(ass, items, vertical, english=english, scale=ep.get("subtitle_scale", 1.0),
+              my_scale=ep.get("subtitle_my_scale"))
     out = out_dir / f"{name}.mp4"
     assemble(files, audio, ass, out, fast, audio_filter)
     return out

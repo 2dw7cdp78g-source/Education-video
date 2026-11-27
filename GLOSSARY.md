@@ -14,6 +14,7 @@ Preferred Burmese terms for subtitles. Use these in every episode. Terms marked 
 | Min Aung Hlaing | "Min Aung Lai" | ✅ |
 | Aung San Suu Kyi | "Aung San Soo Chee" | suggested |
 | Ne Win | "Nay Win" | suggested |
+| Win Myint | "Win Myin" | suggested |
 
 Pronunciation rules live in `pipeline/channel.json` under `pronunciations` and apply to every episode automatically.
 

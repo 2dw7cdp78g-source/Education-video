@@ -133,10 +133,10 @@
    "reveal": true,
    "reveal_at": [
     0,
-    2,
-    4,
+    3,
     5,
-    6
+    6,
+    7
    ],
    "items": [
     {
@@ -166,6 +166,11 @@
      "my": "ထိုစဉ်က ဗမာပြည်ဟုခေါ်သော မြန်မာနိုင်ငံသည် ၁၉၄၈ ခုနှစ်တွင် ဗြိတိသျှထံမှ လွတ်လပ်ရေးရခဲ့သည်။"
     },
     {
+     "en": "The independence movement was led by General Aung San, but he was assassinated in 1947, just months before independence.",
+     "my": "လွတ်လပ်ရေးလှုပ်ရှားမှုကို ဗိုလ်ချုပ်အောင်ဆန်းက ဦးဆောင်ခဲ့သော်လည်း လွတ်လပ်ရေးမရမီ လအနည်းငယ်အလိုဖြစ်သော ၁၉၄၇ ခုနှစ်တွင် လုပ်ကြံခံခဲ့ရသည်။",
+     "person": "aung_san"
+    },
+    {
      "en": "Fighting with ethnic armed groups began almost immediately.",
      "my": "တိုင်းရင်းသားလက်နက်ကိုင်အဖွဲ့များနှင့် တိုက်ပွဲများ ချက်ချင်းနီးပါး စတင်ခဲ့သည်။"
     },
@@ -193,17 +198,57 @@
      "person": "aung_san_suu_kyi"
     },
     {
-     "en": "Aung San Suu Kyi, the daughter of independence hero General Aung San, had won the Nobel Peace Prize in 1991 and spent about fifteen years under house arrest.",
+     "en": "Aung San Suu Kyi, the daughter of General Aung San, had won the Nobel Peace Prize in 1991 and spent about fifteen years under house arrest.",
      "my": "လွတ်လပ်ရေးသူရဲကောင်း ဗိုလ်ချုပ်အောင်ဆန်း၏ သမီးဖြစ်သော ဒေါ်အောင်ဆန်းစုကြည်သည် ၁၉၉၁ ခုနှစ်တွင် နိုဘယ်ငြိမ်းချမ်းရေးဆု ရရှိခဲ့ပြီး နှစ်ပေါင်း ၁၅ နှစ်ခန့် နေအိမ်အကျယ်ချုပ် ချခံခဲ့ရသည်။",
      "person": "aung_san_suu_kyi"
     },
     {
      "en": "But the military kept a quarter of the seats in parliament, and control of the army, police and borders.",
      "my": "သို့သော် စစ်တပ်က လွှတ်တော်နေရာ လေးပုံတစ်ပုံနှင့် တပ်မတော်၊ ရဲနှင့် နယ်စပ်ရေးရာကို ဆက်လက်ထိန်းချုပ်ထားခဲ့သည်။"
-    },
+    }
+   ]
+  },
+  {
+   "type": "image",
+   "kicker": "2017 · Rakhine State → Bangladesh",
+   "caption": "The Rohingya crisis",
+   "detail": "Kutupalong camp, Cox's Bazar, Bangladesh",
+   "bg": {
+    "src": "images/rohingya_camp_1.jpg",
+    "credit": "John Owens (VOA) / Public domain (Wikimedia Commons)",
+    "credit_full": "Kutupalong Refugee Camp (John Owens-VOA).jpg by John Owens (VOA), Public domain, https://commons.wikimedia.org/wiki/File:Kutupalong_Refugee_Camp_(John_Owens-VOA).jpg",
+    "dim": 0.5
+   },
+   "lines": [
     {
      "en": "And in 2017, a brutal military campaign against the Rohingya, a Muslim minority in Rakhine State, forced more than 700,000 people to flee to Bangladesh.",
      "my": "၂၀၁၇ ခုနှစ်တွင် ရခိုင်ပြည်နယ်ရှိ မွတ်စလင်လူနည်းစုဖြစ်သော ရိုဟင်ဂျာများအပေါ် စစ်တပ်၏ ရက်စက်သော စစ်ဆင်ရေးကြောင့် လူ ၇၀၀,၀၀၀ ကျော် ဘင်္ဂလားဒေ့ရှ်သို့ ထွက်ပြေးခဲ့ရသည်။"
+    },
+    {
+     "en": "Many were forced to cross the border with only what they could carry.",
+     "my": "အများအပြားမှာ သယ်ဆောင်နိုင်သမျှ ပစ္စည်းအနည်းငယ်ဖြင့်သာ နယ်စပ်ကို ဖြတ်ကျော်ခဲ့ကြရသည်။"
+    }
+   ]
+  },
+  {
+   "type": "image",
+   "kicker": "Today",
+   "caption": "Around one million Rohingya live in camps in Bangladesh",
+   "detail": "One of the largest refugee settlements in the world",
+   "bg": {
+    "src": "images/rohingya_camp_2.jpg",
+    "credit": "CAPTAIN RAJU / CC BY-SA 4.0 (Wikimedia Commons)",
+    "credit_full": "Rohingya Refugees Camp in 2019.68.jpg by CAPTAIN RAJU, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Rohingya_Refugees_Camp_in_2019.68.jpg",
+    "dim": 0.5
+   },
+   "lines": [
+    {
+     "en": "Today, around one million Rohingya live in crowded camps in Cox's Bazar, one of the largest refugee settlements in the world.",
+     "my": "ယနေ့တွင် ရိုဟင်ဂျာ တစ်သန်းခန့်သည် ကမ္ဘာ့အကြီးဆုံး ဒုက္ခသည်စခန်းများထဲမှ တစ်ခုဖြစ်သော Cox's Bazar ရှိ လူစည်ကားသည့် စခန်းများတွင် နေထိုင်ကြသည်။"
+    },
+    {
+     "en": "The United Nations has called the 2017 campaign \"a textbook example of ethnic cleansing\".",
+     "my": "ကုလသမဂ္ဂက ၂၀၁၇ စစ်ဆင်ရေးကို \"လူမျိုးစုရှင်းလင်းရေး၏ စံနမူနာ\" ဟု ဖော်ပြခဲ့သည်။"
     }
    ]
   },
@@ -253,6 +298,11 @@
      "en": "She was later jailed on charges widely seen as politically motivated.",
      "my": "နောက်ပိုင်းတွင် သူမကို နိုင်ငံရေးအရ ရည်ရွယ်ချက်ရှိသည်ဟု ကျယ်ကျယ်ပြန့်ပြန့် ယူဆကြသော စွဲချက်များဖြင့် ထောင်ချခဲ့သည်။",
      "person": "aung_san_suu_kyi"
+    },
+    {
+     "en": "President Win Myint, the elected head of state, was also detained and later jailed.",
+     "my": "ရွေးကောက်တင်မြှောက်ခံ နိုင်ငံ့ခေါင်းဆောင် သမ္မတ ဦးဝင်းမြင့်ကိုလည်း ဖမ်းဆီးခဲ့ပြီး နောက်ပိုင်းတွင် ထောင်ချခဲ့သည်။",
+     "person": "win_myint"
     },
     {
      "en": "Army chief Min Aung Hlaing took control of the country.",
@@ -808,9 +858,9 @@
    "id": "short-01-the-coup",
    "hook": "How Myanmar's *2021 coup* started a war",
    "scenes": [
-    5,
-    6,
-    8
+    7,
+    8,
+    10
    ],
    "caption": "How a coup in 2021 turned into one of the world's biggest wars. Full story on my channel.",
    "hashtags": [
@@ -825,8 +875,8 @@
    "id": "short-02-operation-1027",
    "hook": "The offensive that *shook* Myanmar's military",
    "scenes": [
-    11,
-    12
+    13,
+    14
    ],
    "caption": "Operation 1027: the offensive that changed Myanmar's war.",
    "hashtags": [
@@ -840,9 +890,9 @@
    "id": "short-03-human-cost",
    "hook": "Myanmar's war in *3 numbers*",
    "scenes": [
-    14,
-    15,
-    16
+    16,
+    17,
+    18
    ],
    "caption": "The human cost of Myanmar's war, in three numbers.",
    "hashtags": [
@@ -904,8 +954,8 @@
  },
  "ai_voice": {
   "voice": "george",
-  "speed": 1.06,
-  "gap_scale": 0.9
+  "speed": 1.15,
+  "gap_scale": 0.75
  },
  "theme": "cinema",
  "music": {
@@ -936,6 +986,23 @@
    "pos": "center 20%",
    "credit": "Claude TRUONG-NGOC / CC BY-SA 3.0",
    "credit_full": "Aung San Suu Kyi par Claude Truong-Ngoc octobre 2013.jpg by Claude TRUONG-NGOC, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Aung_San_Suu_Kyi_par_Claude_Truong-Ngoc_octobre_2013.jpg"
+  },
+  "aung_san": {
+   "name": "General Aung San",
+   "role": "Independence leader, assassinated in 1947",
+   "photo": "images/aung_san.jpg",
+   "pos": "center 15%",
+   "credit": "Public domain",
+   "credit_full": "Aung San in uniform.jpg by Unknown author, Public domain, https://commons.wikimedia.org/wiki/File:Aung_San_in_uniform.jpg"
+  },
+  "win_myint": {
+   "name": "U Win Myint",
+   "role": "Elected president, detained in the 2021 coup",
+   "photo": "images/win_myint.jpg",
+   "pos": "center 15%",
+   "credit": "Roman Kubanskiy / CC BY-SA 4.0",
+   "credit_full": "Myanmar President Win Myint.png by Roman Kubanskiy (creator of composite from two sources above), CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Myanmar_President_Win_Myint.png"
   }
- }
+ },
+ "subtitle_my_scale": 1.33
 }

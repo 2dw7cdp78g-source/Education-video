@@ -4,6 +4,8 @@ Photos from Wikimedia Commons under the licenses shown. Some are shared with Epi
 
 - `images/02.jpg`: An activist with a message commemorating the anniversary of the 8888 (8 August 1988) uprising against the Burmese military junta.jpg by Alisdare Hickson, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:An_activist_with_a_message_commemorating_the_anniversary_of_the_8888_(8_August_1988)_uprising_against_the_Burmese_military_junta.jpg
 - `images/03.jpg`: Bagan, Myanmar, Htilominlo Temple and other Buddhist stupas in Bagan plain.jpg by Vyacheslav Argenberg, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Bagan,_Myanmar,_Htilominlo_Temple_and_other_Buddhist_stupas_in_Bagan_plain.jpg
+- `images/rohingya_camp_1.jpg`: Kutupalong Refugee Camp (John Owens-VOA).jpg by John Owens (VOA), Public domain, https://commons.wikimedia.org/wiki/File:Kutupalong_Refugee_Camp_(John_Owens-VOA).jpg
+- `images/rohingya_camp_2.jpg`: Rohingya Refugees Camp in 2019.68.jpg by CAPTAIN RAJU, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Rohingya_Refugees_Camp_in_2019.68.jpg
 - `images/14.jpg`: Hluttaw Complex, Naypyidaw.jpg by Peerapat Wimolrungkarat, Thai Government photographer, CC BY 2.0, https://commons.wikimedia.org/wiki/File:Hluttaw_Complex,_Naypyidaw.jpg
 - `../01-tnr-in-exile/images/30.jpg`: Protest in Myanmar against Military Coup 14-Feb-2021 02.jpg by MgHla, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_in_Myanmar_against_Military_Coup_14-Feb-2021_02.jpg
 - `../01-tnr-in-exile/images/26.jpg`: Protest against military coup (9 Feb 2021, Hpa-An, Kayin State, Myanmar) (4).jpg by Ninjastrikers, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Protest_against_military_coup_(9_Feb_2021,_Hpa-An,_Kayin_State,_Myanmar)_(4).jpg
@@ -16,3 +18,5 @@ Photos from Wikimedia Commons under the licenses shown. Some are shared with Epi
 - `images/ne_win.jpg`: Ne Win in 1959, Jerusalem.jpg by Moshe Pridan, Public domain, https://commons.wikimedia.org/wiki/File:Ne_Win_in_1959,_Jerusalem.jpg
 - `images/min_aung_hlaing.jpg`: Min Aung Hlaing in April 2019 (cropped).jpg by Vadim Savitsky, mil.ru, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Min_Aung_Hlaing_in_April_2019_(cropped).jpg
 - `images/aung_san_suu_kyi.jpg`: Aung San Suu Kyi par Claude Truong-Ngoc octobre 2013.jpg by Claude TRUONG-NGOC, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Aung_San_Suu_Kyi_par_Claude_Truong-Ngoc_octobre_2013.jpg
+- `images/aung_san.jpg`: Aung San in uniform.jpg by Unknown author, Public domain, https://commons.wikimedia.org/wiki/File:Aung_San_in_uniform.jpg
+- `images/win_myint.jpg`: Myanmar President Win Myint.png by Roman Kubanskiy (creator of composite from two sources above), CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Myanmar_President_Win_Myint.png
