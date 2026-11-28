@@ -15,7 +15,7 @@ Tag the friend who owes you dinner 👇
 #bulgogi #koreanbbq #บูลโกกิ #ManseKoreanFood #KoreanFood #อาหารเกาหลี #ร้านอาหารเกาหลี #KoreanFoodThailand #ของอร่อย #reels
 ```
 
-## 02-bibimbap.mp4  (23s)
+## 02-bibimbap.mp4  (22s)
 Angle: Best-seller social proof + vegan option
 
 ```
@@ -29,7 +29,7 @@ Comment “MIX” if you’re a mixer 👇
 #bibimbap #veganthailand #บิบิมบับ #ManseKoreanFood #KoreanFood #อาหารเกาหลี #ร้านอาหารเกาหลี #KoreanFoodThailand #ของอร่อย #reels
 ```
 
-## 03-kimchi-jjigae.mp4  (24s)
+## 03-kimchi-jjigae.mp4  (23s)
 Angle: Comfort / weather relatable hook
 
 ```
@@ -69,7 +69,7 @@ Tag the friend who “can handle spicy” 👇
 #buldak #spicychallenge #มาม่าเกาหลี #ManseKoreanFood #KoreanFood #อาหารเกาหลี #ร้านอาหารเกาหลี #KoreanFoodThailand #ของอร่อย #reels
 ```
 
-## 06-tteokbokki.mp4  (23s)
+## 06-tteokbokki.mp4  (22s)
 Angle: K-drama fan hook
 
 ```
@@ -95,7 +95,7 @@ Send this to a friend who still calls it sushi 😂
 #kimbap #notsushi #คิมบับ #ManseKoreanFood #KoreanFood #อาหารเกาหลี #ร้านอาหารเกาหลี #KoreanFoodThailand #ของอร่อย #reels
 ```
 
-## 08-eomuk.mp4  (22s)
+## 08-eomuk.mp4  (21s)
 Angle: Seoul street food without the flight
 
 ```
@@ -121,7 +121,7 @@ Red bean 🫘 or chocolate 🍫? Vote below!
 #bungeoppang #koreandessert #ขนมเกาหลี #ManseKoreanFood #KoreanFood #อาหารเกาหลี #ร้านอาหารเกาหลี #KoreanFoodThailand #ของอร่อย #reels
 ```
 
-## 10-kimchi.mp4  (23s)
+## 10-kimchi.mp4  (22s)
 Angle: Cheapest item / homemade pride
 
 ```

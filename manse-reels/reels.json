@@ -203,7 +203,7 @@
     },
     {
      "type": "cta",
-     "say": "Comment MIX if you are a mixer!",
+     "say": "Comment mix if you are a mixer!",
      "cap": "Comment “MIX” if you’re a mixer! 👇"
     }
    ],
@@ -439,7 +439,7 @@
     },
     {
      "type": "feature",
-     "say": "Fire noodles, juicy sausage and melty cheese.",
+     "say": "Buldak fire noodles, juicy sausage and melty cheese.",
      "chips": [
       "🔥 Buldak noodles",
       "🌭 Juicy sausage",
@@ -1008,19 +1008,23 @@
   }
  ],
  "pronounce": {
-  "bulgogi": "bull-go-gee",
-  "Bibimbap": "Bee-bim-bop",
-  "bibimbap": "bee-bim-bop",
-  "gochujang": "go-choo-jahng",
-  "jjigae": "jee-geh",
-  "Gogi gangjeong": "Go-ghee gahng-jung",
-  "Tteokbokki": "Tuck-bo-kee",
-  "Eomuk": "Uh-mook",
-  "Bungeoppang": "Boong-uh-bahng",
-  "kimbap": "kim-bahp",
-  "Seoul": "Sole",
   "K-drama": "Kay drama",
   "omelette": "omelet",
-  "Manse": "Mahn-say"
+  "Seoul": "Sole"
+ },
+ "korean_ipa": {
+  "kimchi": "kˈimʧi",
+  "jjigae": "ʤˈiɡɛ",
+  "bulgogi": "bˈulɡoɡi",
+  "bibimbap": "bˈibimbap",
+  "gogi": "ɡˈoɡi",
+  "gangjeong": "ɡˈaŋʤɔŋ",
+  "buldak": "bˈuldak",
+  "tteokbokki": "tˈɔkpˌokki",
+  "eomuk": "ˈɔmuk",
+  "kimbap": "kˈimbap",
+  "bungeoppang": "bˈuŋɔpˌaŋ",
+  "gochujang": "ɡˈoʧuʤˌaŋ",
+  "manse": "mˈansˌe"
  }
 }

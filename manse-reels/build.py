@@ -36,15 +36,34 @@ def tts(text, out):
         from kokoro_onnx import Kokoro
         m = REPO / "pipeline" / "models"
         _kokoro = Kokoro(str(m / "kokoro-v1.0.onnx"), str(m / "voices-v1.0.bin"))
-    for k, v in CFG["pronounce"].items():
-        text = re.sub(rf"\b{re.escape(k)}\b", v, text)
-    a, sr = _kokoro.create(text, voice=CFG["voice"], speed=CFG["speed"], lang="en-us")
+    a, sr = _kokoro.create(to_phonemes(text), voice=CFG["voice"], speed=CFG["speed"], lang="en-us", is_phonemes=True)
     a = np.asarray(a, dtype=np.float32)
     idx = np.where(np.abs(a) > 0.01)[0]
     if len(idx):
         a = a[max(0, idx[0] - int(0.02 * sr)): idx[-1] + int(0.06 * sr)]
     sf.write(out, a, sr)
     return a, sr
+
+
+def to_phonemes(text):
+    """English words go through the normal phonemizer; Korean dish names use fixed Korean sounds."""
+    for k, v in CFG["pronounce"].items():
+        text = re.sub(rf"\b{re.escape(k)}\b", v, text)
+    ipa = CFG["korean_ipa"]
+    pat = re.compile(r"\b(" + "|".join(sorted(ipa, key=len, reverse=True)) + r")\b", re.I)
+    out, pos = [], 0
+    for m in pat.finditer(text):
+        eng = text[pos:m.start()]
+        if eng.strip():
+            out.append(_kokoro.tokenizer.phonemize(eng, "en-us"))
+        out.append(ipa[m.group(1).lower()])
+        pos = m.end()
+        punct = re.match(r"[.,!?:;]*", text[pos:]).group(0)  # keep the pause after the name
+        out[-1] += punct
+        pos += len(punct)
+    if text[pos:].strip():
+        out.append(_kokoro.tokenizer.phonemize(text[pos:], "en-us"))
+    return " ".join(o.strip() for o in out)
 
 
 # ---------------------------------------------------------------- captions
