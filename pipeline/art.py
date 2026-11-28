@@ -510,3 +510,59 @@ def calendar():
 
 
 ART.update({"ballot": ballot, "pots": pots, "quake": quake, "calendar": calendar})
+
+
+# ---------------------------------------------------------------- slot machine with a near miss
+def slot():
+    style = f"""
+    @keyframes spin {{ from {{ transform: translateY(0); }} to {{ transform: translateY(-600px); }} }}
+    @keyframes stop1 {{ 0% {{ transform: translateY(-1200px); }} 30%,100% {{ transform: translateY(0); }} }}
+    @keyframes stop3 {{ 0% {{ transform: translateY(-1200px); }} 62% {{ transform: translateY(-15px); }} 72%,100% {{ transform: translateY(-100px); }} }}
+    @keyframes flash {{ 0%,70% {{ opacity: 0; }} 75%,95% {{ opacity: 1; }} 100% {{ opacity: 0; }} }}
+    @keyframes lever {{ 0%,4% {{ transform: rotate(0); }} 10% {{ transform: rotate(40deg); }} 18%,100% {{ transform: rotate(0); }} }}
+    .r1 {{ {A('stop1', 4.5, 0, timing='cubic-bezier(.2,.8,.3,1)')} }}
+    .r2 {{ {A('stop1', 4.5, .2, timing='cubic-bezier(.2,.8,.3,1)')} }}
+    .r3 {{ {A('stop3', 4.5, 0, timing='cubic-bezier(.2,.8,.3,1)')} }}
+    .fl {{ {A('flash', 4.5)} }}
+    .lv {{ {A('lever', 4.5, extra='transform-origin:520px 330px;')} }}
+    """
+    syms = ["7", "♦", "★", "7", "♣", "♥"]
+
+    def reel(x, cls):
+        cells = "".join(f"<text x='{x + 60}' y='{230 + i * 100}' font-size='78' font-weight='900' text-anchor='middle' fill='{RED if s == '7' else TEXT}'>{s}</text>"
+                        for i, s in enumerate(syms * 3))
+        return f"<g clip-path='url(#win)'><g class='{cls}'>{cells}</g></g>"
+    body = (f"<defs><clipPath id='win'><rect x='70' y='160' width='400' height='120' rx='10'/></clipPath></defs>"
+            f"<rect x='40' y='70' width='460' height='420' rx='40' fill='{PANEL}' stroke='{GOLD}' stroke-width='8'/>"
+            f"<text x='270' y='130' font-size='40' font-weight='900' fill='{GOLD}' text-anchor='middle' letter-spacing='6'>JACKPOT</text>"
+            f"<rect x='70' y='160' width='400' height='120' rx='10' fill='{NAVY}'/>"
+            + reel(70, 'r1') + reel(210, 'r2') + reel(350, 'r3') +
+            f"<line x1='200' y1='160' x2='200' y2='280' stroke='{LINE}' stroke-width='4'/><line x1='340' y1='160' x2='340' y2='280' stroke='{LINE}' stroke-width='4'/>"
+            f"<text class='fl' x='270' y='360' font-size='44' font-weight='900' fill='{RED}' text-anchor='middle'>SO CLOSE!</text>"
+            f"<rect x='150' y='400' width='240' height='56' rx='28' fill='{GOLD}'/><text x='270' y='438' font-size='28' font-weight='900' fill='#fff' text-anchor='middle'>SPIN</text>"
+            f"<g class='lv'><rect x='512' y='200' width='14' height='130' rx='7' fill='{MUTED}'/><circle cx='519' cy='192' r='24' fill='{RED}'/></g>")
+    return _svg(body, style)
+
+
+# ---------------------------------------------------------------- pyramid scheme: money flows up, base crumbles
+def pyramid():
+    style = f"""
+    @keyframes up {{ 0% {{ transform: translateY(0); opacity: 0; }} 15% {{ opacity: 1; }} 85% {{ opacity: 1; }} 100% {{ transform: translateY(-300px); opacity: 0; }} }}
+    @keyframes crack {{ 0%,60% {{ transform: translateY(0) rotate(0); opacity: 1; }} 100% {{ transform: translateY(80px) rotate(8deg); opacity: 0; }} }}
+    .c1 {{ {A('up', 2.4, 0, timing='linear')} }} .c2 {{ {A('up', 2.4, .8, timing='linear')} }} .c3 {{ {A('up', 2.4, 1.6, timing='linear')} }}
+    .b1 {{ {A('crack', 5, 0, timing='ease-in')} }} .b2 {{ {A('crack', 5, .4, timing='ease-in')} }}
+    """
+    rows = [(1, 120, GOLD), (2, 220, LAND), (4, 320, LAND), (8, 420, LAND)]
+    blocks = ""
+    for n, y, col in rows:
+        w = 560 / 8 * 0.9
+        x0 = 300 - n * (560 / 8) / 2
+        for i in range(n):
+            cls = "b1" if (y == 420 and i % 3 == 0) else "b2" if (y == 420 and i % 3 == 1) else ""
+            blocks += f"<g class='{cls}'><rect x='{x0 + i * 560 / 8 + 3:.0f}' y='{y}' width='{w:.0f}' height='80' rx='10' fill='{col}' stroke='{LINE}' stroke-width='3'/>{_person(x0 + i * 560 / 8 + 3 + w / 2, y + 52, .42, TEXT if col == GOLD else '#8a96a3')}</g>"
+    coins = "".join(f"<g class='{c}'><circle cx='{x}' cy='500' r='16' fill='{GOLD}' stroke='#b47f1e' stroke-width='4'/><text x='{x}' y='508' font-size='20' font-weight='900' fill='#7a5512' text-anchor='middle'>$</text></g>"
+                    for x, c in ((170, 'c1'), (300, 'c2'), (430, 'c3')))
+    return _svg(coins + blocks, style)
+
+
+ART.update({"slot": slot, "pyramid": pyramid})

@@ -392,7 +392,7 @@ def render_scene(scene, orient, state=None, hook="", ctx=None, seed=0):
             body = (f"<style>.stage{{right:860px !important;padding:0 !important}}</style>{body}"
                     f"<div class='artwrap' style='position:absolute;right:90px;top:170px;width:700px;height:700px'>{svg}</div>")
         elif mode == "side" and v:
-            body = f"<div class='artwrap' style='position:absolute;left:190px;top:290px;width:700px;height:700px;opacity:.22'>{svg}</div>{body}"
+            body = f"<div class='artwrap' style='position:absolute;left:190px;top:290px;width:700px;height:700px;opacity:.1'>{svg}</div>{body}"
         elif mode == "top":
             sz = 330 if not v else 300
             disc = (f"background:radial-gradient(circle, rgba(14,20,27,.92) 0%, rgba(14,20,27,.85) 58%, rgba(14,20,27,0) 71%);"
@@ -419,7 +419,7 @@ def render_scene(scene, orient, state=None, hook="", ctx=None, seed=0):
                 brand=scene.get("brand", True), bg=scene.get("bg"), seed=seed)
 
 
-READABLE = {"points", "timeline", "flow", "quote", "text", "image"}
+READABLE = {"points", "timeline", "flow", "quote", "text", "image", "stat"}
 # image captions sit low on the frame (placed after the readable panel style)
 
 
@@ -596,7 +596,7 @@ def scene_flow(s, v, state):
     direction = "column" if v else "row"
     art_html = ""
     if s.get("art"):
-        hh = 250 if v else 400
+        hh = 170 if v else 400
         svg = ART[s["art"]["name"]]().replace("viewBox='0 0 600 600'", "viewBox='0 60 600 480' preserveAspectRatio='xMidYMid meet'")
         art_html = (f"<div class='artwrap' style='height:{hh}px;margin:{'0 0 10px' if v else '6px 0 10px'};display:flex;justify-content:center'>"
                     f"<div style='width:{hh * 1.25:.0f}px;height:{hh}px'>{svg}</div></div>")
@@ -683,3 +683,31 @@ def scene_outro(s, v, state):
       <div style='margin-top:26px;font-size:{36 if v else 36}px;font-weight:800;color:#111;background:{COLORS['gold']};padding:14px 40px;border-radius:60px'>Subscribe</div>
       <div style='max-width:1300px'>{acts}</div>
       <div style='margin-top:26px;font-size:{24 if v else 24}px;color:{COLORS['muted']}'>{e(s.get('safety', ''))}</div></div>"""
+
+
+def scene_shot(s, v, state):
+    """A real screenshot inside a phone frame (or a wide card), slowly scrolling, with a caption."""
+    src = s["src"]
+    if s.get("wide"):
+        frame = (f"<div class='phonewrap' style='width:{960 if v else 1100}px;border:6px solid {COLORS['gold']};border-radius:18px;overflow:hidden;"
+                 f"box-shadow:0 40px 120px rgba(0,0,0,.7);background:#fff'><img src='file://{src}' style='display:block;width:100%'></div>")
+    else:
+        h = 1000 if not v else 760
+        frame = (f"<div class='phonewrap' style='width:{int(h * .5)}px;height:{h}px;border-radius:60px;border:14px solid #2c2c31;background:#000;"
+                 f"overflow:hidden;box-shadow:0 40px 140px rgba(0,0,0,.75), 0 0 0 3px {COLORS['gold']}'>"
+                 f"<img class='scroll' src='file://{src}' style='display:block;width:100%;height:100%;object-fit:cover;--sy:{s.get('scroll', 0)}%'></div>")
+    tag = (f"<div style='position:absolute;{'left:50%;transform:translateX(-50%);top:-28px' if v else 'left:-26px;top:40px'};"
+           f"background:{COLORS['gold']};color:#fff;font-weight:800;font-size:22px;letter-spacing:.14em;padding:8px 16px;text-transform:uppercase;z-index:2'>"
+           f"{e(s.get('stamp', 'Real screenshot'))}</div>")
+    css_ = ("<style>@keyframes scr { from { object-position: 50% 0%; } to { object-position: 50% calc(var(--sy) * 4); } }"
+            ".scroll { animation: scr calc(var(--sd) * 1s) ease-in-out both; animation-delay: calc(var(--t0) * -1s); }</style>")
+    if v:
+        return (css_ + f"<div style='position:absolute;top:{300 if not s.get('wide') else 420}px;left:0;right:0;display:flex;justify-content:center;"
+                f"transform:scale(1);transform-origin:top center'>"
+                f"<div style='position:relative'>{tag}{frame}</div></div>")
+    left = (f"<div class='col' style='position:absolute;left:110px;top:0;bottom:0;width:{620 if s.get('wide') else 820}px;display:flex;flex-direction:column;justify-content:center'>"
+            f"<div class='kicker'>{e(s.get('kicker', ''))}</div><h2 style='margin-top:18px'>{e(s.get('heading', ''))}</h2>"
+            f"<div class='muted' style='font-size:32px;line-height:1.4;margin-top:24px'>{e(s.get('caption', ''))}</div></div>")
+    if s.get("wide"):
+        return css_ + left + f"<div style='position:absolute;right:70px;top:50%;transform:translateY(-50%) scale(.95)'><div style='position:relative'>{tag}{frame}</div></div>"
+    return css_ + left + f"<div style='position:absolute;right:240px;top:40px'><div style='position:relative'>{tag}{frame}</div></div>"

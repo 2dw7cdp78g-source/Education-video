@@ -437,6 +437,9 @@ def main():
     apply_channel_defaults(ep)
     for p in ep.get("people", {}).values():
         p["photo"] = str((ep_dir / p["photo"]).resolve())
+    for sc in ep["scenes"]:
+        if sc["type"] == "shot":
+            sc["src"] = str((ep_dir / sc["src"]).resolve())
     for f in (ep.get("thumbnail") or {}).get("faces", []):
         f["photo"] = str((ep_dir / f["photo"]).resolve())
     for sc in ep["scenes"] + [ep.get("thumbnail") or {}]:  # image paths are relative to the episode folder
