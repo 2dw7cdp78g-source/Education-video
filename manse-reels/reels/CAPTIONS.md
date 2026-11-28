@@ -43,17 +43,17 @@ Save this for the next rainy day!
 #kimchijjigae #kimchistew #ซุปกิมจิ #ManseKoreanFood #KoreanFood #อาหารเกาหลี #ร้านอาหารเกาหลี #KoreanFoodThailand #ของอร่อย #reels
 ```
 
-## 04-gogi-gangjeong.mp4  (24s)
-Angle: Texture craving hook + vegan surprise
+## 04-gogi-gangjeong.mp4  (23s)
+Angle: Texture craving hook
 
 ```
-Crispy, sticky & impossible to share 🤤 Gogi-gangjeong: crispy Korean glazed bites in a sticky honey or spicy sauce, with pickled radish. Pork, beef — or VEGAN king oyster mushroom 🍄 · 120฿
+Crispy, sticky & impossible to share 🤤 Gogi-gangjeong: crispy Korean glazed bites in a sticky honey or spicy sauce, with pickled radish. Chicken, pork or beef · 120฿
 Honey 🍯 or spicy 🌶️? Comment below!
 
-โกกิคังจอง กรอบนอก เคลือบซอสหนึบ 🍯🌶️ เลือกได้ รสน้ำผึ้ง หรือรสเผ็ด เสิร์ฟพร้อมหัวไชเท้าดอง มีหมู เนื้อ และวีแกน (เห็ดออรินจิ) ราคา 120 บาท
+โกกิคังจอง กรอบนอก เคลือบซอสหนึบ 🍯🌶️ เลือกได้ รสน้ำผึ้ง หรือรสเผ็ด เสิร์ฟพร้อมหัวไชเท้าดอง เลือกได้ ไก่ หมู หรือเนื้อ ราคา 120 บาท
 
 📍 MANSE Korean Food, [your area]
-#gangjeong #koreanfriedchicken #อาหารวีแกน #ManseKoreanFood #KoreanFood #อาหารเกาหลี #ร้านอาหารเกาหลี #KoreanFoodThailand #ของอร่อย #reels
+#gangjeong #koreanfriedchicken #ไก่ทอดเกาหลี #ManseKoreanFood #KoreanFood #อาหารเกาหลี #ร้านอาหารเกาหลี #KoreanFoodThailand #ของอร่อย #reels
 ```
 
 ## 05-buldak-omelete.mp4  (21s)

@@ -319,7 +319,7 @@
    "img": "gangjeong",
    "shift": 5,
    "seed": 4,
-   "angle": "Texture craving hook + vegan surprise",
+   "angle": "Texture craving hook",
    "segments": [
     {
      "type": "hook",
@@ -373,12 +373,11 @@
     },
     {
      "type": "options",
-     "say": "Pork, beef, or vegan with king oyster mushroom!",
-     "cap": "Pork, beef, or VEGAN king oyster mushroom!",
+     "say": "Choose chicken, pork or beef.",
      "options": [
+      "Chicken",
       "Pork",
-      "Beef",
-      "Vegan 🍄"
+      "Beef"
      ],
      "focus": [
       50,
@@ -409,9 +408,9 @@
      "cap": "Honey 🍯 or Spicy 🌶️? Comment below!"
     }
    ],
-   "caption_en": "Crispy, sticky & impossible to share 🤤 Gogi-gangjeong: crispy Korean glazed bites in a sticky honey or spicy sauce, with pickled radish. Pork, beef — or VEGAN king oyster mushroom 🍄 · 120฿\nHoney 🍯 or spicy 🌶️? Comment below!",
-   "caption_th": "โกกิคังจอง กรอบนอก เคลือบซอสหนึบ 🍯🌶️ เลือกได้ รสน้ำผึ้ง หรือรสเผ็ด เสิร์ฟพร้อมหัวไชเท้าดอง มีหมู เนื้อ และวีแกน (เห็ดออรินจิ) ราคา 120 บาท",
-   "tags": "#gangjeong #koreanfriedchicken #อาหารวีแกน",
+   "caption_en": "Crispy, sticky & impossible to share 🤤 Gogi-gangjeong: crispy Korean glazed bites in a sticky honey or spicy sauce, with pickled radish. Chicken, pork or beef · 120฿\nHoney 🍯 or spicy 🌶️? Comment below!",
+   "caption_th": "โกกิคังจอง กรอบนอก เคลือบซอสหนึบ 🍯🌶️ เลือกได้ รสน้ำผึ้ง หรือรสเผ็ด เสิร์ฟพร้อมหัวไชเท้าดอง เลือกได้ ไก่ หมู หรือเนื้อ ราคา 120 บาท",
+   "tags": "#gangjeong #koreanfriedchicken #ไก่ทอดเกาหลี",
    "name": "GOGI-GANGJEONG",
    "th_name": "โกกิคังจอง"
   },
