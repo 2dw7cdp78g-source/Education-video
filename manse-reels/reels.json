@@ -1,0 +1,1026 @@
+{
+ "voice": "af_heart",
+ "speed": 1.12,
+ "brand": {
+  "name": "MANSE",
+  "tag": "Korean Food · Made with love",
+  "th_cta": "แวะมาชิมกันได้เลย!",
+  "th_tag": "แท็กเพื่อนที่อยากกินด้วย 👇"
+ },
+ "reels": [
+  {
+   "id": "01-bulgogi",
+   "img": "bulgogi",
+   "crop_top": 0.24,
+   "shift": 0,
+   "seed": 1,
+   "angle": "Price shock hook + signature dish",
+   "segments": [
+    {
+     "type": "hook",
+     "say": "Korean barbecue on rice, for just one hundred thirty-five baht?",
+     "cap": "Korean BBQ on rice for just 135 baht?",
+     "title": "KOREAN BBQ\nFOR 135฿?!",
+     "th": "บูลโกกิ เมนูซิกเนเจอร์",
+     "focus": [
+      40,
+      45
+     ],
+     "zoom": [
+      1.6,
+      1.25
+     ]
+    },
+    {
+     "type": "feature",
+     "say": "Meet our signature bulgogi. Sweet soy marinated meat, grilled hot.",
+     "chips": [
+      "🔥 Grilled hot",
+      "🥢 Sweet soy marinade",
+      "🌶️ Green pepper"
+     ],
+     "focus": [
+      30,
+      40
+     ],
+     "zoom": [
+      1.15,
+      1.4
+     ]
+    },
+    {
+     "type": "feature",
+     "mode": "card",
+     "say": "With fluffy steamed rice and our homemade kimchi on the side.",
+     "chips": [
+      "🍚 Steamed rice",
+      "🥬 Homemade kimchi"
+     ],
+     "focus": [
+      70,
+      45
+     ],
+     "zoom": [
+      1.05,
+      1.15
+     ]
+    },
+    {
+     "type": "options",
+     "say": "Chicken, pork or beef. Original or spicy. You choose.",
+     "options": [
+      "Chicken",
+      "Pork",
+      "Beef",
+      "Original",
+      "Spicy 🌶️"
+     ],
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.3,
+      1.1
+     ]
+    },
+    {
+     "type": "price",
+     "say": "From one hundred thirty-five baht.",
+     "price": "135",
+     "from": true,
+     "focus": [
+      35,
+      45
+     ],
+     "zoom": [
+      1.1,
+      1.3
+     ]
+    },
+    {
+     "type": "cta",
+     "say": "Tag the friend who owes you dinner!",
+     "cap": "Tag the friend who owes you dinner! 👇"
+    }
+   ],
+   "caption_en": "Korean BBQ on rice for 135 baht?! 🔥 Our SIGNATURE Bulgogi: sweet soy-marinated meat, grilled hot, with steamed rice & homemade kimchi. Chicken, pork or beef · original or spicy.\nTag the friend who owes you dinner 👇",
+   "caption_th": "บูลโกกิ เมนูซิกเนเจอร์ของร้าน 🔥 เนื้อหมักซอสโชยุเกาหลี ย่างร้อน ๆ เสิร์ฟพร้อมข้าวสวยและกิมจิโฮมเมด เลือกได้ ไก่ / หมู / เนื้อ รสออริจินัลหรือเผ็ด เริ่มต้น 135 บาท",
+   "tags": "#bulgogi #koreanbbq #บูลโกกิ",
+   "name": "BULGOGI",
+   "th_name": "บูลโกกิ"
+  },
+  {
+   "id": "02-bibimbap",
+   "img": "bibimbap",
+   "shift": 2,
+   "seed": 2,
+   "angle": "Best-seller social proof + vegan option",
+   "segments": [
+    {
+     "type": "hook",
+     "say": "This is the bowl everyone orders here.",
+     "title": "OUR #1\nBEST SELLER",
+     "th": "บิบิมบับ เมนูขายดีอันดับ 1",
+     "focus": [
+      50,
+      45
+     ],
+     "zoom": [
+      1.7,
+      1.3
+     ]
+    },
+    {
+     "type": "feature",
+     "say": "Bibimbap. Rice, grilled meat, fresh veggies and a runny fried egg.",
+     "chips": [
+      "🍳 Fried egg",
+      "🥩 Grilled meat",
+      "🥕 Fresh veggies",
+      "🍄 Shiitake"
+     ],
+     "focus": [
+      45,
+      50
+     ],
+     "zoom": [
+      1.2,
+      1.45
+     ]
+    },
+    {
+     "type": "feature",
+     "mode": "card",
+     "say": "Add gochujang, then mix, mix, mix!",
+     "cap": "Add gochujang, then MIX, MIX, MIX!",
+     "chips": [
+      "🌶️ Gochujang",
+      "✨ Sesame oil"
+     ],
+     "focus": [
+      55,
+      60
+     ],
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "shake": true
+    },
+    {
+     "type": "options",
+     "say": "Vegan, chicken, pork or beef.",
+     "options": [
+      "Vegan 🌱",
+      "Chicken",
+      "Pork",
+      "Beef"
+     ],
+     "focus": [
+      50,
+      45
+     ],
+     "zoom": [
+      1.35,
+      1.15
+     ]
+    },
+    {
+     "type": "price",
+     "say": "And the vegan bowl is just one hundred baht.",
+     "cap": "Vegan bowl just 100 baht",
+     "price": "100",
+     "from": true,
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.1,
+      1.35
+     ]
+    },
+    {
+     "type": "cta",
+     "say": "Comment MIX if you are a mixer!",
+     "cap": "Comment “MIX” if you’re a mixer! 👇"
+    }
+   ],
+   "caption_en": "Our #1 BEST SELLER 🏆 Bibimbap: rice, grilled meat, fresh veggies, runny egg & gochujang. Mix, mix, mix! 🥢\nVegan from 100฿ · chicken/pork 125฿ · beef 135฿.\nComment “MIX” if you’re a mixer 👇",
+   "caption_th": "บิบิมบับ เมนูขายดีอันดับ 1 ของร้าน 🏆 ข้าวยำเกาหลี ผักสด ไข่ดาว ซอสโคชูจัง คลุกให้เข้ากันแล้วฟินมาก มีเมนูวีแกน 100 บาท",
+   "tags": "#bibimbap #veganthailand #บิบิมบับ",
+   "name": "BIBIMBAP",
+   "th_name": "บิบิมบับ"
+  },
+  {
+   "id": "03-kimchi-jjigae",
+   "img": "kimchi-jjigae",
+   "shift": -3,
+   "seed": 3,
+   "angle": "Comfort / weather relatable hook",
+   "segments": [
+    {
+     "type": "hook",
+     "say": "When it rains, this is what you need.",
+     "title": "RAINY DAY?\nWE GOT YOU",
+     "th": "ฝนตกแบบนี้ ต้องซุปกิมจิ",
+     "focus": [
+      50,
+      40
+     ],
+     "zoom": [
+      1.6,
+      1.25
+     ]
+    },
+    {
+     "type": "feature",
+     "say": "Kimchi jjigae. A bubbling hot kimchi stew, rich and a little spicy.",
+     "chips": [
+      "🔥 Bubbling hot",
+      "🥬 Kimchi broth",
+      "🌶️ A little spicy"
+     ],
+     "focus": [
+      50,
+      55
+     ],
+     "zoom": [
+      1.2,
+      1.5
+     ]
+    },
+    {
+     "type": "feature",
+     "mode": "card",
+     "say": "Soft tofu, enoki mushrooms, tender meat, and rice on the side.",
+     "chips": [
+      "🧈 Soft tofu",
+      "🍄 Enoki",
+      "🥩 Tender meat",
+      "🍚 Rice"
+     ],
+     "focus": [
+      50,
+      55
+     ],
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    {
+     "type": "options",
+     "say": "Vegan, chicken, pork or beef.",
+     "options": [
+      "Vegan 🌱",
+      "Chicken",
+      "Pork",
+      "Beef"
+     ],
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.4,
+      1.2
+     ]
+    },
+    {
+     "type": "price",
+     "say": "One whole bowl from one hundred baht.",
+     "price": "100",
+     "from": true,
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.15,
+      1.35
+     ]
+    },
+    {
+     "type": "cta",
+     "say": "Save this for the next rainy day!",
+     "cap": "Save this for the next rainy day ☔"
+    }
+   ],
+   "caption_en": "Rainy day? We got you ☔🔥 Kimchi Jjigae: bubbling hot kimchi stew with soft tofu, enoki, tender meat & rice.\nVegan / chicken / pork / beef · from 100฿.\nSave this for the next rainy day!",
+   "caption_th": "ฝนตกแบบนี้ ต้องซุปกิมจิร้อน ๆ ☔ กิมจิจิแก ซุปกิมจิเข้มข้น เต้าหู้นุ่ม เห็ดเข็มทอง เนื้อนุ่ม พร้อมข้าวสวย มีแบบวีแกน เริ่มต้น 100 บาท",
+   "tags": "#kimchijjigae #kimchistew #ซุปกิมจิ",
+   "name": "KIMCHI JJIGAE",
+   "th_name": "กิมจิจิแก"
+  },
+  {
+   "id": "04-gogi-gangjeong",
+   "img": "gangjeong",
+   "shift": 5,
+   "seed": 4,
+   "angle": "Texture craving hook + vegan surprise",
+   "segments": [
+    {
+     "type": "hook",
+     "say": "Crispy, sticky, and impossible to share.",
+     "title": "CRISPY &\nSTICKY 🤤",
+     "th": "กรอบนอก เคลือบซอสหนึบ",
+     "focus": [
+      50,
+      45
+     ],
+     "zoom": [
+      1.8,
+      1.3
+     ],
+     "shake": true
+    },
+    {
+     "type": "feature",
+     "say": "Gogi gangjeong. Crispy fried bites, glazed in a sticky sweet sauce.",
+     "chips": [
+      "😋 Crispy outside",
+      "🍯 Sticky glaze",
+      "✨ Sesame"
+     ],
+     "focus": [
+      45,
+      45
+     ],
+     "zoom": [
+      1.2,
+      1.5
+     ]
+    },
+    {
+     "type": "feature",
+     "mode": "card",
+     "say": "Honey or spicy. Served with pickled radish.",
+     "chips": [
+      "🍯 Honey",
+      "🌶️ Spicy",
+      "🥒 Pickled radish"
+     ],
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    {
+     "type": "options",
+     "say": "Pork, beef, or vegan with king oyster mushroom!",
+     "cap": "Pork, beef, or VEGAN king oyster mushroom!",
+     "options": [
+      "Pork",
+      "Beef",
+      "Vegan 🍄"
+     ],
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.4,
+      1.2
+     ]
+    },
+    {
+     "type": "price",
+     "say": "All for one hundred twenty baht.",
+     "cap": "All for 120 baht",
+     "price": "120",
+     "focus": [
+      50,
+      45
+     ],
+     "zoom": [
+      1.15,
+      1.4
+     ]
+    },
+    {
+     "type": "cta",
+     "say": "Honey or spicy? Tell us in the comments!",
+     "cap": "Honey 🍯 or Spicy 🌶️? Comment below!"
+    }
+   ],
+   "caption_en": "Crispy, sticky & impossible to share 🤤 Gogi-gangjeong: crispy Korean glazed bites in a sticky honey or spicy sauce, with pickled radish. Pork, beef — or VEGAN king oyster mushroom 🍄 · 120฿\nHoney 🍯 or spicy 🌶️? Comment below!",
+   "caption_th": "โกกิคังจอง กรอบนอก เคลือบซอสหนึบ 🍯🌶️ เลือกได้ รสน้ำผึ้ง หรือรสเผ็ด เสิร์ฟพร้อมหัวไชเท้าดอง มีหมู เนื้อ และวีแกน (เห็ดออรินจิ) ราคา 120 บาท",
+   "tags": "#gangjeong #koreanfriedchicken #อาหารวีแกน",
+   "name": "GOGI-GANGJEONG",
+   "th_name": "โกกิคังจอง"
+  },
+  {
+   "id": "05-buldak-omelete",
+   "img": "buldak-omelete",
+   "shift": 1,
+   "seed": 5,
+   "angle": "Spice challenge + tag a friend",
+   "segments": [
+    {
+     "type": "hook",
+     "say": "Can you handle this one?",
+     "title": "SPICE\nCHALLENGE 🔥",
+     "th": "เผ็ดไหวไหม?",
+     "focus": [
+      55,
+      50
+     ],
+     "zoom": [
+      1.7,
+      1.3
+     ],
+     "shake": true
+    },
+    {
+     "type": "feature",
+     "say": "Fire noodles, juicy sausage and melty cheese.",
+     "chips": [
+      "🔥 Buldak noodles",
+      "🌭 Juicy sausage",
+      "🧀 Melty cheese"
+     ],
+     "focus": [
+      50,
+      60
+     ],
+     "zoom": [
+      1.25,
+      1.5
+     ]
+    },
+    {
+     "type": "feature",
+     "mode": "card",
+     "say": "All wrapped in a soft, fluffy omelette.",
+     "chips": [
+      "🍳 Fluffy omelette",
+      "🌿 Nori & sesame"
+     ],
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    {
+     "type": "options",
+     "say": "Go spicy, or keep it cheesy.",
+     "options": [
+      "Spicy 🔥",
+      "Cheese 🧀"
+     ],
+     "focus": [
+      45,
+      45
+     ],
+     "zoom": [
+      1.4,
+      1.2
+     ]
+    },
+    {
+     "type": "price",
+     "say": "Only one hundred baht.",
+     "price": "100",
+     "focus": [
+      50,
+      55
+     ],
+     "zoom": [
+      1.15,
+      1.4
+     ]
+    },
+    {
+     "type": "cta",
+     "say": "Tag the friend who says they can handle spicy!",
+     "cap": "Tag the friend who “can handle spicy” 👇"
+    }
+   ],
+   "caption_en": "SPICE CHALLENGE 🔥 Can you finish our Buldak Omelette? Fire noodles, juicy sausage & melty cheese wrapped in a fluffy omelette. Spicy or cheese · only 100฿.\nTag the friend who “can handle spicy” 👇",
+   "caption_th": "เผ็ดไหวไหม? 🔥 บุลดักออมเล็ต มาม่าเผ็ดเกาหลี ไส้กรอก ชีสยืด ห่อด้วยไข่เจียวนุ่ม ๆ เลือกได้ รสเผ็ด หรือรสชีส ราคาเพียง 100 บาท",
+   "tags": "#buldak #spicychallenge #มาม่าเกาหลี",
+   "name": "BULDAK OMELETTE",
+   "th_name": "บุลดักออมเล็ต"
+  },
+  {
+   "id": "06-tteokbokki",
+   "img": "tteokbokki",
+   "shift": 3,
+   "seed": 6,
+   "angle": "K-drama fan hook",
+   "segments": [
+    {
+     "type": "hook",
+     "say": "You have seen it in every K-drama.",
+     "cap": "You’ve seen it in every K-drama...",
+     "title": "THE K-DRAMA\nSNACK 📺",
+     "th": "ต็อกบกกี เมนูในซีรีส์เกาหลี",
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.7,
+      1.3
+     ]
+    },
+    {
+     "type": "feature",
+     "say": "Now try it for real. Tteokbokki!",
+     "chips": [
+      "🍢 Chewy rice cakes",
+      "🔴 Sweet & spicy sauce"
+     ],
+     "focus": [
+      45,
+      50
+     ],
+     "zoom": [
+      1.2,
+      1.5
+     ]
+    },
+    {
+     "type": "feature",
+     "mode": "card",
+     "say": "Chewy rice cakes and fish cake, in a sweet and spicy sauce.",
+     "chips": [
+      "🐟 Fish cake",
+      "🌭 Sausage",
+      "🧅 Scallion"
+     ],
+     "focus": [
+      50,
+      55
+     ],
+     "zoom": [
+      1.0,
+      1.12
+     ]
+    },
+    {
+     "type": "options",
+     "say": "Original, spicy, or with melted cheese.",
+     "options": [
+      "Original",
+      "Spicy 🌶️",
+      "Cheese 🧀"
+     ],
+     "focus": [
+      50,
+      45
+     ],
+     "zoom": [
+      1.4,
+      1.2
+     ]
+    },
+    {
+     "type": "price",
+     "say": "From seventy-five baht.",
+     "price": "75",
+     "from": true,
+     "focus": [
+      55,
+      50
+     ],
+     "zoom": [
+      1.15,
+      1.4
+     ]
+    },
+    {
+     "type": "cta",
+     "say": "Which K-drama made you crave it? Comment below!",
+     "cap": "Which K-drama made you crave it? 👇"
+    }
+   ],
+   "caption_en": "You’ve seen it in every K-drama 📺 Now try it for real! Tteokbokki: chewy rice cakes & fish cake in a sweet-spicy sauce. Original / spicy 75฿ · cheese 95฿ 🧀\nWhich K-drama made you crave it? 👇",
+   "caption_th": "ต็อกบกกี เมนูที่เห็นในซีรีส์เกาหลีทุกเรื่อง 📺 ต็อกหนึบ ๆ กับโอเด้งในซอสหวานเผ็ด เลือกได้ ออริจินัล เผ็ด หรือชีส เริ่มต้น 75 บาท",
+   "tags": "#tteokbokki #kdrama #ต็อกบกกี",
+   "name": "TTEOKBOKKI",
+   "th_name": "ต็อกบกกี"
+  },
+  {
+   "id": "07-kimbap",
+   "img": "kimbap",
+   "shift": 4,
+   "seed": 7,
+   "angle": "Myth-busting: it's not sushi",
+   "segments": [
+    {
+     "type": "hook",
+     "say": "Stop calling this sushi!",
+     "title": "THIS IS\nNOT SUSHI ❌",
+     "th": "นี่ไม่ใช่ซูชินะ!",
+     "focus": [
+      50,
+      40
+     ],
+     "zoom": [
+      1.7,
+      1.3
+     ],
+     "shake": true
+    },
+    {
+     "type": "feature",
+     "say": "It is kimbap. Korea's favourite rice roll.",
+     "cap": "It’s KIMBAP, Korea’s favourite rice roll",
+     "chips": [
+      "🍙 Seasoned rice",
+      "🌿 Nori seaweed"
+     ],
+     "focus": [
+      50,
+      45
+     ],
+     "zoom": [
+      1.2,
+      1.45
+     ]
+    },
+    {
+     "type": "feature",
+     "mode": "card",
+     "say": "Sesame oil rice, egg, sausage, crab stick and crunchy veggies.",
+     "chips": [
+      "🥚 Egg",
+      "🌭 Sausage",
+      "🦀 Crab stick",
+      "🥒 Cucumber",
+      "🥕 Carrot"
+     ],
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    {
+     "type": "feature",
+     "say": "Perfect for lunch, a picnic, or a snack on the go.",
+     "chips": [
+      "🍱 Lunch",
+      "🧺 Picnic",
+      "🚶 On the go"
+     ],
+     "focus": [
+      50,
+      60
+     ],
+     "zoom": [
+      1.4,
+      1.2
+     ]
+    },
+    {
+     "type": "price",
+     "say": "Only seventy baht.",
+     "price": "70",
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.15,
+      1.4
+     ]
+    },
+    {
+     "type": "cta",
+     "say": "Share this with a friend who still calls it sushi!",
+     "cap": "Send this to a friend who calls it sushi 😂"
+    }
+   ],
+   "caption_en": "This is NOT sushi ❌ It’s KIMBAP 🇰🇷 Korea’s favourite rice roll with sesame-oil rice, egg, sausage, crab stick & crunchy veggies. Only 70฿!\nSend this to a friend who still calls it sushi 😂",
+   "caption_th": "นี่ไม่ใช่ซูชินะ! ❌ นี่คือ คิมบับ ข้าวห่อสาหร่ายเกาหลี ข้าวคลุกน้ำมันงา ไข่ ไส้กรอก ปูอัด ผักกรอบ ๆ ราคาเพียง 70 บาท",
+   "tags": "#kimbap #notsushi #คิมบับ",
+   "name": "KIMBAP",
+   "th_name": "คิมบับ"
+  },
+  {
+   "id": "08-eomuk",
+   "img": "eomuk",
+   "shift": -2,
+   "seed": 8,
+   "angle": "Seoul street food without the flight",
+   "segments": [
+    {
+     "type": "hook",
+     "say": "Seoul street food, without the flight.",
+     "title": "SEOUL STREET\nFOOD ✈️❌",
+     "th": "สตรีทฟู้ดเกาหลี ไม่ต้องบินไกล",
+     "focus": [
+      45,
+      50
+     ],
+     "zoom": [
+      1.6,
+      1.25
+     ]
+    },
+    {
+     "type": "feature",
+     "say": "Eomuk. Korean fish cake skewers, in a hot, clear broth.",
+     "cap": "EOMUK: Korean fish cake skewers in hot broth",
+     "chips": [
+      "🍢 Fish cake skewers",
+      "🍲 Hot broth"
+     ],
+     "focus": [
+      40,
+      45
+     ],
+     "zoom": [
+      1.2,
+      1.45
+     ]
+    },
+    {
+     "type": "feature",
+     "mode": "card",
+     "say": "Slow cooked with radish, kelp and a little scallion.",
+     "chips": [
+      "🥣 Anchovy-kelp dashi",
+      "⚪ Radish",
+      "🌿 Scallion"
+     ],
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    {
+     "type": "options",
+     "say": "And yes, there is a vegan version too.",
+     "options": [
+      "Original",
+      "Vegan 🌱"
+     ],
+     "focus": [
+      55,
+      55
+     ],
+     "zoom": [
+      1.4,
+      1.2
+     ]
+    },
+    {
+     "type": "price",
+     "say": "From sixty-five baht.",
+     "price": "65",
+     "from": true,
+     "focus": [
+      45,
+      50
+     ],
+     "zoom": [
+      1.15,
+      1.4
+     ]
+    },
+    {
+     "type": "cta",
+     "say": "Who are you bringing for street food night?",
+     "cap": "Who are you bringing? Tag them 👇"
+    }
+   ],
+   "caption_en": "Seoul street food, without the flight ✈️❌ Eomuk: Korean fish cake skewers in a hot radish & kelp broth 🍢 Original or vegan · from 65฿.\nWho are you bringing? Tag them 👇",
+   "caption_th": "สตรีทฟู้ดเกาหลี ไม่ต้องบินไกล ✈️ โอเด้งเกาหลีเสียบไม้ ในน้ำซุปหัวไชเท้าร้อน ๆ มีแบบวีแกนด้วย เริ่มต้น 65 บาท",
+   "tags": "#eomuk #koreanstreetfood #โอเด้ง",
+   "name": "EOMUK",
+   "th_name": "โอเด้งเกาหลี"
+  },
+  {
+   "id": "09-bungeoppang",
+   "img": "bungeoppang",
+   "shift": 6,
+   "seed": 9,
+   "angle": "Curiosity: a fish with no fish",
+   "segments": [
+    {
+     "type": "hook",
+     "say": "A fish... with no fish inside?",
+     "title": "A FISH WITH\nNO FISH? 🐟",
+     "th": "ขนมรูปปลา ไม่มีปลา!",
+     "focus": [
+      40,
+      35
+     ],
+     "zoom": [
+      1.7,
+      1.3
+     ]
+    },
+    {
+     "type": "feature",
+     "say": "Bungeoppang! Korea's warm, fish shaped street snack.",
+     "cap": "BUNGEOPPANG: Korea’s warm fish-shaped snack",
+     "chips": [
+      "🐟 Fish-shaped",
+      "🔥 Served warm"
+     ],
+     "focus": [
+      45,
+      40
+     ],
+     "zoom": [
+      1.2,
+      1.45
+     ]
+    },
+    {
+     "type": "feature",
+     "mode": "card",
+     "say": "Crispy outside, soft inside, packed with sweet filling.",
+     "chips": [
+      "✨ Crispy outside",
+      "☁️ Soft inside",
+      "🧈 Butter & milk"
+     ],
+     "focus": [
+      45,
+      70
+     ],
+     "zoom": [
+      1.0,
+      1.12
+     ]
+    },
+    {
+     "type": "options",
+     "say": "Sweet red bean, or chocolate.",
+     "options": [
+      "Red bean 🫘",
+      "Chocolate 🍫"
+     ],
+     "focus": [
+      45,
+      75
+     ],
+     "zoom": [
+      1.5,
+      1.25
+     ]
+    },
+    {
+     "type": "price",
+     "say": "Only sixty baht.",
+     "price": "60",
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.15,
+      1.4
+     ]
+    },
+    {
+     "type": "cta",
+     "say": "Red bean or chocolate? Vote in the comments!",
+     "cap": "Red bean 🫘 or chocolate 🍫? Vote below!"
+    }
+   ],
+   "caption_en": "A fish… with no fish inside? 🐟 Bungeoppang: Korea’s warm fish-shaped street snack. Crispy outside, soft inside, packed with sweet red bean or chocolate. Only 60฿!\nRed bean 🫘 or chocolate 🍫? Vote below!",
+   "caption_th": "ขนมรูปปลา แต่ไม่มีปลา! 🐟 บุงออปัง ขนมปังปลาเกาหลี กรอบนอก นุ่มใน ไส้ถั่วแดงหรือช็อกโกแลต ราคาเพียง 60 บาท",
+   "tags": "#bungeoppang #koreandessert #ขนมเกาหลี",
+   "name": "BUNGEOPPANG",
+   "th_name": "บุงออปัง"
+  },
+  {
+   "id": "10-kimchi",
+   "img": "kimchi",
+   "shift": -1,
+   "seed": 10,
+   "angle": "Cheapest item / homemade pride",
+   "segments": [
+    {
+     "type": "hook",
+     "say": "Real Korean kimchi, for twenty baht.",
+     "cap": "Real Korean kimchi for 20 baht",
+     "title": "HOMEMADE\nKIMCHI 20฿",
+     "th": "กิมจิโฮมเมด ทำเองที่ร้าน",
+     "focus": [
+      50,
+      45
+     ],
+     "zoom": [
+      1.6,
+      1.25
+     ]
+    },
+    {
+     "type": "feature",
+     "say": "We make it ourselves. Crunchy cabbage, chili and a little sesame.",
+     "chips": [
+      "🥬 Napa cabbage",
+      "🌶️ Korean chili",
+      "✨ Sesame oil"
+     ],
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.2,
+      1.45
+     ]
+    },
+    {
+     "type": "feature",
+     "mode": "card",
+     "say": "Spicy, tangy, and so addictive.",
+     "chips": [
+      "🌶️ Spicy",
+      "🍋 Tangy",
+      "🤤 Addictive"
+     ],
+     "focus": [
+      50,
+      40
+     ],
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    {
+     "type": "feature",
+     "say": "Add it to any meal. Bulgogi, bibimbap, anything!",
+     "chips": [
+      "+ Bulgogi",
+      "+ Bibimbap",
+      "+ Any meal"
+     ],
+     "focus": [
+      40,
+      30
+     ],
+     "zoom": [
+      1.4,
+      1.2
+     ]
+    },
+    {
+     "type": "price",
+     "say": "Just twenty baht.",
+     "price": "20",
+     "focus": [
+      50,
+      50
+     ],
+     "zoom": [
+      1.15,
+      1.4
+     ]
+    },
+    {
+     "type": "cta",
+     "say": "Are you team kimchi? Drop a red heart!",
+     "cap": "Team kimchi? Drop a ❤️"
+    }
+   ],
+   "caption_en": "Real Korean kimchi for 20฿ 🥬🌶️ Our ICONIC homemade kimchi: crunchy, spicy, tangy and seriously addictive. Add it to any meal!\nTeam kimchi? Drop a ❤️",
+   "caption_th": "กิมจิโฮมเมด ทำเองที่ร้าน 🥬🌶️ กรอบ เผ็ด เปรี้ยว อร่อยติดใจ สั่งเพิ่มกับทุกเมนูได้ ราคาเพียง 20 บาท",
+   "tags": "#kimchi #homemadekimchi #กิมจิ",
+   "name": "KIMCHI",
+   "th_name": "กิมจิ"
+  }
+ ],
+ "pronounce": {
+  "bulgogi": "bull-go-gee",
+  "Bibimbap": "Bee-bim-bop",
+  "bibimbap": "bee-bim-bop",
+  "gochujang": "go-choo-jahng",
+  "jjigae": "jee-geh",
+  "Gogi gangjeong": "Go-ghee gahng-jung",
+  "Tteokbokki": "Tuck-bo-kee",
+  "Eomuk": "Uh-mook",
+  "Bungeoppang": "Boong-uh-bahng",
+  "kimbap": "kim-bahp",
+  "Seoul": "Sole",
+  "K-drama": "Kay drama",
+  "omelette": "omelet",
+  "Manse": "Mahn-say"
+ }
+}
