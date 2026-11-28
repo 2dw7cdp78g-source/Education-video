@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publisher Sign-in</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="narrow">
+  <h1>One-Click Publisher</h1>
+  <form method="post" action="/login" class="card">
+    <label>Password <input type="password" name="password" autofocus required></label>
+    <p id="wrong" class="error" hidden>Wrong password.</p>
+    <button class="primary">Sign in</button>
+  </form>
+</main>
+<script>if (location.search.includes("wrong")) document.getElementById("wrong").hidden = false;</script>
+</body>
+</html>

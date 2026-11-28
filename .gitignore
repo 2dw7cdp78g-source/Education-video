@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 episodes/*/audio/
 pipeline/models/
+publisher/.env
+publisher/data/
+.pytest_cache/

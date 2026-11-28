@@ -359,11 +359,11 @@ def write_upload(ep, segs, total, out_dir, draft):
     lines += ["## YouTube (long video: `long.mp4`)", "", "**Title options**", ""]
     lines += [f"- {t}" for t in up.get("titles", [ep["title"]])]
     lines += ["", "**Description** (copy everything in the box)", "", "```"]
-    lines += [up.get("description", ""), ""]
+    desc = [up.get("description", ""), ""]
     if len(chapters) >= 3:
-        lines += ["Chapters"] + [f"{fmt_clock(t)} {n}" for t, n in chapters] + [""]
+        desc += ["Chapters"] + [f"{fmt_clock(t)} {n}" for t, n in chapters] + [""]
     if ep.get("sources"):
-        lines += ["Sources"] + [f"- {s}" for s in ep["sources"]] + [""]
+        desc += ["Sources"] + [f"- {s}" for s in ep["sources"]] + [""]
     credits = []
     for sc in ep["scenes"] + [ep.get("thumbnail") or {}]:
         c = (sc.get("bg") or {}).get("credit_full")
@@ -373,9 +373,10 @@ def write_upload(ep, segs, total, out_dir, draft):
         if p.get("credit_full") and p["credit_full"] not in credits:
             credits.append(p["credit_full"])
     if credits:
-        lines += ["Photo credits (Wikimedia Commons)"] + [f"- {c}" for c in credits] + [""]
-    lines += ["About the author", CHANNEL["author"]["bio"], ""]
-    lines += [up.get("footer", "")]
+        desc += ["Photo credits (Wikimedia Commons)"] + [f"- {c}" for c in credits] + [""]
+    desc += ["About the author", CHANNEL["author"]["bio"], ""]
+    desc += [up.get("footer", "")]
+    lines += desc
     lines += ["```", "", f"**Tags:** {', '.join(up.get('tags', []))}", "",
               "**Subtitles:** upload `en.srt` (English) and `my.srt` (Burmese) under Subtitles.", "",
               "**Altered or synthetic content:** answer *No*. An AI narrator that doesn't imitate a real person doesn't need this label. The AI voice is already disclosed in the description.", ""]
@@ -383,6 +384,17 @@ def write_upload(ep, segs, total, out_dir, draft):
         lines += [f"## Short: `{sh['id']}.mp4`", "", f"**Caption:** {sh.get('caption', sh.get('hook', ''))}", "",
                   f"**Hashtags:** {' '.join(sh.get('hashtags', up.get('hashtags', [])))}", ""]
     (out_dir / "upload.md").write_text("\n".join(lines), encoding="utf-8")
+    # Machine-readable copy for the one-click publisher (publisher/).
+    (out_dir / "upload.json").write_text(json.dumps({
+        "id": ep["id"], "title": ep["title"], "draft": draft,
+        "titles": up.get("titles", [ep["title"]]),
+        "description": "\n".join(desc).strip(),
+        "tags": up.get("tags", []), "hashtags": up.get("hashtags", []),
+        "shorts": [{"id": sh["id"], "hook": sh.get("hook", ""),
+                    "caption": sh.get("caption", sh.get("hook", "")),
+                    "hashtags": sh.get("hashtags", up.get("hashtags", []))}
+                   for sh in ep.get("shorts", [])],
+    }, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
 

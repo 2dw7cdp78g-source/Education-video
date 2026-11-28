@@ -17,3 +17,6 @@ See [PLAN.md](PLAN.md) for the channel strategy and safety checklist.
 
 ## Channel defaults
 `pipeline/channel.json` holds the author bio (shown as an intro after the title) and the standard ending (subscribe, share your experience, contact for research animation). Every episode gets both automatically. Set `"author_intro": false` or `"standard_outro": false` in an episode to turn one off. Burmese terminology lives in `GLOSSARY.md`.
+
+## Posting to all platforms
+`publisher/` is a small web app that uploads a finished video to YouTube, Facebook, Instagram and TikTok after one confirmation. Run it with `python3 -m publisher`. See [publisher/README.md](publisher/README.md) for setup.

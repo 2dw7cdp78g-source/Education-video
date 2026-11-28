@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-Click Publisher</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>One-Click Publisher</h1>
+  <span id="dryrun" class="badge warn" hidden>Dry run: nothing is uploaded</span>
+  <form method="post" action="/logout" id="logout"><button class="link">Sign out</button></form>
+</header>
+<main>
+  <div id="flash" class="flash" hidden></div>
+
+  <section>
+    <h2>1. Accounts</h2>
+    <div id="accounts" class="accounts"></div>
+    <div id="pagepick" class="row" hidden>
+      <label>Facebook Page (and its Instagram) <select id="page"></select></label>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Video</h2>
+    <div class="tabs">
+      <button class="tab active" data-tab="episodes">From my episodes</button>
+      <button class="tab" data-tab="file">Upload a file</button>
+    </div>
+    <div id="tab-episodes">
+      <label>Episode <select id="episode"></select></label>
+      <div id="videos" class="videos"></div>
+      <p id="noeps" class="muted" hidden>No built episodes in <code>output/</code> yet. Run <code>python3 pipeline/build.py episodes/&lt;id&gt;</code>, or upload a file.</p>
+    </div>
+    <div id="tab-file" hidden>
+      <input type="file" id="file" accept="video/mp4,video/quicktime,.mp4,.mov,.m4v">
+      <div class="bar"><div id="upbar"></div></div>
+      <p id="upmsg" class="muted"></p>
+      <label class="check"><input type="checkbox" id="filevertical"> This is a vertical short (9:16)</label>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Where and what to post</h2>
+    <div id="platforms"></div>
+  </section>
+
+  <div class="actions">
+    <button id="review" class="primary" disabled>Review &amp; post</button>
+  </div>
+
+  <section id="statusbox" hidden>
+    <h2>Posting</h2>
+    <div id="jobs"></div>
+  </section>
+
+  <section>
+    <h2>Recent posts</h2>
+    <div id="history" class="muted">None yet.</div>
+  </section>
+</main>
+
+<dialog id="confirm">
+  <h2>Post this video?</h2>
+  <div id="summary"></div>
+  <div class="actions">
+    <button id="cancel" class="link">Back</button>
+    <button id="go" class="primary">Confirm &amp; post</button>
+  </div>
+</dialog>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
